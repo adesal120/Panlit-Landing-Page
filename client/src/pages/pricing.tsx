@@ -36,24 +36,6 @@ const pricingPlans: PricingPlan[] = [
     cta: "Get Started"
   },
   {
-    name: "Professional",
-    description: "Growing teams managing multiple services",
-    price: "$29",
-    period: "per month, billed annually",
-    highlighted: true,
-    features: [
-      { name: "Unlimited bookings", included: true },
-      { name: "Advanced booking management", included: true },
-      { name: "Email & SMS notifications", included: true },
-      { name: "Up to 5 team members", included: true },
-      { name: "Calendar view & scheduling", included: true },
-      { name: "Customer CRM & preferences", included: true },
-      { name: "Basic analytics & reports", included: true },
-      { name: "Team roles & permissions", included: false },
-    ],
-    cta: "Start 14-Day Trial"
-  },
-  {
     name: "Enterprise",
     description: "Scale with unlimited everything",
     price: "$99",
@@ -112,7 +94,7 @@ export default function Pricing() {
         {/* Pricing Plans */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-3xl mx-auto">
               {pricingPlans.map((plan, index) => (
                 <motion.div 
                   key={plan.name}
