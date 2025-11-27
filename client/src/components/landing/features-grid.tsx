@@ -15,10 +15,6 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import bookingImg from "@assets/generated_images/premium_saas_booking_dashboard.png";
-import calendarImg from "@assets/generated_images/advanced_calendar_management_interface.png";
-import checkInImg from "@assets/generated_images/premium_qr_check-in_mobile_interface.png";
-import formImg from "@assets/generated_images/premium_customer_crm_dashboard.png";
 
 interface FeatureCardProps {
   title: string;
@@ -70,9 +66,9 @@ export function FeaturesGrid() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="md:col-span-2 bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow relative group min-h-[400px]"
+            className="md:col-span-2 bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative group min-h-[400px] flex items-center justify-between p-8"
           >
-            <div className="p-8 max-w-lg relative z-10">
+            <div className="max-w-lg">
               <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
                 <Ticket className="w-6 h-6 text-blue-600" />
               </div>
@@ -81,8 +77,8 @@ export function FeaturesGrid() {
                 Stop juggling WhatsApp, emails, and spreadsheets. Manage all your online and offline bookings in one place. Prevent double-bookings automatically and send professional invoices instantly.
               </p>
             </div>
-            <div className="absolute right-0 bottom-0 w-3/4 h-3/4 translate-x-1/4 translate-y-1/4 shadow-2xl rounded-tl-2xl overflow-hidden border border-slate-100">
-              <img src={bookingImg} alt="Booking Management" className="w-full h-full object-cover object-top" />
+            <div className="hidden md:flex items-center justify-center w-1/3">
+              <div className="text-6xl opacity-20">📋</div>
             </div>
           </motion.div>
 
@@ -92,21 +88,16 @@ export function FeaturesGrid() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-panlit-dark rounded-3xl border border-slate-800 overflow-hidden shadow-sm relative group min-h-[400px] flex flex-col"
+            className="bg-panlit-dark rounded-3xl border border-slate-800 shadow-sm relative group min-h-[400px] flex flex-col justify-center items-center p-8"
           >
-            <div className="p-8 relative z-10 flex-1">
-              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-                <QrCode className="w-6 h-6 text-panlit-orange" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-3 font-heading">QR Check-in</h3>
-              <p className="text-slate-300 text-sm">
-                Streamline guest arrival. Scan tickets instantly with any device camera or USB scanner. No more printed lists.
-              </p>
+            <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
+              <QrCode className="w-6 h-6 text-panlit-orange" />
             </div>
-            <div className="relative h-48 mt-auto mx-4 mb-4 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-               <img src={checkInImg} alt="QR Check-in" className="w-full h-full object-cover object-center" />
-               <div className="absolute inset-0 bg-gradient-to-t from-panlit-dark/80 to-transparent" />
-            </div>
+            <h3 className="text-2xl font-bold text-white mb-3 font-heading text-center">QR Check-in</h3>
+            <p className="text-slate-300 text-sm text-center max-w-xs">
+              Streamline guest arrival. Scan tickets instantly with any device camera or USB scanner. No more printed lists.
+            </p>
+            <div className="text-6xl mt-6 opacity-30">✓</div>
           </motion.div>
         </div>
 

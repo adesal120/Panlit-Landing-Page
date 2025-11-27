@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import dashboardImg from "@assets/generated_images/premium_saas_booking_dashboard.png";
+import { ArrowRight, CheckCircle2, Calendar, Users, CreditCard, BarChart3 } from "lucide-react";
 
 export function Hero() {
   return (
@@ -66,35 +65,51 @@ export function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:block"
+            className="relative hidden lg:flex items-center justify-center"
           >
-            <div className="relative rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl aspect-[16/10] group">
-              <div className="absolute inset-0 bg-gradient-to-tr from-panlit-orange/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              <img 
-                src={dashboardImg} 
-                alt="Panlit Dashboard" 
-                className="w-full h-full object-cover object-top rounded-xl transform transition-transform duration-700 group-hover:scale-[1.02]" 
-              />
-              
-              {/* Floating UI Elements for depth */}
+            <div className="grid grid-cols-2 gap-6">
               <motion.div 
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1, duration: 0.5 }}
-                className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-xl border border-slate-100 max-w-xs hidden xl:block"
+                transition={{ delay: 0.3 }}
+                className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl hover:bg-white/15 transition-all"
               >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                    <CheckCircle2 size={20} />
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-500 font-medium">Booking Status</p>
-                    <p className="text-sm font-bold text-slate-900">Confirmed</p>
-                  </div>
-                </div>
-                <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-green-500 w-full" />
-                </div>
+                <Calendar className="w-12 h-12 text-panlit-orange mb-3" />
+                <p className="text-white font-semibold">Calendar</p>
+                <p className="text-xs text-slate-400 mt-1">Smart scheduling</p>
+              </motion.div>
+
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl hover:bg-white/15 transition-all"
+              >
+                <Users className="w-12 h-12 text-blue-400 mb-3" />
+                <p className="text-white font-semibold">CRM</p>
+                <p className="text-xs text-slate-400 mt-1">Customer insights</p>
+              </motion.div>
+
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl hover:bg-white/15 transition-all"
+              >
+                <CreditCard className="w-12 h-12 text-green-400 mb-3" />
+                <p className="text-white font-semibold">Payments</p>
+                <p className="text-xs text-slate-400 mt-1">Secure & instant</p>
+              </motion.div>
+
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl hover:bg-white/15 transition-all"
+              >
+                <BarChart3 className="w-12 h-12 text-purple-400 mb-3" />
+                <p className="text-white font-semibold">Analytics</p>
+                <p className="text-xs text-slate-400 mt-1">Real-time insights</p>
               </motion.div>
             </div>
           </motion.div>
