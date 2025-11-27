@@ -91,71 +91,41 @@ export default function Pricing() {
           </div>
         </section>
 
-        {/* Pricing Plans */}
+        {/* Simple Pricing */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-3xl mx-auto">
-              {pricingPlans.map((plan, index) => (
-                <motion.div 
-                  key={plan.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`relative rounded-2xl border-2 overflow-hidden transition-all ${
-                    plan.highlighted 
-                      ? "border-panlit-orange bg-gradient-to-b from-orange-50/50 to-white shadow-2xl md:scale-105 md:z-10" 
-                      : "border-slate-200 bg-white hover:border-slate-300"
-                  }`}
-                >
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold font-heading text-slate-900 mb-2">
-                      {plan.name}
-                    </h3>
-                    <p className="text-slate-600 text-sm mb-6">
-                      {plan.description}
-                    </p>
-                    
-                    <div className="mb-8">
-                      <span className="text-4xl md:text-5xl font-bold text-slate-900">
-                        {plan.price}
-                      </span>
-                      <span className="text-slate-600 text-sm ml-2">
-                        {plan.period}
-                      </span>
-                    </div>
-                    
-                    <Button 
-                      className={`w-full font-semibold py-6 rounded-lg mb-8 text-base ${
-                        plan.highlighted
-                          ? "bg-panlit-orange hover:bg-orange-600 text-white"
-                          : "border-2 border-panlit-orange text-panlit-orange hover:bg-orange-50"
-                      }`}
-                      variant={plan.highlighted ? "default" : "outline"}
-                    >
-                      {plan.cta}
-                    </Button>
-                    
-                    <div className="space-y-4">
-                      {plan.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <div className="flex-shrink-0 mt-1">
-                            {feature.included ? (
-                              <Check className="w-5 h-5 text-green-500" />
-                            ) : (
-                              <X className="w-5 h-5 text-slate-300" />
-                            )}
-                          </div>
-                          <span className={feature.included ? "text-slate-700" : "text-slate-400"}>
-                            {feature.name}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-3xl mx-auto text-center"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-8">
+                That's it. One simple model.
+              </h2>
+              
+              <div className="bg-gradient-to-br from-panlit-orange/10 to-orange-50 border-2 border-panlit-orange rounded-2xl p-12 md:p-16">
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-slate-600 text-lg mb-2">Start using Panlit</p>
+                    <p className="text-5xl md:text-6xl font-bold font-heading text-slate-900">Free</p>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                  
+                  <div className="border-t-2 border-b-2 border-panlit-orange/20 py-8">
+                    <p className="text-slate-600 text-lg mb-3">Per every booking completed</p>
+                    <p className="text-4xl md:text-5xl font-bold font-heading text-panlit-orange">0.5%</p>
+                  </div>
+                  
+                  <div>
+                    <p className="text-slate-600 text-lg">Zero setup fees • Zero hidden charges • No minimums</p>
+                  </div>
+                </div>
+              </div>
+
+              <Button className="mt-12 bg-panlit-orange hover:bg-orange-600 text-white font-bold py-6 px-10 rounded-lg text-lg">
+                Get Started Free
+              </Button>
+            </motion.div>
           </div>
         </section>
 
