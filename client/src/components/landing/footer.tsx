@@ -12,7 +12,7 @@ export function Footer() {
                 <img 
                   src={panlitLogoCombo} 
                   alt="Panlit Logo" 
-                  className="h-10 w-auto hover:scale-105 transition-transform"
+                  className="h-20 w-auto hover:scale-105 transition-transform"
                 />
             </Link>
             <p className="text-sm text-slate-400 mb-6">
