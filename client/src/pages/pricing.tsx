@@ -204,18 +204,18 @@ export default function Pricing() {
                     <div className="flex justify-between items-center mb-4">
                       <span className="text-slate-600 text-base">Booking amount</span>
                       <span className="font-semibold text-slate-900">
-                        {selectedCurrencyData?.symbol}{amount.toFixed(2)}
+                        {selectedCurrencyData?.symbol}{amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                       </span>
                     </div>
                     <div className="bg-slate-50 -mx-8 md:-mx-12 px-8 md:px-12 py-6 rounded-lg">
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-base font-semibold text-slate-900">0.5% fee (capped)</span>
                         <span className="text-2xl font-bold text-panlit-orange">
-                          {selectedCurrencyData?.symbol}{calculatedFee.toFixed(2)}
+                          {selectedCurrencyData?.symbol}{calculatedFee.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
                       </div>
                       <p className="text-sm text-slate-500">
-                        0.5% of {selectedCurrencyData?.symbol}{amount.toFixed(2)} = {selectedCurrencyData?.symbol}{(amount * 0.005).toFixed(2)} (capped at {selectedCurrencyData?.symbol}{selectedCurrencyData?.maxFee.toFixed(2)})
+                        0.5% of {selectedCurrencyData?.symbol}{amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} = {selectedCurrencyData?.symbol}{(amount * 0.005).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} (capped at {selectedCurrencyData?.symbol}{selectedCurrencyData?.maxFee.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })})
                       </p>
                     </div>
                   </div>
