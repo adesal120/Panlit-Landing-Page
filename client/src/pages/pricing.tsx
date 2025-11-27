@@ -208,12 +208,15 @@ export default function Pricing() {
                       </span>
                     </div>
                     <div className="bg-slate-50 -mx-8 md:-mx-12 px-8 md:px-12 py-6 rounded-lg">
-                      <div className="flex justify-between items-center">
-                        <span className="text-lg font-bold text-slate-900">You'll pay in fees</span>
-                        <span className="text-3xl font-bold text-panlit-orange">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-base font-semibold text-slate-900">0.5% fee (capped)</span>
+                        <span className="text-2xl font-bold text-panlit-orange">
                           {selectedCurrencyData?.symbol}{calculatedFee.toFixed(2)}
                         </span>
                       </div>
+                      <p className="text-sm text-slate-500">
+                        0.5% of {selectedCurrencyData?.symbol}{amount.toFixed(2)} = {selectedCurrencyData?.symbol}{(amount * 0.005).toFixed(2)} (capped at {selectedCurrencyData?.symbol}{selectedCurrencyData?.maxFee.toFixed(2)})
+                      </p>
                     </div>
                   </div>
 
