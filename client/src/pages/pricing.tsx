@@ -126,13 +126,7 @@ export default function Pricing() {
                       : "border-slate-200 bg-white hover:border-slate-300"
                   }`}
                 >
-                  {plan.highlighted && (
-                    <div className="absolute top-0 left-0 right-0 bg-panlit-orange text-white text-sm font-bold text-center py-2">
-                      MOST POPULAR
-                    </div>
-                  )}
-                  
-                  <div className={`p-8 ${plan.highlighted ? "pt-16" : ""}`}>
+                  <div className="p-8">
                     <h3 className="text-2xl font-bold font-heading text-slate-900 mb-2">
                       {plan.name}
                     </h3>
