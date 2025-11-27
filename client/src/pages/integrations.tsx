@@ -10,6 +10,7 @@ import flutterwaveLogo from "@assets/stock_images/flutterwave_logo_10aceade.jpg"
 import tripadvisorLogo from "@assets/stock_images/tripadvisor_logo_f96b0cda.jpg";
 import googleReviewsLogo from "@assets/stock_images/google_reviews_logo_9f8986ee.jpg";
 import mailchimpLogo from "@assets/stock_images/mailchimp_logo_efe226f2.jpg";
+import panlitLogo from "@assets/stock_images/panlit_logo_business_f31d6e41.jpg";
 
 interface Integration {
   name: string;
@@ -80,6 +81,13 @@ export default function Integrations() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
+              <div className="mb-8 flex justify-center">
+                <img 
+                  src={panlitLogo} 
+                  alt="Panlit"
+                  className="h-12 md:h-16 object-contain"
+                />
+              </div>
               <h1 className="text-4xl md:text-5xl font-bold font-heading text-slate-900 mb-6">
                 Connect your tools to Panlit
               </h1>
