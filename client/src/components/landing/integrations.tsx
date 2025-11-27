@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
-import { CreditCard, Mail, MessageCircle, Star, Globe, BarChart3 } from "lucide-react";
+import paystackLogo from "@assets/stock_images/paystack_official_lo_852f1643.jpg";
+import stripeLogo from "@assets/stock_images/stripe_official_logo_ee591d7a.jpg";
+import flutterwaveLogo from "@assets/stock_images/flutterwave_official_2b6ac940.jpg";
+import tripadvisorLogo from "@assets/stock_images/tripadvisor_official_d9ac5a9d.jpg";
+import googleReviewsLogo from "@assets/stock_images/google_reviews_offic_6b54fb95.jpg";
+import mailchimpLogo from "@assets/stock_images/mailchimp_official_l_654e9509.jpg";
 
 export function Integrations() {
   const logos = [
@@ -7,17 +12,17 @@ export function Integrations() {
     { name: "Paystack", color: "text-[#0BA4DB]" },
     { name: "Flutterwave", color: "text-[#FB9129]" },
     { name: "TripAdvisor", color: "text-[#00AF87]" },
-    { name: "WhatsApp", color: "text-[#25D366]" },
-    { name: "Google", color: "text-[#4285F4]" },
+    { name: "Google Reviews", color: "text-[#4285F4]" },
+    { name: "Mailchimp", color: "text-[#FFE01B]" },
   ];
 
-  const floatingIcons = [
-    { icon: CreditCard, color: "text-blue-500", delay: 0 },
-    { icon: Mail, color: "text-orange-500", delay: 0.2 },
-    { icon: MessageCircle, color: "text-green-500", delay: 0.4 },
-    { icon: Star, color: "text-yellow-500", delay: 0.6 },
-    { icon: Globe, color: "text-teal-500", delay: 0.8 },
-    { icon: BarChart3, color: "text-purple-500", delay: 1 },
+  const floatingLogos = [
+    { logo: stripeLogo, name: "Stripe", delay: 0 },
+    { logo: paystackLogo, name: "Paystack", delay: 0.2 },
+    { logo: flutterwaveLogo, name: "Flutterwave", delay: 0.4 },
+    { logo: tripadvisorLogo, name: "TripAdvisor", delay: 0.6 },
+    { logo: googleReviewsLogo, name: "Google Reviews", delay: 0.8 },
+    { logo: mailchimpLogo, name: "Mailchimp", delay: 1 },
   ];
 
   return (
@@ -53,10 +58,9 @@ export function Integrations() {
             <div className="absolute inset-0 bg-gradient-to-r from-panlit-orange/10 to-blue-500/10 rounded-3xl blur-3xl" />
             
             <div className="relative w-full h-full flex items-center justify-center">
-              {floatingIcons.map((item, idx) => {
-                const Icon = item.icon;
-                const angle = (idx / floatingIcons.length) * Math.PI * 2;
-                const radius = 80;
+              {floatingLogos.map((item, idx) => {
+                const angle = (idx / floatingLogos.length) * Math.PI * 2;
+                const radius = 100;
                 const x = Math.cos(angle) * radius;
                 const y = Math.sin(angle) * radius;
 
@@ -73,8 +77,8 @@ export function Integrations() {
                       stiffness: 100
                     }}
                     animate={{
-                      y: [y, y - 20, y],
-                      x: [x, x + 10, x]
+                      y: [y, y - 25, y],
+                      x: [x, x + 12, x]
                     }}
                     transition={{
                       repeat: Infinity,
@@ -85,8 +89,12 @@ export function Integrations() {
                     }}
                     className="absolute"
                   >
-                    <div className={`p-4 rounded-2xl bg-white border-2 border-slate-100 shadow-lg hover:shadow-xl transition-shadow`}>
-                      <Icon className={`w-8 h-8 ${item.color}`} />
+                    <div className={`p-3 rounded-2xl bg-white border-2 border-slate-100 shadow-lg hover:shadow-xl transition-shadow`}>
+                      <img 
+                        src={item.logo} 
+                        alt={item.name}
+                        className="w-10 h-10 object-contain"
+                      />
                     </div>
                   </motion.div>
                 );
@@ -97,7 +105,7 @@ export function Integrations() {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3, duration: 0.5 }}
-                className="absolute w-24 h-24 rounded-full border-2 border-dashed border-slate-200"
+                className="absolute w-28 h-28 rounded-full border-2 border-dashed border-slate-200"
               />
             </div>
           </div>
