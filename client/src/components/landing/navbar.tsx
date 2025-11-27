@@ -29,7 +29,7 @@ export function Navbar() {
             <img 
               src={panlitLogo} 
               alt="Panlit Logo" 
-              className="h-8 w-auto group-hover:scale-105 transition-transform"
+              className="h-12 w-auto group-hover:scale-105 transition-transform"
             />
         </Link>
 
