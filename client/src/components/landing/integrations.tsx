@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import integrationsImg from "@assets/Screenshot 2025-11-27 at 21.22.48_1764279111185.png";
+import integrationsImg from "@assets/generated_images/panlit_integrations_dashboard_ui_mockup.png";
 
 export function Integrations() {
   const logos = [
