@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
-import paystackOfficialLogo from "../../assets/official_logos/paystack-official.svg";
 import stripeLogo from "../../assets/official_logos/stripe.webp";
-import tripadvisorLogoSvg from "../../assets/official_logos/tripadvisor-logo.svg";
+import paystackOfficialLogo from "../../assets/official_logos/paystack-official.svg";
+import flutterwaveOfficialLogo from "../../assets/official_logos/flutterwave-official.svg";
+import tripadvisorLogo from "../../assets/official_logos/tripadvisor.png";
 import googleReviewsLogo from "../../assets/official_logos/google_reviews.png";
 import whatsappLogo from "../../assets/official_logos/whatsapp.webp";
-import flutterwaveOfficialLogo from "../../assets/official_logos/flutterwave-official.svg";
-import mailchimpLogo from "@assets/stock_images/mailchimp_official_l_d1744ad3.jpg";
+import mailchimpOfficialLogo from "../../assets/official_logos/mailchimp-official.svg";
 
 export function Integrations() {
   const logos = [
     { name: "Stripe", logo: stripeLogo },
     { name: "Paystack", logo: paystackOfficialLogo },
     { name: "Flutterwave", logo: flutterwaveOfficialLogo },
-    { name: "TripAdvisor", logo: tripadvisorLogoSvg },
+    { name: "TripAdvisor", logo: tripadvisorLogo },
     { name: "Google Reviews", logo: googleReviewsLogo },
     { name: "WhatsApp", logo: whatsappLogo },
   ];
@@ -21,9 +21,9 @@ export function Integrations() {
     { logo: stripeLogo, name: "Stripe", delay: 0 },
     { logo: paystackOfficialLogo, name: "Paystack", delay: 0.2 },
     { logo: flutterwaveOfficialLogo, name: "Flutterwave", delay: 0.4 },
-    { logo: tripadvisorLogoSvg, name: "TripAdvisor", delay: 0.6 },
+    { logo: tripadvisorLogo, name: "TripAdvisor", delay: 0.6 },
     { logo: googleReviewsLogo, name: "Google Reviews", delay: 0.8 },
-    { logo: mailchimpLogo, name: "Mailchimp", delay: 1 },
+    { logo: mailchimpOfficialLogo, name: "Mailchimp", delay: 1 },
   ];
 
   return (
