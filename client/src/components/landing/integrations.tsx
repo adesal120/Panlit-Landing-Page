@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import integrationsImg from "@assets/generated_images/panlit_integrations_dashboard_ui_mockup.png";
+import { CreditCard, Mail, MessageCircle, Star, Globe, BarChart3 } from "lucide-react";
 
 export function Integrations() {
   const logos = [
@@ -9,6 +9,15 @@ export function Integrations() {
     { name: "TripAdvisor", color: "text-[#00AF87]" },
     { name: "WhatsApp", color: "text-[#25D366]" },
     { name: "Google", color: "text-[#4285F4]" },
+  ];
+
+  const floatingIcons = [
+    { icon: CreditCard, color: "text-blue-500", delay: 0 },
+    { icon: Mail, color: "text-orange-500", delay: 0.2 },
+    { icon: MessageCircle, color: "text-green-500", delay: 0.4 },
+    { icon: Star, color: "text-yellow-500", delay: 0.6 },
+    { icon: Globe, color: "text-teal-500", delay: 0.8 },
+    { icon: BarChart3, color: "text-purple-500", delay: 1 },
   ];
 
   return (
@@ -40,17 +49,58 @@ export function Integrations() {
             </div>
           </div>
           
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="absolute -inset-4 bg-gradient-to-r from-panlit-orange/20 to-blue-500/20 rounded-full blur-3xl opacity-30" />
-            <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-2xl bg-white">
-              <img src={integrationsImg} alt="Integrations Dashboard" className="w-full h-auto" />
+          <div className="relative h-96 flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-panlit-orange/10 to-blue-500/10 rounded-3xl blur-3xl" />
+            
+            <div className="relative w-full h-full flex items-center justify-center">
+              {floatingIcons.map((item, idx) => {
+                const Icon = item.icon;
+                const angle = (idx / floatingIcons.length) * Math.PI * 2;
+                const radius = 80;
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ x: 0, y: 0, opacity: 0, scale: 0 }}
+                    whileInView={{ x, y, opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ 
+                      delay: item.delay,
+                      duration: 0.6,
+                      type: "spring",
+                      stiffness: 100
+                    }}
+                    animate={{
+                      y: [y, y - 20, y],
+                      x: [x, x + 10, x]
+                    }}
+                    transition={{
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      duration: 4 + idx * 0.3,
+                      ease: "easeInOut",
+                      delay: item.delay
+                    }}
+                    className="absolute"
+                  >
+                    <div className={`p-4 rounded-2xl bg-white border-2 border-slate-100 shadow-lg hover:shadow-xl transition-shadow`}>
+                      <Icon className={`w-8 h-8 ${item.color}`} />
+                    </div>
+                  </motion.div>
+                );
+              })}
+              
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="absolute w-24 h-24 rounded-full border-2 border-dashed border-slate-200"
+              />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
