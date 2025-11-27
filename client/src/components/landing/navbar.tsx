@@ -52,7 +52,7 @@ export function Navbar() {
             }}>
             Pricing
           </Link>
-          <Link href="/blog" className="text-sm font-medium transition-colors hover:text-panlit-orange cursor-pointer" style={{
+          <Link href="/support" className="text-sm font-medium transition-colors hover:text-panlit-orange cursor-pointer" style={{
               color: isScrolled ? "#64748b" : "#e2e8f0"
             }}>
             Resources
