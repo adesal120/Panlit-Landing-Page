@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import stripeLogo from "../../assets/official_logos/stripe.webp";
 import paystackLogo from "../../assets/official_logos/paystack.png";
-import flutterwaveLogo from "../../assets/official_logos/flutterwave-official.svg";
+import flutterwaveLogo from "../../assets/official_logos/flutterwave-clean.png";
 import tripadvisorLogo from "../../assets/official_logos/tripadvisor.png";
 import googleReviewsLogo from "../../assets/official_logos/google_reviews.png";
-import mailchimpOfficialLogo from "../../assets/official_logos/mailchimp-official.svg";
+import mailchimpOfficialLogo from "../../assets/official_logos/mailchimp-clean.png";
 
 export function Integrations() {
   const logos = [
