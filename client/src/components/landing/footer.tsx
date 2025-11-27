@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import panlitLogoCombo from "@/assets/panlit-logo-combo.png";
 
 export function Footer() {
   return (
@@ -8,10 +9,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-6 cursor-pointer">
-                <div className="w-8 h-8 rounded-lg bg-panlit-orange flex items-center justify-center text-white font-bold text-xl">
-                  P
-                </div>
-                <span className="text-xl font-bold font-heading text-white">Panlit</span>
+                <img 
+                  src={panlitLogoCombo} 
+                  alt="Panlit Logo" 
+                  className="h-10 w-auto hover:scale-105 transition-transform"
+                />
             </Link>
             <p className="text-sm text-slate-400 mb-6">
               Built for tourism operators and experience creators. Supercharge your business today.
