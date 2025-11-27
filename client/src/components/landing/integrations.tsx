@@ -1,19 +1,20 @@
 import { motion } from "framer-motion";
-import paystackLogo from "@assets/stock_images/paystack_official_lo_852f1643.jpg";
-import stripeLogo from "@assets/stock_images/stripe_official_logo_ee591d7a.jpg";
-import flutterwaveLogo from "@assets/stock_images/flutterwave_official_2b6ac940.jpg";
-import tripadvisorLogo from "@assets/stock_images/tripadvisor_official_d9ac5a9d.jpg";
-import googleReviewsLogo from "@assets/stock_images/google_reviews_offic_6b54fb95.jpg";
-import mailchimpLogo from "@assets/stock_images/mailchimp_official_l_654e9509.jpg";
+import paystackLogo from "@assets/stock_images/official_paystack_lo_ba7b53c5.jpg";
+import stripeLogo from "@assets/stock_images/official_stripe_logo_128f887a.jpg";
+import flutterwaveLogo from "@assets/stock_images/official_flutterwave_bb3179e1.jpg";
+import tripadvisorLogo from "@assets/stock_images/official_tripadvisor_a71dc9ee.jpg";
+import googleReviewsLogo from "@assets/stock_images/official_google_revi_882e1dd0.jpg";
+import mailchimpLogo from "@assets/stock_images/official_mailchimp_l_8a595f22.jpg";
+import whatsappLogo from "@assets/stock_images/official_whatsapp_lo_f8b58d06.jpg";
 
 export function Integrations() {
   const logos = [
-    { name: "Stripe", color: "text-[#635BFF]" },
-    { name: "Paystack", color: "text-[#0BA4DB]" },
-    { name: "Flutterwave", color: "text-[#FB9129]" },
-    { name: "TripAdvisor", color: "text-[#00AF87]" },
-    { name: "Google Reviews", color: "text-[#4285F4]" },
-    { name: "Mailchimp", color: "text-[#FFE01B]" },
+    { name: "Stripe", color: "text-[#635BFF]", logo: stripeLogo },
+    { name: "Paystack", color: "text-[#0BA4DB]", logo: paystackLogo },
+    { name: "Flutterwave", color: "text-[#FB9129]", logo: flutterwaveLogo },
+    { name: "TripAdvisor", color: "text-[#00AF87]", logo: tripadvisorLogo },
+    { name: "Google Reviews", color: "text-[#4285F4]", logo: googleReviewsLogo },
+    { name: "WhatsApp", color: "text-[#25D366]", logo: whatsappLogo },
   ];
 
   const floatingLogos = [
@@ -39,16 +40,19 @@ export function Integrations() {
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {logos.map((logo, index) => (
+              {logos.map((item, index) => (
                 <motion.div 
-                  key={logo.name}
+                  key={item.name}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center justify-center p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:border-slate-200 hover:bg-white hover:shadow-sm transition-all"
+                  className="flex items-center justify-center p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:border-slate-200 hover:bg-white hover:shadow-sm transition-all group"
                 >
-                  <span className={`font-bold text-lg ${logo.color}`}>{logo.name}</span>
+                  <div className="flex items-center gap-3">
+                    <img src={item.logo} alt={item.name} className="w-6 h-6 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+                    <span className={`font-bold text-lg ${item.color}`}>{item.name}</span>
+                  </div>
                 </motion.div>
               ))}
             </div>
