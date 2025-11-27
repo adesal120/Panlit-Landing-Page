@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import stripeLogo from "../../assets/official_logos/stripe.webp";
-import paystackOfficialLogo from "../../assets/official_logos/paystack-official.svg";
-import flutterwaveOfficialLogo from "../../assets/official_logos/flutterwave-official.svg";
+import paystackLogo from "../../assets/official_logos/paystack.png";
 import tripadvisorLogo from "../../assets/official_logos/tripadvisor.png";
 import googleReviewsLogo from "../../assets/official_logos/google_reviews.png";
 import whatsappLogo from "../../assets/official_logos/whatsapp.webp";
@@ -10,8 +9,8 @@ import mailchimpOfficialLogo from "../../assets/official_logos/mailchimp-officia
 export function Integrations() {
   const logos = [
     { name: "Stripe", logo: stripeLogo },
-    { name: "Paystack", logo: paystackOfficialLogo },
-    { name: "Flutterwave", logo: flutterwaveOfficialLogo },
+    { name: "Paystack", logo: paystackLogo },
+    { name: "Flutterwave", logo: paystackLogo },
     { name: "TripAdvisor", logo: tripadvisorLogo },
     { name: "Google Reviews", logo: googleReviewsLogo },
     { name: "WhatsApp", logo: whatsappLogo },
@@ -19,8 +18,8 @@ export function Integrations() {
 
   const floatingLogos = [
     { logo: stripeLogo, name: "Stripe", delay: 0 },
-    { logo: paystackOfficialLogo, name: "Paystack", delay: 0.2 },
-    { logo: flutterwaveOfficialLogo, name: "Flutterwave", delay: 0.4 },
+    { logo: paystackLogo, name: "Paystack", delay: 0.2 },
+    { logo: paystackLogo, name: "Flutterwave", delay: 0.4 },
     { logo: tripadvisorLogo, name: "TripAdvisor", delay: 0.6 },
     { logo: googleReviewsLogo, name: "Google Reviews", delay: 0.8 },
     { logo: mailchimpOfficialLogo, name: "Mailchimp", delay: 1 },
@@ -87,7 +86,7 @@ export function Integrations() {
                       y: [y, y - 25, y],
                       x: [x, x + 12, x]
                     }}
-                    transition={{
+                    whileInView={{
                       repeat: Infinity,
                       repeatType: "reverse",
                       duration: 4 + idx * 0.3,
