@@ -40,19 +40,17 @@ const integrations: Integration[] = [
     category: "Payments"
   },
 
-  // Reviews & Booking Platforms
-  {
-    name: "TripAdvisor",
-    description: "Sync your listings and manage reviews on TripAdvisor",
-    logo: tripadvisorLogo,
-    category: "Booking Platforms"
-  },
-
   // Reviews
   {
     name: "Google Reviews",
     description: "Collect and manage customer reviews on Google",
     logo: googleReviewsLogo,
+    category: "Reviews"
+  },
+  {
+    name: "TripAdvisor",
+    description: "Sync your listings and manage reviews on TripAdvisor",
+    logo: tripadvisorLogo,
     category: "Reviews"
   },
 
@@ -81,13 +79,6 @@ export default function Integrations() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="mb-8 flex justify-center">
-                <img 
-                  src={panlitLogo} 
-                  alt="Panlit"
-                  className="h-12 md:h-16 object-contain"
-                />
-              </div>
               <h1 className="text-4xl md:text-5xl font-bold font-heading text-slate-900 mb-6">
                 Connect your tools to Panlit
               </h1>
