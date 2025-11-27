@@ -4,13 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
 
-import paystackLogo from "@assets/stock_images/paystack_logo_af0e8b19.jpg";
-import stripeLogo from "@assets/stock_images/stripe_logo_ca81aeb3.jpg";
-import flutterwaveLogo from "@assets/stock_images/flutterwave_logo_10aceade.jpg";
-import tripadvisorLogo from "@assets/stock_images/tripadvisor_logo_f96b0cda.jpg";
-import googleReviewsLogo from "@assets/stock_images/google_reviews_logo_9f8986ee.jpg";
-import mailchimpLogo from "@assets/stock_images/mailchimp_logo_efe226f2.jpg";
-import panlitLogo from "@assets/stock_images/panlit_logo_business_f31d6e41.jpg";
+import paystackLogo from "@assets/stock_images/paystack_official_lo_852f1643.jpg";
+import stripeLogo from "@assets/stock_images/stripe_official_logo_ee591d7a.jpg";
+import flutterwaveLogo from "@assets/stock_images/flutterwave_official_2b6ac940.jpg";
+import tripadvisorLogo from "@assets/stock_images/tripadvisor_official_d9ac5a9d.jpg";
+import googleReviewsLogo from "@assets/stock_images/google_reviews_offic_6b54fb95.jpg";
+import mailchimpLogo from "@assets/stock_images/mailchimp_official_l_654e9509.jpg";
 
 interface Integration {
   name: string;
