@@ -84,7 +84,6 @@ export default function Pricing() {
   const selectedCurrencyData = currencies.find(c => c.code === selectedCurrency);
   const amount = parseFloat(bookingAmount) || 0;
   const calculatedFee = Math.min((amount * 0.005), selectedCurrencyData?.maxFee || 0);
-  const total = amount + calculatedFee;
 
   return (
     <div className="min-h-screen bg-white">
@@ -201,24 +200,20 @@ export default function Pricing() {
                   </div>
 
                   {/* Results */}
-                  <div className="border-t-2 border-slate-100 pt-8 space-y-4">
-                    <div className="flex justify-between items-center">
+                  <div className="border-t-2 border-slate-100 pt-8">
+                    <div className="flex justify-between items-center mb-4">
                       <span className="text-slate-600 text-base">Booking amount</span>
                       <span className="font-semibold text-slate-900">
                         {selectedCurrencyData?.symbol}{amount.toFixed(2)}
                       </span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-slate-600 text-base">Panlit fee (0.5% capped)</span>
-                      <span className="font-semibold text-panlit-orange">
-                        {selectedCurrencyData?.symbol}{calculatedFee.toFixed(2)}
-                      </span>
-                    </div>
-                    <div className="border-t-2 border-slate-100 pt-4 flex justify-between items-center bg-slate-50 -mx-8 md:-mx-12 px-8 md:px-12 py-4 rounded-b-lg">
-                      <span className="text-lg font-bold text-slate-900">Total you pay</span>
-                      <span className="text-2xl font-bold text-slate-900">
-                        {selectedCurrencyData?.symbol}{total.toFixed(2)}
-                      </span>
+                    <div className="bg-slate-50 -mx-8 md:-mx-12 px-8 md:px-12 py-6 rounded-lg">
+                      <div className="flex justify-between items-center">
+                        <span className="text-lg font-bold text-slate-900">You'll pay in fees</span>
+                        <span className="text-3xl font-bold text-panlit-orange">
+                          {selectedCurrencyData?.symbol}{calculatedFee.toFixed(2)}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
