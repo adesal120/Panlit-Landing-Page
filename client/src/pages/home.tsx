@@ -2,6 +2,7 @@ import { Navbar } from "@/components/landing/navbar";
 import { Hero } from "@/components/landing/hero";
 import { FeaturesGrid } from "@/components/landing/features-grid";
 import { Integrations } from "@/components/landing/integrations";
+import { BlogPreview } from "@/components/landing/blog-preview";
 import { Footer } from "@/components/landing/footer";
 import { Button } from "@/components/ui/button";
 
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <FeaturesGrid />
         <Integrations />
+        <BlogPreview />
         
         {/* CTA Section */}
         <section className="py-24 bg-panlit-dark relative overflow-hidden">
