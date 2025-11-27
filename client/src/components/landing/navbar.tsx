@@ -38,18 +38,25 @@ export function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          {["Features", "Solutions", "Pricing", "Resources"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-panlit-orange",
-                isScrolled ? "text-slate-600" : "text-slate-200"
-              )}
-            >
-              {item}
-            </a>
-          ))}
+          <a
+            href="/#features"
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-panlit-orange",
+              isScrolled ? "text-slate-600" : "text-slate-200"
+            )}
+          >
+            Features
+          </a>
+          <Link href="/pricing" className="text-sm font-medium transition-colors hover:text-panlit-orange cursor-pointer" style={{
+              color: isScrolled ? "#64748b" : "#e2e8f0"
+            }}>
+            Pricing
+          </Link>
+          <Link href="/blog" className="text-sm font-medium transition-colors hover:text-panlit-orange cursor-pointer" style={{
+              color: isScrolled ? "#64748b" : "#e2e8f0"
+            }}>
+            Resources
+          </Link>
         </div>
 
         <div className="hidden md:flex items-center gap-4">
