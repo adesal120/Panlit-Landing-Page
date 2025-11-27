@@ -28,8 +28,8 @@ export function Footer() {
             <h4 className="text-white font-bold mb-4">Product</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="hover:text-panlit-orange transition-colors">Features</a></li>
-              <li><a href="#" className="hover:text-panlit-orange transition-colors">Pricing</a></li>
-              <li><a href="#" className="hover:text-panlit-orange transition-colors">Integrations</a></li>
+              <li><Link href="/pricing" className="hover:text-panlit-orange transition-colors cursor-pointer">Pricing</Link></li>
+              <li><Link href="/integrations" className="hover:text-panlit-orange transition-colors cursor-pointer">Integrations</Link></li>
               <li><a href="#" className="hover:text-panlit-orange transition-colors">Changelog</a></li>
             </ul>
           </div>

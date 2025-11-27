@@ -9,6 +9,7 @@ import Blog from "@/pages/blog";
 import Pricing from "@/pages/pricing";
 import Support from "@/pages/support";
 import FAQs from "@/pages/faqs";
+import Integrations from "@/pages/integrations";
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/support" component={Support} />
       <Route path="/faq" component={FAQs} />
+      <Route path="/integrations" component={Integrations} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -27,8 +29,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
         <Router />
+        <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
   );

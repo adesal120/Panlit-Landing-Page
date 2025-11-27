@@ -47,6 +47,11 @@ export function Navbar() {
           >
             Features
           </a>
+          <Link href="/integrations" className="text-sm font-medium transition-colors hover:text-panlit-orange cursor-pointer" style={{
+              color: isScrolled ? "#64748b" : "#e2e8f0"
+            }}>
+            Integrations
+          </Link>
           <Link href="/pricing" className="text-sm font-medium transition-colors hover:text-panlit-orange cursor-pointer" style={{
               color: isScrolled ? "#64748b" : "#e2e8f0"
             }}>
@@ -87,16 +92,22 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-white border-b border-slate-200 p-4 flex flex-col gap-4 md:hidden shadow-xl animate-in slide-in-from-top-5">
-          {["Features", "Solutions", "Pricing", "Resources"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-slate-600 font-medium py-2 hover:text-panlit-orange"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
+          <a
+            href="/#features"
+            className="text-slate-600 font-medium py-2 hover:text-panlit-orange"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Features
+          </a>
+          <Link href="/integrations" className="text-slate-600 font-medium py-2 hover:text-panlit-orange cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+            Integrations
+          </Link>
+          <Link href="/pricing" className="text-slate-600 font-medium py-2 hover:text-panlit-orange cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+            Pricing
+          </Link>
+          <Link href="/support" className="text-slate-600 font-medium py-2 hover:text-panlit-orange cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+            Resources
+          </Link>
           <div className="h-px bg-slate-100 my-2" />
           <Button variant="ghost" className="justify-start text-slate-600">
             Log in
