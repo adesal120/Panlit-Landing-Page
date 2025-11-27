@@ -4,8 +4,8 @@ import paystackLogo from "../../assets/official_logos/paystack.png";
 import tripadvisorLogo from "../../assets/official_logos/tripadvisor.png";
 import googleReviewsLogo from "../../assets/official_logos/google_reviews.png";
 import whatsappLogo from "../../assets/official_logos/whatsapp.webp";
-import flutterwaveLogo from "../../assets/official_logos/flutterwave-clean.png";
-import mailchimpLogo from "@assets/stock_images/mailchimp_official_l_d1744ad3.jpg";
+import flutterwaveLogo from "../../assets/official_logos/flutterwave-official.webp";
+import mailchimpLogo from "../../assets/official_logos/mailchimp-official.png";
 
 export function Integrations() {
   const logos = [
