@@ -82,26 +82,27 @@ export function Integrations() {
                       type: "spring",
                       stiffness: 100
                     }}
-                    animate={{
-                      y: [y, y - 25, y],
-                      x: [x, x + 12, x]
-                    }}
-                    whileInView={{
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      duration: 4 + idx * 0.3,
-                      ease: "easeInOut",
-                      delay: item.delay
-                    }}
                     className="absolute"
                   >
-                    <div className={`p-4 rounded-2xl bg-white border-2 border-slate-100 shadow-lg hover:shadow-xl transition-shadow w-24 h-24 flex items-center justify-center overflow-hidden`}>
+                    <motion.div 
+                      className={`p-4 rounded-2xl bg-white border-2 border-slate-100 shadow-lg hover:shadow-xl transition-shadow w-24 h-24 flex items-center justify-center overflow-hidden`}
+                      animate={{
+                        y: [0, -15, 0],
+                        x: [0, 8, 0]
+                      }}
+                      transition={{
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        duration: 3 + idx * 0.2,
+                        ease: "easeInOut"
+                      }}
+                    >
                       <img 
                         src={item.logo} 
                         alt={item.name} 
                         className="w-full h-full object-contain p-1"
                       />
-                    </div>
+                    </motion.div>
                   </motion.div>
                 );
               })}
