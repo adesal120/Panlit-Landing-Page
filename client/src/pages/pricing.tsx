@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -55,19 +56,27 @@ const pricingPlans: PricingPlan[] = [
 ];
 
 const currencies = [
-  { name: "US Dollar", code: "USD", fee: "$1.25" },
-  { name: "British Pound", code: "GBP", fee: "£1.00" },
-  { name: "Euro", code: "EUR", fee: "€1.20" },
-  { name: "Nigerian Naira", code: "NGN", fee: "₦2,000" },
-  { name: "Kenyan Shilling", code: "KES", fee: "KSh167" },
-  { name: "South African Rand", code: "ZAR", fee: "R22" },
-  { name: "Ghanaian Cedi", code: "GHS", fee: "₵17" },
-  { name: "Ugandan Shilling", code: "UGX", fee: "USh4,400" },
-  { name: "Tanzanian Shilling", code: "TZS", fee: "TSh3,100" },
-  { name: "Egyptian Pound", code: "EGP", fee: "£61" },
+  { name: "US Dollar", code: "USD", fee: "$1.25", maxFee: 1.25, symbol: "$" },
+  { name: "British Pound", code: "GBP", fee: "£1.00", maxFee: 1.00, symbol: "£" },
+  { name: "Euro", code: "EUR", fee: "€1.20", maxFee: 1.20, symbol: "€" },
+  { name: "Nigerian Naira", code: "NGN", fee: "₦2,000", maxFee: 2000, symbol: "₦" },
+  { name: "Kenyan Shilling", code: "KES", fee: "KSh167", maxFee: 167, symbol: "KSh" },
+  { name: "South African Rand", code: "ZAR", fee: "R22", maxFee: 22, symbol: "R" },
+  { name: "Ghanaian Cedi", code: "GHS", fee: "₵17", maxFee: 17, symbol: "₵" },
+  { name: "Ugandan Shilling", code: "UGX", fee: "USh4,400", maxFee: 4400, symbol: "USh" },
+  { name: "Tanzanian Shilling", code: "TZS", fee: "TSh3,100", maxFee: 3100, symbol: "TSh" },
+  { name: "Egyptian Pound", code: "EGP", fee: "£61", maxFee: 61, symbol: "£" },
 ];
 
 export default function Pricing() {
+  const [bookingAmount, setBookingAmount] = useState<string>("100");
+  const [selectedCurrency, setSelectedCurrency] = useState<string>("USD");
+
+  const selectedCurrencyData = currencies.find(c => c.code === selectedCurrency);
+  const amount = parseFloat(bookingAmount) || 0;
+  const calculatedFee = Math.min((amount * 0.005), selectedCurrencyData?.maxFee || 0);
+  const total = amount + calculatedFee;
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -125,6 +134,90 @@ export default function Pricing() {
               <Button className="mt-12 bg-panlit-orange hover:bg-orange-600 text-white font-bold py-6 px-10 rounded-lg text-lg">
                 Get Started Free
               </Button>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Fee Calculator */}
+        <section className="py-24 bg-slate-50">
+          <div className="container mx-auto px-4 md:px-6">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-2xl mx-auto"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-8 text-center">
+                See what you'll pay
+              </h2>
+
+              <div className="bg-white rounded-2xl p-8 md:p-12 border-2 border-slate-200">
+                <div className="space-y-8">
+                  {/* Input Fields */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-900 mb-2">
+                        Booking Amount
+                      </label>
+                      <div className="relative">
+                        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 text-lg font-semibold">
+                          {selectedCurrencyData?.symbol}
+                        </span>
+                        <input
+                          type="number"
+                          value={bookingAmount}
+                          onChange={(e) => setBookingAmount(e.target.value)}
+                          placeholder="0"
+                          className="w-full pl-8 pr-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-panlit-orange text-lg font-semibold"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-900 mb-2">
+                        Currency
+                      </label>
+                      <select
+                        value={selectedCurrency}
+                        onChange={(e) => setSelectedCurrency(e.target.value)}
+                        className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-panlit-orange text-base font-medium"
+                      >
+                        {currencies.map(curr => (
+                          <option key={curr.code} value={curr.code}>
+                            {curr.name} ({curr.code})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Results */}
+                  <div className="border-t-2 border-slate-100 pt-8 space-y-4">
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-600 text-base">Booking amount</span>
+                      <span className="font-semibold text-slate-900">
+                        {selectedCurrencyData?.symbol}{amount.toFixed(2)}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-600 text-base">Panlit fee (0.5% capped)</span>
+                      <span className="font-semibold text-panlit-orange">
+                        {selectedCurrencyData?.symbol}{calculatedFee.toFixed(2)}
+                      </span>
+                    </div>
+                    <div className="border-t-2 border-slate-100 pt-4 flex justify-between items-center bg-slate-50 -mx-8 md:-mx-12 px-8 md:px-12 py-4 rounded-b-lg">
+                      <span className="text-lg font-bold text-slate-900">Total you pay</span>
+                      <span className="text-2xl font-bold text-slate-900">
+                        {selectedCurrencyData?.symbol}{total.toFixed(2)}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="text-sm text-slate-500 text-center mt-6">
+                    The fee shown is the maximum capped amount for {selectedCurrencyData?.name}. Your actual fee will be 0.5% of the booking amount, capped at this maximum.
+                  </p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
