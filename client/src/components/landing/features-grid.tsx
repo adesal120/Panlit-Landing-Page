@@ -15,6 +15,10 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import bookingDashboard from "@assets/generated_images/premium_booking_dashboard_mockup.png";
+import crmInterface from "@assets/generated_images/premium_customer_crm_interface.png";
+import calendarScheduling from "@assets/generated_images/premium_calendar_scheduling_mockup.png";
+import analyticsDashboard from "@assets/generated_images/premium_analytics_dashboard.png";
 
 interface FeatureCardProps {
   title: string;
@@ -61,24 +65,26 @@ export function FeaturesGrid() {
 
         {/* Main Feature Highlights - Bento Grid Style */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {/* Large Card 1 - Bookings */}
+          {/* Large Card 1 - Bookings with Dashboard Image */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="md:col-span-2 bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative group min-h-[400px] flex items-center justify-between p-8"
+            className="md:col-span-2 bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative group overflow-hidden"
           >
-            <div className="max-w-lg">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
-                <Ticket className="w-6 h-6 text-blue-600" />
+            <div className="grid grid-cols-2 gap-0">
+              <div className="p-8 flex flex-col justify-center">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
+                  <Ticket className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-3 font-heading">Centralized Booking Management</h3>
+                <p className="text-slate-600">
+                  Stop juggling WhatsApp, emails, and spreadsheets. Manage all your online and offline bookings in one place.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-3 font-heading">Centralized Booking Management</h3>
-              <p className="text-slate-600">
-                Stop juggling WhatsApp, emails, and spreadsheets. Manage all your online and offline bookings in one place. Prevent double-bookings automatically and send professional invoices instantly.
-              </p>
-            </div>
-            <div className="hidden md:flex items-center justify-center w-1/3">
-              <div className="text-6xl opacity-20">📋</div>
+              <div className="bg-slate-50 flex items-center justify-center overflow-hidden">
+                <img src={bookingDashboard} alt="Booking Dashboard" className="w-full h-full object-cover" />
+              </div>
             </div>
           </motion.div>
 
@@ -101,32 +107,82 @@ export function FeaturesGrid() {
           </motion.div>
         </div>
 
-        {/* Secondary Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <FeatureCard 
-            title="Smart Calendar" 
-            description="Unified view of all services. Prevent conflicts and optimize resource allocation."
-            icon={Calendar}
-            delay={0.2}
-          />
-          <FeatureCard 
-            title="Customer CRM" 
-            description="Track preferences, history, and dietary needs to deliver personalized experiences."
-            icon={Users}
-            delay={0.3}
-          />
-          <FeatureCard 
-            title="Analytics" 
-            description="Real-time insights on revenue, trends, and best-selling experiences."
-            icon={LineChart}
-            delay={0.4}
-          />
-          <FeatureCard 
-            title="Team Roles" 
-            description="Manage staff permissions securely. Give everyone clarity on their schedule."
-            icon={Users2}
-            delay={0.5}
-          />
+        {/* Secondary Grid - Image-Enhanced Features */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          {/* Calendar Feature with Image */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <div className="bg-slate-50 h-48 overflow-hidden">
+              <img src={calendarScheduling} alt="Calendar Scheduling" className="w-full h-full object-cover" />
+            </div>
+            <div className="p-6">
+              <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center mb-4">
+                <Calendar className="w-5 h-5 text-blue-600" />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2 font-heading">Smart Calendar</h3>
+              <p className="text-slate-600 text-sm">Unified view of all services. Prevent conflicts and optimize resource allocation.</p>
+            </div>
+          </motion.div>
+
+          {/* CRM Feature with Image */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <div className="bg-slate-50 h-48 overflow-hidden">
+              <img src={crmInterface} alt="Customer CRM" className="w-full h-full object-cover" />
+            </div>
+            <div className="p-6">
+              <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center mb-4">
+                <Users className="w-5 h-5 text-purple-600" />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2 font-heading">Customer CRM</h3>
+              <p className="text-slate-600 text-sm">Track preferences, history, and dietary needs to deliver personalized experiences.</p>
+            </div>
+          </motion.div>
+
+          {/* Analytics Feature with Image */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <div className="bg-slate-50 h-48 overflow-hidden">
+              <img src={analyticsDashboard} alt="Analytics Dashboard" className="w-full h-full object-cover" />
+            </div>
+            <div className="p-6">
+              <div className="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center mb-4">
+                <LineChart className="w-5 h-5 text-panlit-orange" />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2 font-heading">Analytics & Insights</h3>
+              <p className="text-slate-600 text-sm">Real-time insights on revenue, trends, and best-selling experiences.</p>
+            </div>
+          </motion.div>
+
+          {/* Team Roles - Icon Only */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="bg-white rounded-3xl border border-slate-200 p-6 hover:shadow-md transition-shadow flex flex-col justify-center"
+          >
+            <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-4">
+              <Users2 className="w-5 h-5 text-teal-600" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 mb-2 font-heading">Team Roles</h3>
+            <p className="text-slate-600 text-sm">Manage staff permissions securely. Give everyone clarity on their schedule.</p>
+          </motion.div>
         </div>
 
         {/* Third Grid - New Features */}
