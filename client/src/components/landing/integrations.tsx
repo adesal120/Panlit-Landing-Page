@@ -7,25 +7,37 @@ import whatsappLogo from "../../assets/official_logos/whatsapp.webp";
 import flutterwaveLogo from "../../assets/official_logos/flutterwave-official.webp";
 import mailchimpLogo from "../../assets/official_logos/mailchimp-black.png";
 
+const BankTransferIcon = () => (
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+    <rect x="15" y="20" width="70" height="45" rx="3" fill="none" stroke="#000" strokeWidth="2"/>
+    <line x1="15" y1="32" x2="85" y2="32" stroke="#000" strokeWidth="1.5"/>
+    <circle cx="30" cy="52" r="4" fill="#000"/>
+    <path d="M40 52 L70 52" stroke="#000" strokeWidth="1.5"/>
+    <path d="M65 42 L75 52 L65 62" fill="none" stroke="#0F766E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
 export function Integrations() {
   const logos = [
-    { name: "Stripe", logo: stripeLogo },
-    { name: "Paystack", logo: paystackLogo },
-    { name: "Flutterwave", logo: flutterwaveLogo },
-    { name: "TripAdvisor", logo: tripadvisorLogo },
-    { name: "Google Reviews", logo: googleReviewsLogo },
-    { name: "WhatsApp", logo: whatsappLogo },
-    { name: "Mailchimp", logo: mailchimpLogo },
+    { name: "Stripe", logo: stripeLogo, isImage: true },
+    { name: "Paystack", logo: paystackLogo, isImage: true },
+    { name: "Flutterwave", logo: flutterwaveLogo, isImage: true },
+    { name: "TripAdvisor", logo: tripadvisorLogo, isImage: true },
+    { name: "Google Reviews", logo: googleReviewsLogo, isImage: true },
+    { name: "WhatsApp", logo: whatsappLogo, isImage: true },
+    { name: "Mailchimp", logo: mailchimpLogo, isImage: true },
+    { name: "Bank Transfers", logo: null, isImage: false, component: BankTransferIcon },
   ];
 
   const floatingLogos = [
-    { logo: stripeLogo, name: "Stripe", delay: 0 },
-    { logo: paystackLogo, name: "Paystack", delay: 0.15 },
-    { logo: flutterwaveLogo, name: "Flutterwave", delay: 0.3 },
-    { logo: tripadvisorLogo, name: "TripAdvisor", delay: 0.45 },
-    { logo: googleReviewsLogo, name: "Google Reviews", delay: 0.6 },
-    { logo: whatsappLogo, name: "WhatsApp", delay: 0.75 },
-    { logo: mailchimpLogo, name: "Mailchimp", delay: 0.9 },
+    { logo: stripeLogo, name: "Stripe", delay: 0, isImage: true },
+    { logo: paystackLogo, name: "Paystack", delay: 0.12, isImage: true },
+    { logo: flutterwaveLogo, name: "Flutterwave", delay: 0.24, isImage: true },
+    { logo: tripadvisorLogo, name: "TripAdvisor", delay: 0.36, isImage: true },
+    { logo: googleReviewsLogo, name: "Google Reviews", delay: 0.48, isImage: true },
+    { logo: whatsappLogo, name: "WhatsApp", delay: 0.6, isImage: true },
+    { logo: mailchimpLogo, name: "Mailchimp", delay: 0.72, isImage: true },
+    { logo: null, name: "Bank Transfers", delay: 0.84, isImage: false, component: BankTransferIcon },
   ];
 
   return (
@@ -52,11 +64,17 @@ export function Integrations() {
                   className="flex items-center justify-center p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:border-slate-200 hover:bg-white hover:shadow-sm transition-all group h-24"
                 >
                   <div className="flex items-center gap-3 w-full justify-center h-full">
-                    <img 
-                      src={item.logo} 
-                      alt={item.name} 
-                      className="max-h-12 w-auto max-w-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" 
-                    />
+                    {item.isImage ? (
+                      <img 
+                        src={item.logo} 
+                        alt={item.name} 
+                        className="max-h-12 w-auto max-w-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" 
+                      />
+                    ) : (
+                      <div className="w-12 h-12 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-opacity">
+                        <item.component />
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -100,11 +118,17 @@ export function Integrations() {
                         ease: "easeInOut"
                       }}
                     >
-                      <img 
-                        src={item.logo} 
-                        alt={item.name} 
-                        className="w-full h-full object-contain p-1"
-                      />
+                      {item.isImage ? (
+                        <img 
+                          src={item.logo} 
+                          alt={item.name} 
+                          className="w-full h-full object-contain p-1"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center p-1">
+                          <item.component />
+                        </div>
+                      )}
                     </motion.div>
                   </motion.div>
                 );
