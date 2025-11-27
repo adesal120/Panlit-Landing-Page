@@ -73,7 +73,7 @@ export function FeaturesGrid() {
 
         {/* Top Grid: Big Card + Tall Card */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          {/* Large Card - Data & Analytics */}
+          {/* Large Card - Ticketing & Booking */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -82,16 +82,19 @@ export function FeaturesGrid() {
           >
             <div className="max-w-lg">
               <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6 shadow-sm">
-                <LineChart className="w-6 h-6 text-blue-600" />
+                <Ticket className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-3 font-heading">Data & Analytics</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-3 font-heading">Ticketing & Booking Management</h3>
               <p className="text-slate-700">
-                Real-time insights on revenue, trends, and best-selling experiences. Make data-driven decisions with comprehensive reporting.
+                Stop juggling WhatsApp, emails, and spreadsheets. Manage all your online and offline bookings in one place. Prevent double-bookings automatically.
               </p>
             </div>
-            <div className="hidden md:flex items-center justify-center w-1/3">
-              <div className="w-24 h-24 rounded-full bg-white/60 flex items-center justify-center shadow-sm backdrop-blur-sm">
-                <LineChart className="w-10 h-10 text-blue-500" />
+            <div className="hidden md:flex items-center justify-center w-1/3 flex-col gap-4">
+              <div className="w-20 h-20 rounded-2xl bg-white/60 flex items-center justify-center shadow-sm">
+                <Calendar className="w-10 h-10 text-blue-500 opacity-80" />
+              </div>
+              <div className="w-20 h-20 rounded-2xl bg-white/60 flex items-center justify-center shadow-sm">
+                <CreditCard className="w-10 h-10 text-blue-500 opacity-80" />
               </div>
             </div>
           </motion.div>
@@ -118,24 +121,44 @@ export function FeaturesGrid() {
         {/* Middle Grid - 4 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
           <FeatureCard 
-            title="Calendar" 
-            description="Unified view of all services. Prevent conflicts and optimize resource allocation."
-            icon={Calendar}
-            iconColor="text-blue-600"
-            iconBg="bg-blue-50"
+            title="Payment Processing" 
+            description="Accept payments globally with integrated secure gateways."
+            icon={CreditCard}
+            iconColor="text-green-600"
+            iconBg="bg-green-50"
             delay={0.2}
           />
           <FeatureCard 
-            title="Customer CRM" 
-            description="Track preferences, history, and dietary needs to deliver personalized experiences."
-            icon={Users}
-            iconColor="text-purple-600"
-            iconBg="bg-purple-50"
+            title="Data & Analytics" 
+            description="Real-time insights on revenue, trends, and best-selling experiences."
+            icon={LineChart}
+            iconColor="text-orange-600"
+            iconBg="bg-orange-50"
+            delay={0.25}
+          />
+          <FeatureCard 
+            title="Calendar" 
+            description="Unified view of all services. Prevent conflicts and optimize allocation."
+            icon={Calendar}
+            iconColor="text-blue-600"
+            iconBg="bg-blue-50"
             delay={0.3}
           />
           <FeatureCard 
+            title="Customer CRM" 
+            description="Track preferences, history, and dietary needs for personalized service."
+            icon={Users}
+            iconColor="text-purple-600"
+            iconBg="bg-purple-50"
+            delay={0.35}
+          />
+        </div>
+
+        {/* Bottom Grid - 4 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+          <FeatureCard 
             title="Inventory" 
-            description="Track stock, supplies, and equipment resources across all your operations."
+            description="Track stock, supplies, and equipment resources across operations."
             icon={Box}
             iconColor="text-emerald-600"
             iconBg="bg-emerald-50"
@@ -147,26 +170,23 @@ export function FeaturesGrid() {
             icon={Users2}
             iconColor="text-teal-600"
             iconBg="bg-teal-50"
-            delay={0.5}
+            delay={0.45}
           />
-        </div>
-
-        {/* Bottom Grid - 3 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
            <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl border border-slate-200 overflow-hidden p-8 hover:border-panlit-orange/30 transition-colors"
+            transition={{ delay: 0.5 }}
+            className="bg-white rounded-3xl border border-slate-200 overflow-hidden p-6 hover:border-panlit-orange/30 transition-colors group"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 bg-orange-50 rounded-lg text-panlit-orange">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-3 bg-pink-50 rounded-xl text-pink-600">
                 <FileText size={24} />
               </div>
-              <h3 className="text-xl font-bold font-heading">Custom Forms</h3>
+              <h3 className="text-lg font-bold font-heading">Custom Forms</h3>
             </div>
-            <p className="text-slate-600 text-sm mb-6">
-              Collect waivers, passport details, or dietary restrictions automatically before the trip starts.
+            <p className="text-slate-600 text-sm">
+              Collect waivers and passport details automatically before the trip.
             </p>
           </motion.div>
 
@@ -174,51 +194,44 @@ export function FeaturesGrid() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="bg-white rounded-3xl border border-slate-200 overflow-hidden p-8 hover:border-panlit-orange/30 transition-colors"
+            transition={{ delay: 0.55 }}
+            className="bg-white rounded-3xl border border-slate-200 overflow-hidden p-6 hover:border-panlit-orange/30 transition-colors group"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 bg-purple-50 rounded-lg text-purple-600">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-3 bg-violet-50 rounded-xl text-violet-600">
                 <Percent size={24} />
               </div>
-              <h3 className="text-xl font-bold font-heading">Discount Engine</h3>
+              <h3 className="text-lg font-bold font-heading">Discounts</h3>
             </div>
-            <p className="text-slate-600 text-sm mb-6">
-              Create promo codes, early bird specials, and seasonal offers to drive more bookings.
+            <p className="text-slate-600 text-sm">
+              Create promo codes and seasonal offers to drive bookings.
             </p>
-            <div className="space-y-2">
-              <div className="flex justify-between items-center p-3 bg-slate-50 rounded border border-slate-100 text-xs">
-                <span className="font-mono font-bold text-slate-700">SUMMER20</span>
-                <span className="text-green-600 font-medium">Active</span>
-              </div>
-              <div className="flex justify-between items-center p-3 bg-slate-50 rounded border border-slate-100 text-xs">
-                <span className="font-mono font-bold text-slate-700">VIP_GUEST</span>
-                <span className="text-green-600 font-medium">Active</span>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="bg-white rounded-3xl border border-slate-200 overflow-hidden p-8 hover:border-panlit-orange/30 transition-colors"
-          >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 bg-teal-50 rounded-lg text-teal-600">
-                <ShoppingBag size={24} />
-              </div>
-              <h3 className="text-xl font-bold font-heading">Online Store</h3>
-            </div>
-            <p className="text-slate-600 text-sm mb-6">
-              A beautiful, mobile-optimized booking page that embeds directly into your existing website.
-            </p>
-            <div className="rounded-lg overflow-hidden border border-slate-100 bg-slate-50 p-4 flex items-center justify-center">
-              <Button size="sm" className="w-full bg-panlit-dark text-white hover:bg-panlit-dark/90">Book Now</Button>
-            </div>
           </motion.div>
         </div>
+
+        {/* Full Width Online Store */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="bg-gradient-to-r from-teal-50 to-emerald-50 rounded-3xl border border-teal-100 p-8 flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <div className="flex-1">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="p-3 bg-teal-100 rounded-xl text-teal-700">
+                <ShoppingBag size={24} />
+              </div>
+              <h3 className="text-2xl font-bold font-heading text-slate-900">Online Storefront</h3>
+            </div>
+            <p className="text-slate-700 text-lg max-w-2xl">
+              A beautiful, mobile-optimized booking page that embeds directly into your existing website. Turn visitors into customers instantly.
+            </p>
+          </div>
+          <Button size="lg" className="bg-panlit-dark text-white hover:bg-panlit-dark/90 shrink-0">
+            View Demo Store
+          </Button>
+        </motion.div>
 
       </div>
     </section>
