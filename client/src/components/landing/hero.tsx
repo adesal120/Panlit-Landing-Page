@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import dashboardImg from "@assets/generated_images/dashboard_booking_interface_vector.png";
+import dashboardImg from "@assets/generated_images/premium_saas_booking_dashboard.png";
 
 export function Hero() {
   return (

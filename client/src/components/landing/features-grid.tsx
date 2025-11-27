@@ -15,10 +15,10 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import bookingImg from "@assets/generated_images/dashboard_booking_interface_vector.png";
-import calendarImg from "@assets/generated_images/calendar_scheduling_interface_vector.png";
-import checkInImg from "@assets/generated_images/qr_code_scanner_interface_vector.png";
-import formImg from "@assets/generated_images/customer_crm_dashboard_vector.png";
+import bookingImg from "@assets/generated_images/premium_saas_booking_dashboard.png";
+import calendarImg from "@assets/generated_images/advanced_calendar_management_interface.png";
+import checkInImg from "@assets/generated_images/premium_qr_check-in_mobile_interface.png";
+import formImg from "@assets/generated_images/premium_customer_crm_dashboard.png";
 
 interface FeatureCardProps {
   title: string;
