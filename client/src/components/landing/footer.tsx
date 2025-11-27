@@ -37,9 +37,9 @@ export function Footer() {
           <div>
             <h4 className="text-white font-bold mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-panlit-orange transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-panlit-orange transition-colors">API Reference</a></li>
-              <li><a href="#" className="hover:text-panlit-orange transition-colors">Blog</a></li>
+              <li><Link href="/faq" className="hover:text-panlit-orange transition-colors cursor-pointer">FAQ</Link></li>
+              <li><Link href="/blog" className="hover:text-panlit-orange transition-colors cursor-pointer">Blog</Link></li>
+              <li><Link href="/support" className="hover:text-panlit-orange transition-colors cursor-pointer">Support</Link></li>
               <li><a href="#" className="hover:text-panlit-orange transition-colors">Community</a></li>
             </ul>
           </div>
