@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import panlitLogo from "@/assets/panlit-logo.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,15 +26,11 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group cursor-pointer">
-            <div className="w-8 h-8 rounded-lg bg-panlit-orange flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform">
-              P
-            </div>
-            <span className={cn(
-              "text-xl font-bold font-heading",
-              isScrolled ? "text-panlit-dark" : "text-white"
-            )}>
-              Panlit
-            </span>
+            <img 
+              src={panlitLogo} 
+              alt="Panlit Logo" 
+              className="h-8 w-auto group-hover:scale-105 transition-transform"
+            />
         </Link>
 
         {/* Desktop Menu */}
