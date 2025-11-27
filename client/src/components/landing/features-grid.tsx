@@ -146,9 +146,6 @@ export function FeaturesGrid() {
             <p className="text-slate-600 text-sm mb-6">
               Collect waivers, passport details, or dietary restrictions automatically before the trip starts.
             </p>
-            <div className="rounded-lg overflow-hidden border border-slate-100 shadow-sm h-32 relative">
-               <img src={formImg} alt="Forms" className="w-full h-full object-cover" />
-            </div>
           </motion.div>
 
           <motion.div 
