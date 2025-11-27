@@ -4,109 +4,63 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
 
+import paystackLogo from "@assets/stock_images/paystack_logo_af0e8b19.jpg";
+import stripeLogo from "@assets/stock_images/stripe_logo_ca81aeb3.jpg";
+import flutterwaveLogo from "@assets/stock_images/flutterwave_logo_10aceade.jpg";
+import tripadvisorLogo from "@assets/stock_images/tripadvisor_logo_f96b0cda.jpg";
+import googleReviewsLogo from "@assets/stock_images/google_reviews_logo_9f8986ee.jpg";
+import mailchimpLogo from "@assets/stock_images/mailchimp_logo_efe226f2.jpg";
+
 interface Integration {
   name: string;
   description: string;
-  icon: string;
+  logo: string;
   category: string;
-  status: "available" | "coming-soon";
 }
 
 const integrations: Integration[] = [
   // Payments
   {
-    name: "Stripe",
-    description: "Accept payments globally with industry-leading payment processing",
-    icon: "💳",
-    category: "Payments",
-    status: "available"
+    name: "Paystack",
+    description: "Accept payments from customers worldwide with secure payment processing",
+    logo: paystackLogo,
+    category: "Payments"
   },
   {
-    name: "PayPal",
-    description: "Secure payment processing with one of the world's most trusted platforms",
-    icon: "🅿️",
-    category: "Payments",
-    status: "available"
+    name: "Stripe",
+    description: "Accept payments globally with industry-leading payment processing",
+    logo: stripeLogo,
+    category: "Payments"
   },
   {
     name: "Flutterwave",
     description: "Accept payments across Africa with local payment methods",
-    icon: "🌍",
-    category: "Payments",
-    status: "available"
+    logo: flutterwaveLogo,
+    category: "Payments"
   },
 
-  // Calendar & Scheduling
+  // Reviews & Booking Platforms
   {
-    name: "Google Calendar",
-    description: "Sync bookings automatically with your Google Calendar",
-    icon: "📅",
-    category: "Calendar",
-    status: "coming-soon"
-  },
-  {
-    name: "Microsoft Outlook",
-    description: "Keep your Outlook calendar in sync with Panlit bookings",
-    icon: "📆",
-    category: "Calendar",
-    status: "coming-soon"
+    name: "TripAdvisor",
+    description: "Sync your listings and manage reviews on TripAdvisor",
+    logo: tripadvisorLogo,
+    category: "Booking Platforms"
   },
 
-  // Communication
+  // Reviews
   {
-    name: "Twilio SMS",
-    description: "Send automated SMS notifications to customers",
-    icon: "💬",
-    category: "Communication",
-    status: "available"
-  },
-  {
-    name: "WhatsApp Business",
-    description: "Send booking confirmations and updates via WhatsApp",
-    icon: "💚",
-    category: "Communication",
-    status: "coming-soon"
+    name: "Google Reviews",
+    description: "Collect and manage customer reviews on Google",
+    logo: googleReviewsLogo,
+    category: "Reviews"
   },
 
   // Email Marketing
   {
     name: "Mailchimp",
     description: "Sync customer lists and run email marketing campaigns",
-    icon: "📧",
-    category: "Marketing",
-    status: "coming-soon"
-  },
-  {
-    name: "Klaviyo",
-    description: "Create personalized customer journeys with behavioral emails",
-    icon: "🎯",
-    category: "Marketing",
-    status: "coming-soon"
-  },
-
-  // Accounting
-  {
-    name: "Xero",
-    description: "Automatically sync your Panlit revenue to Xero accounting",
-    icon: "📊",
-    category: "Accounting",
-    status: "coming-soon"
-  },
-  {
-    name: "QuickBooks",
-    description: "Streamline your accounting with QuickBooks integration",
-    icon: "💰",
-    category: "Accounting",
-    status: "coming-soon"
-  },
-
-  // Analytics
-  {
-    name: "Google Analytics",
-    description: "Track visitor behavior and conversion metrics",
-    icon: "📈",
-    category: "Analytics",
-    status: "coming-soon"
+    logo: mailchimpLogo,
+    category: "Marketing"
   }
 ];
 
@@ -130,7 +84,7 @@ export default function Integrations() {
                 Connect your tools to Panlit
               </h1>
               <p className="text-lg text-slate-600 leading-relaxed">
-                Integrate with your favorite tools to streamline operations, automate workflows, and get real-time insights. We're constantly adding new integrations to help your business grow.
+                Integrate with your favorite platforms to streamline operations, automate workflows, and manage your business more efficiently.
               </p>
             </motion.div>
           </div>
@@ -163,30 +117,28 @@ export default function Integrations() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.05 }}
-                        className="border-2 border-slate-200 rounded-2xl p-6 hover:border-panlit-orange hover:shadow-lg transition-all group"
+                        className="border-2 border-slate-200 rounded-2xl p-8 hover:border-panlit-orange hover:shadow-lg transition-all group flex flex-col"
                       >
-                        <div className="mb-4 text-5xl">
-                          {integration.icon}
+                        <div className="mb-6 h-16 flex items-center justify-center">
+                          <img 
+                            src={integration.logo} 
+                            alt={integration.name}
+                            className="max-h-full max-w-full object-contain"
+                          />
                         </div>
 
                         <h3 className="text-xl font-bold font-heading text-slate-900 mb-2 group-hover:text-panlit-orange transition-colors">
                           {integration.name}
                         </h3>
 
-                        <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+                        <p className="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">
                           {integration.description}
                         </p>
 
-                        {integration.status === "available" ? (
-                          <div className="flex items-center gap-2 text-green-600 font-semibold text-sm">
-                            <Check className="w-4 h-4" />
-                            <span>Available now</span>
-                          </div>
-                        ) : (
-                          <div className="inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-semibold">
-                            Coming soon
-                          </div>
-                        )}
+                        <div className="flex items-center gap-2 text-green-600 font-semibold text-sm">
+                          <Check className="w-4 h-4" />
+                          <span>Available now</span>
+                        </div>
                       </motion.div>
                     ))}
                   </div>
@@ -207,10 +159,10 @@ export default function Integrations() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-6">
-                Can't find the integration you need?
+                Need a custom integration?
               </h2>
               <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-                Let us know what integration would help your business the most. We're always building new connections based on user feedback.
+                We're always looking to expand our integrations. If you need to connect Panlit with another tool, let us know!
               </p>
               <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-bold h-14 px-10 rounded-full text-lg">
                 Request an Integration
