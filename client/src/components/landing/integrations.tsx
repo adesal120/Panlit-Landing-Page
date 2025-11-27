@@ -1,28 +1,28 @@
 import { motion } from "framer-motion";
 import stripeLogo from "../../assets/official_logos/stripe.webp";
 import paystackLogo from "../../assets/official_logos/paystack.png";
-import flutterwaveLogo from "../../assets/official_logos/flutterwave-clean.png";
 import tripadvisorLogo from "../../assets/official_logos/tripadvisor.png";
 import googleReviewsLogo from "../../assets/official_logos/google_reviews.png";
-import mailchimpOfficialLogo from "../../assets/official_logos/mailchimp-clean.png";
+import whatsappLogo from "../../assets/official_logos/whatsapp.webp";
+import mailchimpSVG from "@assets/stock_images/mailchimp_official_l_d1744ad3.jpg";
 
 export function Integrations() {
   const logos = [
     { name: "Stripe", logo: stripeLogo },
     { name: "Paystack", logo: paystackLogo },
-    { name: "Flutterwave", logo: flutterwaveLogo },
     { name: "TripAdvisor", logo: tripadvisorLogo },
     { name: "Google Reviews", logo: googleReviewsLogo },
-    { name: "Mailchimp", logo: mailchimpOfficialLogo },
+    { name: "WhatsApp", logo: whatsappLogo },
+    { name: "Mailchimp", logo: mailchimpSVG },
   ];
 
   const floatingLogos = [
     { logo: stripeLogo, name: "Stripe", delay: 0 },
     { logo: paystackLogo, name: "Paystack", delay: 0.2 },
-    { logo: flutterwaveLogo, name: "Flutterwave", delay: 0.4 },
-    { logo: tripadvisorLogo, name: "TripAdvisor", delay: 0.6 },
-    { logo: googleReviewsLogo, name: "Google Reviews", delay: 0.8 },
-    { logo: mailchimpOfficialLogo, name: "Mailchimp", delay: 1 },
+    { logo: tripadvisorLogo, name: "TripAdvisor", delay: 0.4 },
+    { logo: googleReviewsLogo, name: "Google Reviews", delay: 0.6 },
+    { logo: whatsappLogo, name: "WhatsApp", delay: 0.8 },
+    { logo: mailchimpSVG, name: "Mailchimp", delay: 1 },
   ];
 
   return (
