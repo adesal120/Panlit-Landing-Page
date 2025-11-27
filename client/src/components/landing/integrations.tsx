@@ -5,7 +5,7 @@ import tripadvisorLogo from "../../assets/official_logos/tripadvisor.png";
 import googleReviewsLogo from "../../assets/official_logos/google_reviews.png";
 import whatsappLogo from "../../assets/official_logos/whatsapp.webp";
 import flutterwaveLogo from "../../assets/official_logos/flutterwave-official.webp";
-import mailchimpLogo from "../../assets/official_logos/mailchimp-official.png";
+import mailchimpLogo from "../../assets/official_logos/mailchimp-black.png";
 
 export function Integrations() {
   const logos = [
