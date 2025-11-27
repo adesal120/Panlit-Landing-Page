@@ -4,12 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
 
-import paystackLogo from "@assets/stock_images/paystack_official_lo_852f1643.jpg";
-import stripeLogo from "@assets/stock_images/stripe_official_logo_ee591d7a.jpg";
-import flutterwaveLogo from "@assets/stock_images/flutterwave_official_2b6ac940.jpg";
-import tripadvisorLogo from "@assets/stock_images/tripadvisor_official_d9ac5a9d.jpg";
-import googleReviewsLogo from "@assets/stock_images/google_reviews_offic_6b54fb95.jpg";
-import mailchimpLogo from "@assets/stock_images/mailchimp_official_l_654e9509.jpg";
+import paystackLogo from "../assets/official_logos/paystack.png";
+import stripeLogo from "../assets/official_logos/stripe.webp";
+import flutterwaveLogo from "../assets/official_logos/flutterwave-official.webp";
+import tripadvisorLogo from "../assets/official_logos/tripadvisor.png";
+import googleReviewsLogo from "../assets/official_logos/google_reviews.png";
+import mailchimpLogo from "../assets/official_logos/mailchimp-black.png";
+import whatsappLogo from "../assets/official_logos/whatsapp.webp";
 
 interface Integration {
   name: string;
@@ -59,6 +60,14 @@ const integrations: Integration[] = [
     description: "Sync customer lists and run email marketing campaigns",
     logo: mailchimpLogo,
     category: "Marketing"
+  },
+
+  // Communication
+  {
+    name: "WhatsApp",
+    description: "Send notifications and updates to customers via WhatsApp",
+    logo: whatsappLogo,
+    category: "Communication"
   }
 ];
 
