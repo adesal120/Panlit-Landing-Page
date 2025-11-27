@@ -237,7 +237,7 @@ export default function Pricing() {
                 Multi-currency support
               </h2>
               <p className="text-slate-600 text-lg">
-                We support payments in 50+ currencies. Here are some examples of our capped maximum fees per booking.
+                All supported currencies and their capped maximum fees per booking.
               </p>
             </div>
 
@@ -268,15 +268,6 @@ export default function Pricing() {
                 </table>
               </div>
             </motion.div>
-
-            <div className="mt-12 text-center">
-              <p className="text-slate-600 mb-4">
-                Don't see your currency? We support 50+ currencies. Contact us for details.
-              </p>
-              <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg">
-                View all currencies
-              </Button>
-            </div>
           </div>
         </section>
 
