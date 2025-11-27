@@ -65,7 +65,16 @@ const currencies = [
   { name: "Ghanaian Cedi", code: "GHS", fee: "₵17", maxFee: 17, symbol: "₵" },
   { name: "Ugandan Shilling", code: "UGX", fee: "USh4,400", maxFee: 4400, symbol: "USh" },
   { name: "Tanzanian Shilling", code: "TZS", fee: "TSh3,100", maxFee: 3100, symbol: "TSh" },
-  { name: "Egyptian Pound", code: "EGP", fee: "£61", maxFee: 61, symbol: "£" },
+  { name: "Egyptian Pound", code: "EGP", fee: "£E61", maxFee: 61, symbol: "£E" },
+  { name: "Moroccan Dirham", code: "MAD", fee: "DH12.5", maxFee: 12.5, symbol: "DH" },
+  { name: "Ethiopian Birr", code: "ETB", fee: "Br22", maxFee: 22, symbol: "Br" },
+  { name: "Rwandan Franc", code: "RWF", fee: "FRw1,540", maxFee: 1540, symbol: "FRw" },
+  { name: "Zambian Kwacha", code: "ZMW", fee: "ZK16", maxFee: 16, symbol: "ZK" },
+  { name: "Botswana Pula", code: "BWP", fee: "P17", maxFee: 17, symbol: "P" },
+  { name: "Malawian Kwacha", code: "MWK", fee: "MK2,100", maxFee: 2100, symbol: "MK" },
+  { name: "Mozambican Metical", code: "MZN", fee: "MT80", maxFee: 80, symbol: "MT" },
+  { name: "Namibian Dollar", code: "NAD", fee: "N$22", maxFee: 22, symbol: "N$" },
+  { name: "Swazi Lilangeni", code: "SZL", fee: "L22", maxFee: 22, symbol: "L" },
 ];
 
 export default function Pricing() {
