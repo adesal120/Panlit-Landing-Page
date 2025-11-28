@@ -2,7 +2,6 @@ import { Navbar } from "@/components/landing/navbar";
 import { Hero } from "@/components/landing/hero";
 import { FeaturesGrid } from "@/components/landing/features-grid";
 import { Integrations } from "@/components/landing/integrations";
-import { AnalyticsSection } from "@/components/landing/analytics-section";
 import { Testimonials } from "@/components/landing/testimonials";
 import { BlogPreview } from "@/components/landing/blog-preview";
 import { Footer } from "@/components/landing/footer";
@@ -15,7 +14,6 @@ export default function Home() {
       <main>
         <Hero />
         <FeaturesGrid />
-        <AnalyticsSection />
         <Integrations />
         <Testimonials />
         <BlogPreview />
