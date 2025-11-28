@@ -1,8 +1,17 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Calendar, Users, CreditCard, BarChart3 } from "lucide-react";
 
 export function Hero() {
+  const [word, setWord] = useState<"tourism" | "experience">("tourism");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWord(prev => prev === "tourism" ? "experience" : "tourism");
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className="relative bg-panlit-dark pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       {/* Abstract Background Elements */}
@@ -28,7 +37,18 @@ export function Hero() {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold font-heading text-white leading-[1.1] mb-6">
-              Ready to supercharge your <span className="text-transparent bg-clip-text bg-gradient-to-r from-panlit-orange to-orange-300">tourism business?</span>
+              Ready to supercharge your <AnimatePresence mode="wait">
+                <motion.span 
+                  key={word}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-panlit-orange to-orange-300 inline-block"
+                >
+                  {word}
+                </motion.span>
+              </AnimatePresence> business?
             </h1>
             
             <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
