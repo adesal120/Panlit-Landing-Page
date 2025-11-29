@@ -52,7 +52,7 @@ export function Hero() {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
-              No months of implementation. No team disruption. Start organizing bookings, tracking customers, and optimizing operations immediately.
+              Digitise every part of your front-office and back-office operations from one complete platform. More than booking software—your business operating system.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
