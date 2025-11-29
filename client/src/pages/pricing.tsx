@@ -297,10 +297,6 @@ export default function Pricing() {
                   a: "We accept all major credit cards, bank transfers, and local payment methods in 50+ countries through our payment partners."
                 },
                 {
-                  q: "Is there a free trial?",
-                  a: "Yes! Professional and Enterprise plans come with a 14-day free trial. No credit card required to get started."
-                },
-                {
                   q: "Can I cancel anytime?",
                   a: "Absolutely. Cancel your subscription at any time. No penalties, no long-term contracts."
                 }
@@ -339,7 +335,7 @@ export default function Pricing() {
                 Ready to get started?
               </h2>
               <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-                Try Panlit free for 14 days. No credit card required.
+                Start using Panlit today. No credit card required.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-bold h-14 px-10 rounded-full text-lg">

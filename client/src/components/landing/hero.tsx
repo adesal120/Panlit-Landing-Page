@@ -72,10 +72,6 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-panlit-orange" />
-                <span>14-day free trial</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-panlit-orange" />
                 <span>Cancel anytime</span>
               </div>
             </div>
