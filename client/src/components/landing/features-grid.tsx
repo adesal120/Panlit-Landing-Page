@@ -90,7 +90,7 @@ export function FeaturesGrid() {
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-3 font-heading">Centralized Booking Engine</h3>
               <p className="text-slate-700">
-                Stop juggling WhatsApp, emails, and spreadsheets. Manage all your room reservations, tour bookings, and activity slots in one place. Prevent overbooking automatically across all your inventory.
+                Stop juggling WhatsApp, emails, and spreadsheets. Manage reservations, appointments, tours, and activity slots in one place. Prevent overbooking automatically across all your inventory.
               </p>
             </div>
             <div className="hidden md:flex items-center justify-center w-1/3 flex-col gap-4">
@@ -116,7 +116,7 @@ export function FeaturesGrid() {
             </div>
             <h3 className="text-2xl font-bold text-white mb-3 font-heading text-center">Seamless Check-in</h3>
             <p className="text-slate-300 text-sm text-center max-w-xs">
-              Streamline guest arrival for tours or hotel stays. Scan tickets or check in guests instantly with any device. No lists, no delays.
+              Streamline guest arrival for tours, appointments, or stays. Scan tickets or check in guests instantly with any device. No lists, no delays.
             </p>
             <div className="text-6xl mt-6 opacity-30">✓</div>
           </motion.div>
@@ -142,7 +142,7 @@ export function FeaturesGrid() {
           />
           <FeatureCard 
             title="Smart Calendar" 
-            description="Unified view of all rooms and tours. Prevent conflicts and optimize your schedule effortlessly."
+            description="Unified view of all rooms, tours, and staff schedules. Prevent conflicts and optimize your schedule effortlessly."
             icon={Calendar}
             iconColor="text-blue-600"
             iconBg="bg-blue-50"
@@ -162,7 +162,7 @@ export function FeaturesGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
           <FeatureCard 
             title="Resource Management" 
-            description="Track room inventory, equipment, and supplies across all your properties and tours."
+            description="Track inventory, equipment, and supplies across all your properties and tours."
             icon={Box}
             iconColor="text-emerald-600"
             iconBg="bg-emerald-50"
@@ -170,7 +170,7 @@ export function FeaturesGrid() {
           />
           <FeatureCard 
             title="Team Management" 
-            description="Manage staff schedules, roles, and permissions for front desk and guides securely."
+            description="Manage staff schedules, roles, and permissions for front desk, therapists, and guides securely."
             icon={Users2}
             iconColor="text-teal-600"
             iconBg="bg-teal-50"
@@ -229,11 +229,10 @@ export function FeaturesGrid() {
               <h3 className="text-2xl font-bold font-heading text-slate-900">AI Website Builder</h3>
             </div>
             <p className="text-slate-700 text-lg max-w-2xl">
-              Launch a professional, high-converting website for your hotel or tour business in seconds. AI-driven copy and layouts tailored to showcase your unique property and experiences.
+              Launch a professional, SEO-driven website with a custom domain in under 10 minutes. Tailored layouts for tours, spas, barbershops, hotels, and experience businesses.
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Coming Soon</span>
             <div className="flex items-center gap-2 bg-purple-200/50 px-4 py-2 rounded-full text-purple-700 font-bold text-sm">
               <Zap size={16} />
               AI POWERED
