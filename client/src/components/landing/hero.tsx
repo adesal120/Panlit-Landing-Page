@@ -4,11 +4,15 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Calendar, Users, CreditCard, BarChart3 } from "lucide-react";
 
 export function Hero() {
-  const [word, setWord] = useState<"tourism" | "experience">("tourism");
+  const [word, setWord] = useState<"tourism" | "hospitality" | "experience">("tourism");
 
   useEffect(() => {
+    const words: ("tourism" | "hospitality" | "experience")[] = ["tourism", "hospitality", "experience"];
+    let currentIndex = 0;
+
     const interval = setInterval(() => {
-      setWord(prev => prev === "tourism" ? "experience" : "tourism");
+      currentIndex = (currentIndex + 1) % words.length;
+      setWord(words[currentIndex]);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
