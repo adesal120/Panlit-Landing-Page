@@ -13,7 +13,11 @@ import {
   Percent,
   Globe,
   Box,
-  Zap
+  Zap,
+  Bot,
+  MessageSquare,
+  RefreshCcw,
+  Layers
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -121,8 +125,8 @@ export function FeaturesGrid() {
         {/* Middle Grid - 4 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
           <FeatureCard 
-            title="Payment Processing" 
-            description="Accept payments globally with integrated secure gateways."
+            title="Payment & Reconciliation" 
+            description="Accept card payments and bank transfers globally with automated reconciliation."
             icon={CreditCard}
             iconColor="text-green-600"
             iconBg="bg-green-50"
@@ -205,6 +209,75 @@ export function FeaturesGrid() {
             </div>
             <p className="text-slate-600 text-sm">
               Create promo codes and seasonal offers to drive bookings.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* AI Website Builder Card */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.65 }}
+          className="bg-gradient-to-r from-violet-50 to-purple-50 rounded-3xl border border-purple-100 p-8 flex flex-col md:flex-row items-center justify-between gap-8 mb-6"
+        >
+          <div className="flex-1">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="p-3 bg-purple-100 rounded-xl text-purple-700">
+                <Bot size={24} />
+              </div>
+              <h3 className="text-2xl font-bold font-heading text-slate-900">AI Website Builder</h3>
+            </div>
+            <p className="text-slate-700 text-lg max-w-2xl">
+              Generate a professional, high-converting website for your tourism business in seconds. AI-driven copy and layouts tailored to your unique experiences.
+            </p>
+          </div>
+          <div className="flex items-center gap-2 bg-purple-200/50 px-4 py-2 rounded-full text-purple-700 font-bold text-sm">
+            <Zap size={16} />
+            AI POWERED
+          </div>
+        </motion.div>
+
+        {/* New Features Grid - 2 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.7 }}
+            className="bg-white rounded-3xl border border-slate-200 p-8 hover:border-panlit-orange/30 transition-all group"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <div className="p-4 bg-orange-50 rounded-2xl text-orange-600">
+                <Layers size={32} />
+              </div>
+              <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Coming Soon</span>
+            </div>
+            <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">Channel Manager</h3>
+            <p className="text-slate-600 leading-relaxed">
+              Sync your availability and sell across Airbnb, Booking.com, TripAdvisor, and local agents in one click. Reach millions of customers globally without the manual work.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.75 }}
+            className="bg-white rounded-3xl border border-slate-200 p-8 hover:border-panlit-orange/30 transition-all group"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <div className="p-4 bg-blue-50 rounded-2xl text-blue-600">
+                <MessageSquare size={32} />
+              </div>
+              <div className="flex items-center gap-1.5 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">
+                <Zap size={12} />
+                AI POWERED
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">Unified AI Inbox</h3>
+            <p className="text-slate-600 leading-relaxed">
+              All your messages from Instagram, WhatsApp, Airbnb, and Booking.com in one place. AI-powered summaries and suggested replies help you close bookings faster.
             </p>
           </motion.div>
         </div>
