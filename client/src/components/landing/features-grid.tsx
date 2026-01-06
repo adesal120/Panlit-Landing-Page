@@ -298,9 +298,8 @@ export function FeaturesGrid() {
               <div className="p-4 bg-teal-50 rounded-2xl text-teal-600">
                 <Send size={32} />
               </div>
-              <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Coming Soon</span>
             </div>
-            <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">Guest Communications</h3>
+            <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">Automated Guest Comms</h3>
             <p className="text-slate-600 leading-relaxed">
               Send automated communications via Email, SMS, and WhatsApp. Automate review requests, arrival instructions, meetup details, and personalized offers for every guest.
             </p>
