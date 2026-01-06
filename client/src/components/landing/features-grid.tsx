@@ -17,7 +17,8 @@ import {
   Bot,
   MessageSquare,
   RefreshCcw,
-  Layers
+  Layers,
+  Send
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -240,8 +241,8 @@ export function FeaturesGrid() {
           </div>
         </motion.div>
 
-        {/* New Features Grid - 2 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        {/* New Features Grid - 3 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -273,7 +274,7 @@ export function FeaturesGrid() {
                 <MessageSquare size={32} />
               </div>
               <div className="flex items-center gap-2">
-                <span className="border border-slate-200 text-slate-400 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Coming Soon</span>
+                <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Coming Soon</span>
                 <div className="flex items-center gap-1.5 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">
                   <Zap size={12} />
                   AI POWERED
@@ -283,6 +284,25 @@ export function FeaturesGrid() {
             <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">Unified AI Inbox</h3>
             <p className="text-slate-600 leading-relaxed">
               Centralize every guest interaction. Manage messages from Instagram, WhatsApp, Airbnb, and Booking.com. AI drafts responses for you, but you always have full control to review, edit, or reply yourself.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8 }}
+            className="bg-white rounded-3xl border border-slate-200 p-8 hover:border-panlit-orange/30 transition-all group"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <div className="p-4 bg-teal-50 rounded-2xl text-teal-600">
+                <Send size={32} />
+              </div>
+              <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Coming Soon</span>
+            </div>
+            <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">Guest Communications</h3>
+            <p className="text-slate-600 leading-relaxed">
+              Send automated communications via Email, SMS, and WhatsApp. Automate review requests, arrival instructions, meetup details, and personalized offers for every guest.
             </p>
           </motion.div>
         </div>
@@ -300,10 +320,10 @@ export function FeaturesGrid() {
               <div className="p-3 bg-teal-100 rounded-xl text-teal-700">
                 <ShoppingBag size={24} />
               </div>
-              <h3 className="text-2xl font-bold font-heading text-slate-900">Direct Booking Website</h3>
+              <h3 className="text-2xl font-bold font-heading text-slate-900">Direct Booking Store</h3>
             </div>
             <p className="text-slate-700 text-lg max-w-2xl">
-              A beautiful, mobile-optimized booking engine that embeds directly into your existing site. Turn lookers into bookers instantly—commission-free.
+              A beautiful, mobile-optimized booking engine that embeds directly into your existing website or social media platform. Turn lookers into bookers instantly—commission-free.
             </p>
           </div>
           <Button size="lg" className="bg-panlit-dark text-white hover:bg-panlit-dark/90 shrink-0">
