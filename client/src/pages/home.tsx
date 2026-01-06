@@ -26,7 +26,7 @@ export default function Home() {
                Ready to scale your operations?
              </h2>
              <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-               Join hundreds of tourism and experience businesses who trust Panlit to run their business.
+               Join hundreds of tourism, hospitality, and experience businesses who trust Panlit to run their business.
              </p>
              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                <Button size="lg" className="bg-panlit-orange hover:bg-orange-600 text-white font-bold h-14 px-10 rounded-full text-lg">

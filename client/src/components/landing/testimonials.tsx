@@ -41,9 +41,9 @@ const testimonials: Testimonial[] = [
     icon: Zap,
     metric: "10min",
     title: "to start winning",
-    quote: "I expected days of setup. Took 10 minutes. First booking logged that afternoon.",
-    author: "— Museum operations lead",
-    role: "Museum Operations Lead",
+    quote: "I expected days of setup. Took 10 minutes. Clients now book their own cuts 24/7.",
+    author: "— Barbershop Owner",
+    role: "Barbershop Owner",
   }
 ];
 
@@ -64,7 +64,7 @@ export function Testimonials() {
           >
             <h2 className="text-4xl md:text-5xl font-bold font-heading text-white leading-tight mb-6">
               Real results, real <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-panlit-orange to-orange-300">operators</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-panlit-orange to-orange-300">businesses</span>
             </h2>
           </motion.div>
 
@@ -75,7 +75,7 @@ export function Testimonials() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-slate-300 text-lg leading-relaxed"
           >
-            What tourism and experience businesses achieve in their first week. Built by someone who managed 1,500+ operators and saw these problems firsthand.
+            What tourism, hospitality, and experience businesses achieve in their first week. Built by someone who managed 1,500+ operators and saw these problems firsthand.
           </motion.p>
         </div>
 

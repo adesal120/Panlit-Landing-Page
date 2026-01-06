@@ -56,7 +56,7 @@ export function Hero() {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
-              The complete operating system for tours, activities, experiences, and stays. Digitise every part of your business from booking to check-out.
+              The complete operating system for tourism, hospitality, and experience businesses. Digitise every part of your business from booking to check-out.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">

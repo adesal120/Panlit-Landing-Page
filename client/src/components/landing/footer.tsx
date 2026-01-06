@@ -16,7 +16,7 @@ export function Footer() {
                 />
             </Link>
             <p className="text-sm text-slate-400 mb-6">
-              Built for tourism operators and experience creators. Supercharge your business today.
+              Built for tourism, hospitality, and experience businesses. Supercharge your business today.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-slate-400 hover:text-white transition-colors"><Twitter size={20} /></a>
