@@ -90,7 +90,7 @@ export function FeaturesGrid() {
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-3 font-heading">Centralized Booking Engine</h3>
               <p className="text-slate-700">
-                Stop juggling WhatsApp, emails, and spreadsheets. Manage reservations, appointments, tours, and activity slots in one place. Prevent overbooking automatically across all your inventory.
+                Stop juggling WhatsApp, emails, and spreadsheets. Manage reservations, appointments, tours, activities, and nightly stays in one place. Prevent overbooking automatically across all your inventory.
               </p>
             </div>
             <div className="hidden md:flex items-center justify-center w-1/3 flex-col gap-4">
@@ -116,7 +116,7 @@ export function FeaturesGrid() {
             </div>
             <h3 className="text-2xl font-bold text-white mb-3 font-heading text-center">Seamless Check-in</h3>
             <p className="text-slate-300 text-sm text-center max-w-xs">
-              Streamline guest arrival for tours, appointments, or stays. Scan tickets or check in guests instantly with any device. No lists, no delays.
+              Streamline guest arrival for tours, appointments, or overnight stays. Scan tickets or check in guests instantly with any device. No lists, no delays.
             </p>
             <div className="text-6xl mt-6 opacity-30">✓</div>
           </motion.div>
@@ -126,7 +126,7 @@ export function FeaturesGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
           <FeatureCard 
             title="Secure Payments & Reconciliation" 
-            description="Accept card payments and bank transfers globally with automated reconciliation for every booking."
+            description="Accept card payments, bank transfers, mobile money, and cash. Automated reconciliation for every booking, online or offline."
             icon={CreditCard}
             iconColor="text-green-600"
             iconBg="bg-green-50"
@@ -142,7 +142,7 @@ export function FeaturesGrid() {
           />
           <FeatureCard 
             title="Smart Calendar" 
-            description="Unified view of all rooms, tours, and staff schedules. Prevent conflicts and optimize your schedule effortlessly."
+            description="Unified view of all rooms, tours, activities, and staff schedules. Prevent conflicts and optimize your schedule effortlessly."
             icon={Calendar}
             iconColor="text-blue-600"
             iconBg="bg-blue-50"
@@ -162,7 +162,7 @@ export function FeaturesGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
           <FeatureCard 
             title="Resource Management" 
-            description="Track inventory, equipment, and supplies across all your properties and tours."
+            description="Track inventory, equipment, rooms, and supplies across all your properties and tours."
             icon={Box}
             iconColor="text-emerald-600"
             iconBg="bg-emerald-50"
@@ -273,7 +273,7 @@ export function FeaturesGrid() {
                 <MessageSquare size={32} />
               </div>
               <div className="flex items-center gap-2">
-                <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Coming Soon</span>
+                <span className="border border-slate-200 text-slate-400 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Coming Soon</span>
                 <div className="flex items-center gap-1.5 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">
                   <Zap size={12} />
                   AI POWERED
@@ -282,7 +282,7 @@ export function FeaturesGrid() {
             </div>
             <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">Unified AI Inbox</h3>
             <p className="text-slate-600 leading-relaxed">
-              Centralize every guest interaction. Manage messages from Instagram, WhatsApp, Airbnb, Booking.com, and Email in one shared inbox. Let AI draft instant responses to save your team hours.
+              Centralize every guest interaction. Manage messages from Instagram, WhatsApp, Airbnb, and Booking.com. AI drafts responses for you, but you always have full control to review, edit, or reply yourself.
             </p>
           </motion.div>
         </div>

@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Calendar, Users, CreditCard, BarChart3 } from "lucide-react";
 
 export function Hero() {
-  const [word, setWord] = useState<"tourism" | "hospitality" | "experience">("tourism");
+  const [word, setWord] = useState<"tours" | "activities" | "experiences" | "stays">("tours");
 
   useEffect(() => {
-    const words: ("tourism" | "hospitality" | "experience")[] = ["tourism", "hospitality", "experience"];
+    const words: ("tours" | "activities" | "experiences" | "stays")[] = ["tours", "activities", "experiences", "stays"];
     let currentIndex = 0;
 
     const interval = setInterval(() => {
@@ -56,7 +56,7 @@ export function Hero() {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
-              Digitise every part of your front-office and back-office operations from one complete platform. More than booking software - your business operating system.
+              The complete operating system for tours, activities, experiences, and stays. Digitise every part of your business from booking to check-out.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
