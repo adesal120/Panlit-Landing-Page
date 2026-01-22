@@ -237,7 +237,7 @@ export default function Pricing() {
   const [avgBookingValue, setAvgBookingValue] = useState([100]);
   const [monthlyBookings, setMonthlyBookings] = useState([50]);
   const [selectedBasePlan, setSelectedBasePlan] = useState("free");
-  const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
+  const [selectedAddons, setSelectedAddons] = useState<string[]>(["website_starter"]);
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly");
   
   const currencyData = currencies.find(c => c.code === selectedCurrency) || currencies[ currencies.length - 1 ]; // Default to USD if not found
