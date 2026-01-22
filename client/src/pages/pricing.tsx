@@ -278,6 +278,20 @@ export default function Pricing() {
     setSelectedBasePlan(id);
   };
 
+  // Non-linear scale helpers
+  const toExternalValue = (percentage: number, max: number) => {
+    const raw = max * Math.pow(percentage / 100, 3);
+    if (raw < 1000) return Math.round(raw / 10) * 10;
+    if (raw < 10000) return Math.round(raw / 100) * 100;
+    if (raw < 100000) return Math.round(raw / 1000) * 1000;
+    if (raw < 1000000) return Math.round(raw / 5000) * 5000;
+    return Math.round(raw / 10000) * 10000;
+  };
+
+  const toInternalValue = (value: number, max: number) => {
+    return Math.pow(value / max, 1/3) * 100;
+  };
+
   // Calculations
   const transactionFeeRate = 0.005; // 0.5%
   const transactionFeeCap = currencyData.maxFee > 0 ? currencyData.maxFee : Infinity; 
@@ -356,10 +370,10 @@ export default function Pricing() {
                       <span className="font-bold text-slate-900">{currencyData.symbol}{avgBookingValue[0].toLocaleString()}</span>
                     </div>
                     <Slider 
-                      value={avgBookingValue} 
-                      onValueChange={setAvgBookingValue} 
-                      max={10000000} 
-                      step={10} 
+                      value={[toInternalValue(avgBookingValue[0], 10000000)]} 
+                      onValueChange={(vals) => setAvgBookingValue([toExternalValue(vals[0], 10000000)])} 
+                      max={100} 
+                      step={0.1} 
                       className="py-4"
                     />
                   </div>
@@ -369,10 +383,10 @@ export default function Pricing() {
                       <span className="font-bold text-slate-900">{monthlyBookings[0].toLocaleString()}</span>
                     </div>
                     <Slider 
-                      value={monthlyBookings} 
-                      onValueChange={setMonthlyBookings} 
-                      max={1000000} 
-                      step={10} 
+                      value={[toInternalValue(monthlyBookings[0], 1000000)]} 
+                      onValueChange={(vals) => setMonthlyBookings([toExternalValue(vals[0], 1000000)])} 
+                      max={100} 
+                      step={0.1} 
                       className="py-4"
                     />
                   </div>
