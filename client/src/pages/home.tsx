@@ -16,7 +16,7 @@ export default function Home() {
         <FeaturesGrid />
         <Integrations />
         <Testimonials />
-        <BlogPreview />
+        {/* <BlogPreview /> */}
         
         {/* CTA Section */}
         <section className="py-24 bg-panlit-dark relative overflow-hidden">
