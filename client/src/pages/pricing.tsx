@@ -107,7 +107,7 @@ const addOns = [
   {
     id: "website_starter",
     name: "AI Website Starter",
-    description: "Professional site (5 pages)",
+    description: "Launch a professional 5-page business site instantly.",
     icon: LayoutDashboard,
     pricing: {
       NGN: 10000, USD: 10, GBP: 8, EUR: 10, KES: 1500, GHS: 150, ZAR: 200, 
@@ -119,7 +119,7 @@ const addOns = [
   {
     id: "website_pro",
     name: "AI Website Pro",
-    description: "Unlimited pages & blog",
+    description: "Scale with unlimited pages, blog, and advanced SEO.",
     icon: Globe,
     pricing: {
       NGN: 12000, USD: 35, GBP: 25, EUR: 30, KES: 1800, GHS: 180, ZAR: 240,
@@ -131,7 +131,7 @@ const addOns = [
   {
     id: "concierge_starter",
     name: "AI Concierge Starter",
-    description: "Digital channels support",
+    description: "Automate support on WhatsApp, Email, and Socials.",
     icon: MessageSquare,
     pricing: {
       NGN: 10000, USD: 20, GBP: 15, EUR: 18, KES: 1500, GHS: 150, ZAR: 200,
@@ -143,7 +143,7 @@ const addOns = [
   {
     id: "concierge_pro",
     name: "AI Concierge Pro",
-    description: "Digital + Phone AI support",
+    description: "Full 24/7 AI voice support + digital channels.",
     icon: Phone,
     pricing: {
       NGN: 18000, USD: 35, GBP: 25, EUR: 30, KES: 2700, GHS: 270, ZAR: 360,
@@ -155,7 +155,7 @@ const addOns = [
   {
     id: "channel_starter",
     name: "Channel Manager Starter",
-    description: "Sync standard integrations",
+    description: "Sync inventory with standard booking platforms.",
     icon: Layers,
     pricing: {
       NGN: 15000, USD: 49, GBP: 35, EUR: 40, KES: 2200, GHS: 220, ZAR: 300,
@@ -167,7 +167,7 @@ const addOns = [
   {
     id: "channel_pro",
     name: "Channel Manager Pro",
-    description: "Sync custom & regional",
+    description: "Connect with custom & regional travel agents.",
     icon: Layers,
     pricing: {
       NGN: 25000, USD: 79, GBP: 60, EUR: 70, KES: 3700, GHS: 375, ZAR: 500,
