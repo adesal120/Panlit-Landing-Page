@@ -131,7 +131,7 @@ const addOns = [
   {
     id: "concierge_starter",
     name: "AI Concierge Starter",
-    description: "AI-powered support across chat, social, email & reviews.",
+    description: "AI-powered support across OTAs, chat, social, email, whatsapp & reviews.",
     icon: MessageSquare,
     pricing: {
       NGN: 10000, USD: 20, GBP: 15, EUR: 18, KES: 1500, GHS: 150, ZAR: 200,
@@ -143,7 +143,7 @@ const addOns = [
   {
     id: "concierge_pro",
     name: "AI Concierge Pro",
-    description: "Everything in Starter + Voice AI assistant & call recording.",
+    description: "Everything in Starter + Voice AI assistant.",
     icon: Phone,
     pricing: {
       NGN: 18000, USD: 35, GBP: 25, EUR: 30, KES: 2700, GHS: 270, ZAR: 360,
@@ -155,7 +155,7 @@ const addOns = [
   {
     id: "channel_starter",
     name: "Channel Manager Starter",
-    description: "Sync inventory with standard booking platforms.",
+    description: "Sync inventory with standard OTAs and booking platforms.",
     icon: Layers,
     pricing: {
       NGN: 15000, USD: 49, GBP: 35, EUR: 40, KES: 2200, GHS: 220, ZAR: 300,
@@ -167,7 +167,7 @@ const addOns = [
   {
     id: "channel_pro",
     name: "Channel Manager Pro",
-    description: "Connect with custom & regional travel agents.",
+    description: "Connect with custom API",
     icon: Layers,
     pricing: {
       NGN: 25000, USD: 79, GBP: 60, EUR: 70, KES: 3700, GHS: 375, ZAR: 500,
@@ -244,13 +244,34 @@ export default function Pricing() {
 
   // Handlers
   const toggleAddon = (id: string) => {
-    // Logic: If selecting Website Pro, remove Starter if present, and vice versa if needed? 
-    // Prompt says "Mix & Match - Can select multiple". Doesn't explicitly say mutually exclusive, but logically Starter vs Pro website is likely exclusive. 
-    // I'll keep it simple: selecting Pro doesn't auto-deselect Starter, user can choose. Or I can enforce logic.
-    // For now, allow simple toggle.
-    setSelectedAddons(prev => 
-      prev.includes(id) ? prev.filter(m => m !== id) : [...prev, id]
-    );
+    // Categories for mutual exclusivity
+    const categories: Record<string, string[]> = {
+      website: ["website_starter", "website_pro"],
+      concierge: ["concierge_starter", "concierge_pro"],
+      channel: ["channel_starter", "channel_pro"]
+    };
+
+    let categoryToClear: string[] = [];
+    
+    // Find if the selected addon belongs to a mutually exclusive category
+    Object.values(categories).forEach(group => {
+      if (group.includes(id)) {
+        categoryToClear = group.filter(item => item !== id);
+      }
+    });
+
+    setSelectedAddons(prev => {
+      // If already selected, just remove it
+      if (prev.includes(id)) {
+        return prev.filter(m => m !== id);
+      }
+      
+      // If adding new item:
+      // 1. Remove any items from the same category (mutual exclusivity)
+      // 2. Add the new item
+      const othersFiltered = prev.filter(item => !categoryToClear.includes(item));
+      return [...othersFiltered, id];
+    });
   };
 
   const handleBasePlanSelect = (id: string) => {
