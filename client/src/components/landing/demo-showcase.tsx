@@ -10,7 +10,7 @@ const demos = [
     fullTitle: "Museums, Galleries, Theatres & More",
     icon: Building2,
     videoId: "266206827f7840f5938013921a899d1a",
-    description: "Manage exhibitions, ticketing, and visitor flow seamlessly."
+    description: "Manage exhibitions, ticketing, memberships, and visitor flow seamlessly."
   },
   {
     id: "tours",
