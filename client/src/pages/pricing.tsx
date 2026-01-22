@@ -110,7 +110,10 @@ const addOns = [
     description: "Professional site (5 pages)",
     icon: LayoutDashboard,
     pricing: {
-      NGN: 10000, GHS: 150, XOF: 6000, GMD: 65, SLL: 220000, LRD: 1900, KES: 1500, TZS: 25000, UGX: 40000, RWF: 13000, ETB: 600, ZAR: 200, BWP: 140, NAD: 200, MZN: 640, ZMW: 230, MWK: 18000, SZL: 200, LSL: 200, EGP: 500, MAD: 100, TND: 32, DZD: 1350, XAF: 6000, USD: 10, GBP: 8, EUR: 10
+      NGN: 10000, USD: 10, GBP: 8, EUR: 10, KES: 1500, GHS: 150, ZAR: 200, 
+      XOF: 6000, GMD: 65, SLL: 220000, LRD: 1900, TZS: 25000, UGX: 40000, 
+      RWF: 13000, ETB: 600, BWP: 140, NAD: 200, MZN: 640, ZMW: 230, 
+      MWK: 18000, SZL: 200, LSL: 200, EGP: 500, MAD: 100, TND: 32, DZD: 1350, XAF: 6000
     }
   },
   {
@@ -119,16 +122,22 @@ const addOns = [
     description: "Unlimited pages & blog",
     icon: Globe,
     pricing: {
-      NGN: 12000, GHS: 180, XOF: 7200, GMD: 78, SLL: 264000, LRD: 2300, KES: 1800, TZS: 30000, UGX: 48000, RWF: 15600, ETB: 720, ZAR: 240, BWP: 168, NAD: 240, MZN: 768, ZMW: 276, MWK: 21600, SZL: 240, LSL: 240, EGP: 600, MAD: 120, TND: 38, DZD: 1620, XAF: 7200, USD: 35, GBP: 25, EUR: 30
+      NGN: 12000, USD: 35, GBP: 25, EUR: 30, KES: 1800, GHS: 180, ZAR: 240,
+      XOF: 7200, GMD: 78, SLL: 264000, LRD: 2300, TZS: 30000, UGX: 48000,
+      RWF: 15600, ETB: 720, BWP: 168, NAD: 240, MZN: 768, ZMW: 276,
+      MWK: 21600, SZL: 240, LSL: 240, EGP: 600, MAD: 120, TND: 38, DZD: 1620, XAF: 7200
     }
   },
   {
     id: "concierge_starter",
     name: "AI Concierge Starter",
-    description: "Digital channels chat booking",
+    description: "Digital channels support",
     icon: MessageSquare,
     pricing: {
-      NGN: 10000, GHS: 150, XOF: 6000, GMD: 65, SLL: 220000, LRD: 1900, KES: 1500, TZS: 25000, UGX: 40000, RWF: 13000, ETB: 600, ZAR: 200, BWP: 140, NAD: 200, MZN: 640, ZMW: 230, MWK: 18000, SZL: 200, LSL: 200, EGP: 500, MAD: 100, TND: 32, DZD: 1350, XAF: 6000, USD: 20, GBP: 15, EUR: 18
+      NGN: 10000, USD: 20, GBP: 15, EUR: 18, KES: 1500, GHS: 150, ZAR: 200,
+      XOF: 6000, GMD: 65, SLL: 220000, LRD: 1900, TZS: 25000, UGX: 40000,
+      RWF: 13000, ETB: 600, BWP: 140, NAD: 200, MZN: 640, ZMW: 230,
+      MWK: 18000, SZL: 200, LSL: 200, EGP: 500, MAD: 100, TND: 32, DZD: 1350, XAF: 6000
     }
   },
   {
@@ -137,16 +146,34 @@ const addOns = [
     description: "Digital + Phone AI support",
     icon: Phone,
     pricing: {
-      NGN: 18000, GHS: 270, XOF: 10800, GMD: 117, SLL: 396000, LRD: 3420, KES: 2700, TZS: 45000, UGX: 72000, RWF: 23400, ETB: 1080, ZAR: 360, BWP: 252, NAD: 360, MZN: 1152, ZMW: 414, MWK: 32400, SZL: 360, LSL: 360, EGP: 900, MAD: 180, TND: 58, DZD: 2430, XAF: 10800, USD: 35, GBP: 25, EUR: 30
+      NGN: 18000, USD: 35, GBP: 25, EUR: 30, KES: 2700, GHS: 270, ZAR: 360,
+      XOF: 10800, GMD: 117, SLL: 396000, LRD: 3420, TZS: 45000, UGX: 72000,
+      RWF: 23400, ETB: 1080, BWP: 252, NAD: 360, MZN: 1152, ZMW: 414,
+      MWK: 32400, SZL: 360, LSL: 360, EGP: 900, MAD: 180, TND: 58, DZD: 2430, XAF: 10800
     }
   },
   {
-    id: "channel_manager",
-    name: "Channel Manager",
-    description: "Sync with OTAs instantly",
+    id: "channel_starter",
+    name: "Channel Manager Starter",
+    description: "Sync standard integrations",
     icon: Layers,
     pricing: {
-      NGN: 15000, GHS: 220, XOF: 9000, GMD: 98, SLL: 330000, LRD: 2850, KES: 2200, TZS: 37000, UGX: 60000, RWF: 19500, ETB: 900, ZAR: 300, BWP: 210, NAD: 300, MZN: 960, ZMW: 345, MWK: 27000, SZL: 300, LSL: 300, EGP: 750, MAD: 150, TND: 48, DZD: 2025, XAF: 9000, USD: 49, GBP: 35, EUR: 40
+      NGN: 15000, USD: 49, GBP: 35, EUR: 40, KES: 2200, GHS: 220, ZAR: 300,
+      XOF: 9000, GMD: 98, SLL: 330000, LRD: 2850, TZS: 37000, UGX: 60000,
+      RWF: 19500, ETB: 900, BWP: 210, NAD: 300, MZN: 960, ZMW: 345,
+      MWK: 27000, SZL: 300, LSL: 300, EGP: 750, MAD: 150, TND: 48, DZD: 2025, XAF: 9000
+    }
+  },
+  {
+    id: "channel_pro",
+    name: "Channel Manager Pro",
+    description: "Sync custom & regional",
+    icon: Layers,
+    pricing: {
+      NGN: 25000, USD: 79, GBP: 60, EUR: 70, KES: 3700, GHS: 375, ZAR: 500,
+      XOF: 15000, GMD: 163, SLL: 550000, LRD: 4750, TZS: 62000, UGX: 100000,
+      RWF: 32500, ETB: 1500, BWP: 350, NAD: 500, MZN: 1600, ZMW: 575,
+      MWK: 45000, SZL: 500, LSL: 500, EGP: 1250, MAD: 250, TND: 80, DZD: 3375, XAF: 15000
     }
   }
 ];
