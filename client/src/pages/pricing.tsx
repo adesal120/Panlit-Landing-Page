@@ -151,6 +151,60 @@ const addOns = [
   }
 ];
 
+// --- Detailed Feature Comparison Data ---
+const featureComparison = [
+  {
+    category: "Core Operations",
+    features: [
+      { name: "Bookings management", free: true, pro: true, prem: true },
+      { name: "Calendar & availability", free: true, pro: true, prem: true },
+      { name: "CRM (Customer Relationship Management)", free: true, pro: true, prem: true },
+      { name: "Import & export customers", free: true, pro: true, prem: true },
+      { name: "Product/inventory management", free: true, pro: true, prem: true },
+      { name: "QR code check-in", free: true, pro: true, prem: true },
+      { name: "Discount codes", free: true, pro: true, prem: true },
+      { name: "Review collection automation", free: true, pro: true, prem: true },
+    ]
+  },
+  {
+    category: "Memberships & Loyalty",
+    features: [
+      { name: "Membership management", free: false, pro: true, prem: true },
+      { name: "Member portal", free: false, pro: true, prem: true },
+      { name: "Tiered memberships", free: false, pro: true, prem: true },
+      { name: "Member-only pricing", free: false, pro: true, prem: true },
+      { name: "Recurring billing", free: false, pro: true, prem: true },
+    ]
+  },
+  {
+    category: "Branding & Customization",
+    features: [
+      { name: "PDF tickets", free: "Standard", pro: "Standard", prem: "Custom Branded" },
+      { name: "Custom logo on emails/tickets", free: false, pro: false, prem: true },
+      { name: "Custom colour scheme", free: false, pro: false, prem: true },
+      { name: "Remove Panlit branding", free: false, pro: false, prem: true },
+      { name: "Custom email domain", free: false, pro: false, prem: true },
+      { name: "Branded customer portal", free: false, pro: false, prem: true },
+    ]
+  },
+  {
+    category: "Team & Limits",
+    features: [
+      { name: "Team members", free: "Up to 5", pro: "Up to 10", prem: "Unlimited" },
+      { name: "Forms & lead capture", free: "Up to 5", pro: "Up to 10", prem: "Unlimited" },
+    ]
+  },
+  {
+    category: "Support & Notifications",
+    features: [
+      { name: "Email notifications", free: true, pro: true, prem: true },
+      { name: "WhatsApp & SMS notifications", free: false, pro: true, prem: true },
+      { name: "Support level", free: "Email", pro: "Priority", prem: "White Glove" },
+      { name: "Onboarding", free: "Self-service", pro: "Dedicated", prem: "Account Manager" },
+    ]
+  }
+];
+
 export default function Pricing() {
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
   const [avgBookingValue, setAvgBookingValue] = useState([100]);
@@ -468,6 +522,67 @@ export default function Pricing() {
         {/* Currency Table Section */}
         <section className="bg-slate-50 py-16 border-t border-slate-200">
           <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 mb-4">
+                Detailed Feature Breakdown
+              </h2>
+              <p className="text-slate-600">
+                Compare features across our base plans to find the right fit for your business.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm max-w-5xl mx-auto mb-24">
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm text-left">
+                  <thead className="bg-slate-50 text-slate-900 font-semibold border-b border-slate-200">
+                    <tr>
+                      <th className="px-6 py-4 w-1/3">Feature</th>
+                      <th className="px-6 py-4 text-center w-1/5">Free Plan</th>
+                      <th className="px-6 py-4 text-center w-1/5 text-panlit-orange">Professional</th>
+                      <th className="px-6 py-4 text-center w-1/5">Premium</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {featureComparison.map((section, idx) => (
+                      <>
+                        <tr key={section.category} className="bg-slate-50/50">
+                          <td colSpan={4} className="px-6 py-3 font-bold text-slate-900 text-xs uppercase tracking-wider">
+                            {section.category}
+                          </td>
+                        </tr>
+                        {section.features.map((feature, fIdx) => (
+                          <tr key={`${idx}-${fIdx}`} className="hover:bg-slate-50 transition-colors">
+                            <td className="px-6 py-4 font-medium text-slate-700">{feature.name}</td>
+                            
+                            {/* Free Column */}
+                            <td className="px-6 py-4 text-center">
+                              {feature.free === true ? <Check size={18} className="mx-auto text-green-500" /> : 
+                               feature.free === false ? <X size={18} className="mx-auto text-slate-300" /> : 
+                               <span className="text-slate-600 font-medium">{feature.free}</span>}
+                            </td>
+                            
+                            {/* Professional Column */}
+                            <td className="px-6 py-4 text-center bg-orange-50/10">
+                              {feature.pro === true ? <Check size={18} className="mx-auto text-panlit-orange" /> : 
+                               feature.pro === false ? <X size={18} className="mx-auto text-slate-300" /> : 
+                               <span className="text-panlit-orange font-bold">{feature.pro}</span>}
+                            </td>
+                            
+                            {/* Premium Column */}
+                            <td className="px-6 py-4 text-center">
+                              {feature.prem === true ? <Check size={18} className="mx-auto text-green-500" /> : 
+                               feature.prem === false ? <X size={18} className="mx-auto text-slate-300" /> : 
+                               <span className="text-slate-900 font-bold">{feature.prem}</span>}
+                            </td>
+                          </tr>
+                        ))}
+                      </>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
             <div className="text-center max-w-2xl mx-auto mb-12">
               <h2 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 mb-4">
                 Supported Currencies
