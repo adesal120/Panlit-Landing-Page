@@ -1,0 +1,567 @@
+# Panlit Pricing Page Update - AI Prompt
+
+## Overview
+Update the pricing page to reflect Panlit's new **modular pricing structure**: Base Plans + Add-On Services. Users can mix and match to build their perfect solution. Keep the **existing UI design** and visual style.
+
+---
+
+## Design Requirements (KEEP CURRENT DESIGN)
+
+### Layout Structure
+1. **Header Section**: "Build your perfect plan" with subtitle "Start with a Base Plan. Add powerful modules as you grow."
+2. **Interactive Calculator Section** containing:
+   - Currency selector dropdown (top left)
+   - Usage estimator with sliders (Average Booking Value, Monthly Bookings)
+   - Module selection cards (two columns)
+   - Estimated Cost panel (right sidebar, sticky on scroll)
+3. **Modular Pricing Cards Section** (detailed breakdown below calculator)
+4. **Supported Currencies Table** (bottom section)
+5. **Footer CTA**: "Start Building for Free"
+
+### Visual Style to Maintain
+- Primary colour: Orange (#F97316 or similar)
+- Dark sidebar/cost panel: Dark navy (#1E293B)
+- Card style: White background, subtle border, rounded corners
+- Icons: Use simple line icons for each module
+- "COMING SOON" badges for unreleased features (if any)
+- Checkmarks in orange/green for included features
+- Clean, modern SaaS aesthetic
+
+---
+
+## Pricing Data Structure
+
+### BASE PLANS (User must choose ONE)
+
+#### 1. Free Plan
+| Currency | Code | Monthly | Yearly |
+|----------|------|---------|--------|
+| Nigeria | NGN | ₦0 | ₦0 |
+| Ghana | GHS | GH₵ 0 | GH₵ 0 |
+| Senegal | XOF | F 0 | F 0 |
+| Ivory Coast | XOF | F 0 | F 0 |
+| Gambia | GMD | D 0 | D 0 |
+| Sierra Leone | SLL | Le 0 | Le 0 |
+| Liberia | LRD | L$ 0 | L$ 0 |
+| Kenya | KES | KSh 0 | KSh 0 |
+| Tanzania | TZS | TSh 0 | TSh 0 |
+| Uganda | UGX | UGX 0 | UGX 0 |
+| Rwanda | RWF | RWF 0 | RWF 0 |
+| Ethiopia | ETB | Br 0 | Br 0 |
+| South Africa | ZAR | R 0 | R 0 |
+| Botswana | BWP | P 0 | P 0 |
+| Namibia | NAD | N$ 0 | N$ 0 |
+| Mozambique | MZN | MT 0 | MT 0 |
+| Zambia | ZMW | K 0 | K 0 |
+| Malawi | MWK | K 0 | K 0 |
+| Eswatini | SZL | L 0 | L 0 |
+| Lesotho | LSL | L 0 | L 0 |
+| Egypt | EGP | E£ 0 | E£ 0 |
+| Morocco | MAD | DH 0 | DH 0 |
+| Tunisia | TND | DT 0 | DT 0 |
+| Algeria | DZD | DA 0 | DA 0 |
+| Cameroon | XAF | F 0 | F 0 |
+| Global | USD | $0 | $0 |
+| UK | GBP | £0 | £0 |
+| Europe | EUR | €0 | €0 |
+
+**Features included:**
+- Bookings management ✓
+- Calendar & availability ✓
+- Customer Relationship Management (CRM) ✓
+- Import & export customers ✓
+- Product/inventory management ✓
+- Team members: Up to 5
+- QR code check-in ✓
+- Discount codes ✓
+- Forms & lead capture: Up to 5
+- Review collection automation ✓
+- PDF tickets: Standard
+- Email notifications ✓
+- 24/7 support: Email
+- Onboarding: Self-service
+
+**NOT included:**
+- Membership management ✗
+- Member portal ✗
+- WhatsApp/SMS notifications ✗
+- White-label branding ✗
+
+---
+
+#### 2. Professional Plan
+| Currency | Code | Monthly | Yearly (Save 20%) |
+|----------|------|---------|-------------------|
+| Nigeria | NGN | ₦20,000 | ₦16,000/mo |
+| Ghana | GHS | GH₵ 300 | GH₵ 240/mo |
+| Senegal | XOF | F 12,000 | F 9,600/mo |
+| Ivory Coast | XOF | F 12,000 | F 9,600/mo |
+| Gambia | GMD | D 130 | D 104/mo |
+| Sierra Leone | SLL | Le 440,000 | Le 352,000/mo |
+| Liberia | LRD | L$ 3,800 | L$ 3,040/mo |
+| Kenya | KES | KSh 3,000 | KSh 2,400/mo |
+| Tanzania | TZS | TSh 50,000 | TSh 40,000/mo |
+| Uganda | UGX | UGX 80,000 | UGX 64,000/mo |
+| Rwanda | RWF | RWF 26,000 | RWF 20,800/mo |
+| Ethiopia | ETB | Br 1,200 | Br 960/mo |
+| South Africa | ZAR | R 400 | R 320/mo |
+| Botswana | BWP | P 280 | P 224/mo |
+| Namibia | NAD | N$ 400 | N$ 320/mo |
+| Mozambique | MZN | MT 1,280 | MT 1,024/mo |
+| Zambia | ZMW | K 460 | K 368/mo |
+| Malawi | MWK | K 36,000 | K 28,800/mo |
+| Eswatini | SZL | L 400 | L 320/mo |
+| Lesotho | LSL | L 400 | L 320/mo |
+| Egypt | EGP | E£ 1,000 | E£ 800/mo |
+| Morocco | MAD | DH 200 | DH 160/mo |
+| Tunisia | TND | DT 64 | DT 51/mo |
+| Algeria | DZD | DA 2,700 | DA 2,160/mo |
+| Cameroon | XAF | F 12,000 | F 9,600/mo |
+| Global | USD | $45 | $36/mo |
+| UK | GBP | £35 | £28/mo |
+| Europe | EUR | €40 | €32/mo |
+
+**Everything in Free, PLUS:**
+- Membership management ✓
+- Member portal ✓
+- Tiered memberships ✓
+- Member-only pricing ✓
+- Recurring billing for members ✓
+- WhatsApp notifications ✓
+- SMS notifications ✓
+- Team members: Up to 10
+- Forms & lead capture: Up to 10
+- 24/7 support: Priority
+- Onboarding: Dedicated
+
+**Tagline:** "Membership + communications"
+
+---
+
+#### 3. Premium Plan
+| Currency | Code | Monthly | Yearly (Save 20%) |
+|----------|------|---------|-------------------|
+| Nigeria | NGN | ₦40,000 | ₦32,000/mo |
+| Ghana | GHS | GH₵ 600 | GH₵ 480/mo |
+| Senegal | XOF | F 24,000 | F 19,200/mo |
+| Ivory Coast | XOF | F 24,000 | F 19,200/mo |
+| Gambia | GMD | D 260 | D 208/mo |
+| Sierra Leone | SLL | Le 880,000 | Le 704,000/mo |
+| Liberia | LRD | L$ 7,600 | L$ 6,080/mo |
+| Kenya | KES | KSh 6,000 | KSh 4,800/mo |
+| Tanzania | TZS | TSh 100,000 | TSh 80,000/mo |
+| Uganda | UGX | UGX 160,000 | UGX 128,000/mo |
+| Rwanda | RWF | RWF 52,000 | RWF 41,600/mo |
+| Ethiopia | ETB | Br 2,400 | Br 1,920/mo |
+| South Africa | ZAR | R 800 | R 640/mo |
+| Botswana | BWP | P 560 | P 448/mo |
+| Namibia | NAD | N$ 800 | N$ 640/mo |
+| Mozambique | MZN | MT 2,560 | MT 2,048/mo |
+| Zambia | ZMW | K 920 | K 736/mo |
+| Malawi | MWK | K 72,000 | K 57,600/mo |
+| Eswatini | SZL | L 800 | L 640/mo |
+| Lesotho | LSL | L 800 | L 640/mo |
+| Egypt | EGP | E£ 2,000 | E£ 1,600/mo |
+| Morocco | MAD | DH 400 | DH 320/mo |
+| Tunisia | TND | DT 128 | DT 102/mo |
+| Algeria | DZD | DA 5,400 | DA 4,320/mo |
+| Cameroon | XAF | F 24,000 | F 19,200/mo |
+| Global | USD | $90 | $72/mo |
+| UK | GBP | £70 | £56/mo |
+| Europe | EUR | €80 | €64/mo |
+
+**Everything in Professional, PLUS:**
+- Custom logo on PDF tickets ✓
+- Custom logo on emails ✓
+- Custom colour scheme ✓
+- Remove Panlit branding ✓
+- Custom email domain ✓
+- Branded customer portal ✓
+- PDF tickets: Custom branded
+- Team members: Unlimited
+- Forms & lead capture: Unlimited
+- 24/7 support: White glove
+- Account manager ✓
+- Custom training ✓
+
+**Tagline:** "Full white-label branding"
+
+---
+
+### ADD-ON SERVICES (Mix & Match - Can select multiple)
+
+#### 1. AI Website Starter
+| Currency | Code | Monthly | Yearly (Save 20%) |
+|----------|------|---------|-------------------|
+| Nigeria | NGN | ₦10,000 | ₦8,000/mo |
+| Ghana | GHS | GH₵ 150 | GH₵ 120/mo |
+| Senegal | XOF | F 6,000 | F 4,800/mo |
+| Ivory Coast | XOF | F 6,000 | F 4,800/mo |
+| Gambia | GMD | D 65 | D 52/mo |
+| Sierra Leone | SLL | Le 220,000 | Le 176,000/mo |
+| Liberia | LRD | L$ 1,900 | L$ 1,520/mo |
+| Kenya | KES | KSh 1,500 | KSh 1,200/mo |
+| Tanzania | TZS | TSh 25,000 | TSh 20,000/mo |
+| Uganda | UGX | UGX 40,000 | UGX 32,000/mo |
+| Rwanda | RWF | RWF 13,000 | RWF 10,400/mo |
+| Ethiopia | ETB | Br 600 | Br 480/mo |
+| South Africa | ZAR | R 200 | R 160/mo |
+| Botswana | BWP | P 140 | P 112/mo |
+| Namibia | NAD | N$ 200 | N$ 160/mo |
+| Mozambique | MZN | MT 640 | MT 512/mo |
+| Zambia | ZMW | K 230 | K 184/mo |
+| Malawi | MWK | K 18,000 | K 14,400/mo |
+| Eswatini | SZL | L 200 | L 160/mo |
+| Lesotho | LSL | L 200 | L 160/mo |
+| Egypt | EGP | E£ 500 | E£ 400/mo |
+| Morocco | MAD | DH 100 | DH 80/mo |
+| Tunisia | TND | DT 32 | DT 26/mo |
+| Algeria | DZD | DA 1,350 | DA 1,080/mo |
+| Cameroon | XAF | F 6,000 | F 4,800/mo |
+| Global | USD | $10 | $8/mo |
+| UK | GBP | £8 | £6.40/mo |
+| Europe | EUR | €10 | €8/mo |
+
+**Features:**
+- Website pages: 5 pages
+- AI messages/month: 100
+- Custom domain ✓
+- Blog functionality ✓
+- Multilingual ✓
+- SEO optimisation ✓
+- Mobile responsive ✓
+
+---
+
+#### 2. AI Website Pro
+| Currency | Code | Monthly | Yearly (Save 20%) |
+|----------|------|---------|-------------------|
+| Nigeria | NGN | ₦12,000 | ₦9,600/mo |
+| Ghana | GHS | GH₵ 180 | GH₵ 144/mo |
+| Senegal | XOF | F 7,200 | F 5,760/mo |
+| Ivory Coast | XOF | F 7,200 | F 5,760/mo |
+| Gambia | GMD | D 78 | D 62/mo |
+| Sierra Leone | SLL | Le 264,000 | Le 211,200/mo |
+| Liberia | LRD | L$ 2,300 | L$ 1,840/mo |
+| Kenya | KES | KSh 1,800 | KSh 1,440/mo |
+| Tanzania | TZS | TSh 30,000 | TSh 24,000/mo |
+| Uganda | UGX | UGX 48,000 | UGX 38,400/mo |
+| Rwanda | RWF | RWF 15,600 | RWF 12,480/mo |
+| Ethiopia | ETB | Br 720 | Br 576/mo |
+| South Africa | ZAR | R 240 | R 192/mo |
+| Botswana | BWP | P 168 | P 134/mo |
+| Namibia | NAD | N$ 240 | N$ 192/mo |
+| Mozambique | MZN | MT 768 | MT 614/mo |
+| Zambia | ZMW | K 276 | K 221/mo |
+| Malawi | MWK | K 21,600 | K 17,280/mo |
+| Eswatini | SZL | L 240 | L 192/mo |
+| Lesotho | LSL | L 240 | L 192/mo |
+| Egypt | EGP | E£ 600 | E£ 480/mo |
+| Morocco | MAD | DH 120 | DH 96/mo |
+| Tunisia | TND | DT 38 | DT 30/mo |
+| Algeria | DZD | DA 1,620 | DA 1,296/mo |
+| Cameroon | XAF | F 7,200 | F 5,760/mo |
+| Global | USD | $35 | $28/mo |
+| UK | GBP | £25 | £20/mo |
+| Europe | EUR | €30 | €24/mo |
+
+**Features:**
+- Website pages: Unlimited
+- AI messages/month: 100
+- Custom domain ✓
+- Blog functionality ✓
+- Multilingual ✓
+- SEO optimisation ✓
+- Mobile responsive ✓
+
+---
+
+#### 3. AI Concierge Starter (Digital Channels)
+| Currency | Code | Monthly | Yearly (Save 20%) |
+|----------|------|---------|-------------------|
+| Nigeria | NGN | ₦10,000 | ₦8,000/mo |
+| Ghana | GHS | GH₵ 150 | GH₵ 120/mo |
+| Senegal | XOF | F 6,000 | F 4,800/mo |
+| Ivory Coast | XOF | F 6,000 | F 4,800/mo |
+| Gambia | GMD | D 65 | D 52/mo |
+| Sierra Leone | SLL | Le 220,000 | Le 176,000/mo |
+| Liberia | LRD | L$ 1,900 | L$ 1,520/mo |
+| Kenya | KES | KSh 1,500 | KSh 1,200/mo |
+| Tanzania | TZS | TSh 25,000 | TSh 20,000/mo |
+| Uganda | UGX | UGX 40,000 | UGX 32,000/mo |
+| Rwanda | RWF | RWF 13,000 | RWF 10,400/mo |
+| Ethiopia | ETB | Br 600 | Br 480/mo |
+| South Africa | ZAR | R 200 | R 160/mo |
+| Botswana | BWP | P 140 | P 112/mo |
+| Namibia | NAD | N$ 200 | N$ 160/mo |
+| Mozambique | MZN | MT 640 | MT 512/mo |
+| Zambia | ZMW | K 230 | K 184/mo |
+| Malawi | MWK | K 18,000 | K 14,400/mo |
+| Eswatini | SZL | L 200 | L 160/mo |
+| Lesotho | LSL | L 200 | L 160/mo |
+| Egypt | EGP | E£ 500 | E£ 400/mo |
+| Morocco | MAD | DH 100 | DH 80/mo |
+| Tunisia | TND | DT 32 | DT 26/mo |
+| Algeria | DZD | DA 1,350 | DA 1,080/mo |
+| Cameroon | XAF | F 6,000 | F 4,800/mo |
+| Global | USD | $20 | $16/mo |
+| UK | GBP | £15 | £12/mo |
+| Europe | EUR | €18 | €14.40/mo |
+
+**Features:**
+- Website chat booking ✓
+- WhatsApp booking ✓
+- Facebook/Instagram DMs ✓
+- Automated responses ✓
+- Smart suggestions ✓
+- Phone booking support ✗
+- Voice AI assistant ✗
+- Call recording ✗
+
+---
+
+#### 4. AI Concierge Pro (Digital + Phone)
+| Currency | Code | Monthly | Yearly (Save 20%) |
+|----------|------|---------|-------------------|
+| Nigeria | NGN | ₦18,000 | ₦14,400/mo |
+| Ghana | GHS | GH₵ 270 | GH₵ 216/mo |
+| Senegal | XOF | F 10,800 | F 8,640/mo |
+| Ivory Coast | XOF | F 10,800 | F 8,640/mo |
+| Gambia | GMD | D 117 | D 94/mo |
+| Sierra Leone | SLL | Le 396,000 | Le 316,800/mo |
+| Liberia | LRD | L$ 3,420 | L$ 2,736/mo |
+| Kenya | KES | KSh 2,700 | KSh 2,160/mo |
+| Tanzania | TZS | TSh 45,000 | TSh 36,000/mo |
+| Uganda | UGX | UGX 72,000 | UGX 57,600/mo |
+| Rwanda | RWF | RWF 23,400 | RWF 18,720/mo |
+| Ethiopia | ETB | Br 1,080 | Br 864/mo |
+| South Africa | ZAR | R 360 | R 288/mo |
+| Botswana | BWP | P 252 | P 202/mo |
+| Namibia | NAD | N$ 360 | N$ 288/mo |
+| Mozambique | MZN | MT 1,152 | MT 922/mo |
+| Zambia | ZMW | K 414 | K 331/mo |
+| Malawi | MWK | K 32,400 | K 25,920/mo |
+| Eswatini | SZL | L 360 | L 288/mo |
+| Lesotho | LSL | L 360 | L 288/mo |
+| Egypt | EGP | E£ 900 | E£ 720/mo |
+| Morocco | MAD | DH 180 | DH 144/mo |
+| Tunisia | TND | DT 58 | DT 46/mo |
+| Algeria | DZD | DA 2,430 | DA 1,944/mo |
+| Cameroon | XAF | F 10,800 | F 8,640/mo |
+| Global | USD | $35 | $28/mo |
+| UK | GBP | £25 | £20/mo |
+| Europe | EUR | €30 | €24/mo |
+
+**Features:**
+- Website chat booking ✓
+- WhatsApp booking ✓
+- Facebook/Instagram DMs ✓
+- Automated responses ✓
+- Smart suggestions ✓
+- Phone booking support ✓
+- Voice AI assistant ✓
+- Call recording ✓
+
+---
+
+#### 5. Channel Manager (Multi-Platform Distribution)
+| Currency | Code | Monthly | Yearly (Save 20%) |
+|----------|------|---------|-------------------|
+| Nigeria | NGN | ₦15,000 | ₦12,000/mo |
+| Ghana | GHS | GH₵ 220 | GH₵ 176/mo |
+| Senegal | XOF | F 9,000 | F 7,200/mo |
+| Ivory Coast | XOF | F 9,000 | F 7,200/mo |
+| Gambia | GMD | D 98 | D 78/mo |
+| Sierra Leone | SLL | Le 330,000 | Le 264,000/mo |
+| Liberia | LRD | L$ 2,850 | L$ 2,280/mo |
+| Kenya | KES | KSh 2,200 | KSh 1,760/mo |
+| Tanzania | TZS | TSh 37,000 | TSh 29,600/mo |
+| Uganda | UGX | UGX 60,000 | UGX 48,000/mo |
+| Rwanda | RWF | RWF 19,500 | RWF 15,600/mo |
+| Ethiopia | ETB | Br 900 | Br 720/mo |
+| South Africa | ZAR | R 300 | R 240/mo |
+| Botswana | BWP | P 210 | P 168/mo |
+| Namibia | NAD | N$ 300 | N$ 240/mo |
+| Mozambique | MZN | MT 960 | MT 768/mo |
+| Zambia | ZMW | K 345 | K 276/mo |
+| Malawi | MWK | K 27,000 | K 21,600/mo |
+| Eswatini | SZL | L 300 | L 240/mo |
+| Lesotho | LSL | L 300 | L 240/mo |
+| Egypt | EGP | E£ 750 | E£ 600/mo |
+| Morocco | MAD | DH 150 | DH 120/mo |
+| Tunisia | TND | DT 48 | DT 38/mo |
+| Algeria | DZD | DA 2,025 | DA 1,620/mo |
+| Cameroon | XAF | F 9,000 | F 7,200/mo |
+| Global | USD | $49 | $39.20/mo |
+| UK | GBP | £35 | £28/mo |
+| Europe | EUR | €40 | €32/mo |
+
+**Features:**
+- Multi-platform distribution ✓
+- Inventory sync ✓
+- Rate management ✓
+- Channel analytics ✓
+- Automated listings ✓
+- Real-time availability ✓
+
+---
+
+### TRANSACTION FEE STRUCTURE
+All plans include a **0.5% transaction fee** on bookings (covers WhatsApp/SMS costs). The fee is capped per booking based on currency:
+
+| Currency | Code | Maximum Fee Per Booking |
+|----------|------|-------------------------|
+| US Dollar | USD | $1.25 |
+| British Pound | GBP | £1.00 |
+| Euro | EUR | €1.20 |
+| Nigerian Naira | NGN | ₦2,000 |
+| Kenyan Shilling | KES | KSh 167 |
+| South African Rand | ZAR | R 22 |
+| Ghanaian Cedi | GHS | ₵17 |
+| Ugandan Shilling | UGX | USh 4,400 |
+| Tanzanian Shilling | TZS | TSh 3,100 |
+| Egyptian Pound | EGP | £E 61 |
+| Moroccan Dirham | MAD | DH 12.5 |
+| Ethiopian Birr | ETB | Br 22 |
+| Rwandan Franc | RWF | FRw 1,540 |
+| Zambian Kwacha | ZMW | ZK 16 |
+| Botswana Pula | BWP | P 17 |
+| Malawian Kwacha | MWK | MK 2,100 |
+| Mozambican Metical | MZN | MT 80 |
+| Namibian Dollar | NAD | N$ 22 |
+| Swazi Lilangeni | SZL | L 22 |
+
+---
+
+## Interactive Calculator Logic
+
+### How the calculator should work:
+
+1. **Currency Selection**: When user selects a currency, all prices update to that currency's values.
+
+2. **Base Plan Selection**: User must select exactly ONE base plan (Free, Professional, or Premium). Default to Free.
+
+3. **Add-On Selection**: User can toggle ON/OFF any number of add-ons. Each add-on is optional.
+
+4. **Billing Toggle**: Add a Monthly/Yearly toggle. Yearly saves 20%.
+
+5. **Usage Estimator**:
+   - Average Booking Value: Slider from minimum to maximum (currency-appropriate ranges)
+   - Monthly Bookings: Slider from 1 to 100,000+
+
+6. **Estimated Cost Calculation**:
+   ```
+   Transaction Fees = Monthly Bookings × Average Booking Value × 0.5%
+   (But capped at: Monthly Bookings × Max Fee Per Booking for selected currency)
+   
+   Module Subscriptions = Base Plan Price + Sum of Selected Add-On Prices
+   
+   Total Estimated Monthly Cost = Transaction Fees + Module Subscriptions
+   ```
+
+---
+
+## Example Configurations (Show as suggested bundles)
+
+| Package Name | Configuration | NGN Price | Use Case |
+|--------------|---------------|-----------|----------|
+| Starter | Free + AI Website Starter | ₦10,000/mo | New businesses testing the market |
+| Small Business | Free + AI Website Pro + AI Concierge Starter | ₦22,000/mo | Basic operations with online presence |
+| Growing Business | Professional + AI Website Pro + AI Concierge Starter | ₦42,000/mo | Tour operators, cultural centres with memberships |
+| Premium Business | Professional + AI Website Pro + AI Concierge Pro + Channel Manager | ₦65,000/mo | Multi-channel operations with phone support |
+| Enterprise | Premium + AI Website Pro + AI Concierge Pro + Channel Manager | ₦85,000/mo | Established brands, government institutions |
+
+---
+
+## UI Component Specifications
+
+### Base Plan Cards
+- Display as horizontal row of 3 cards (Free | Professional | Premium)
+- Visual indicator for selected plan (border highlight, checkmark)
+- Show key differentiators prominently
+- "Most Popular" badge on Professional plan
+- Price prominently displayed with /mo or /yr based on toggle
+
+### Add-On Cards
+- Display as grid (2-3 columns)
+- Each card has:
+  - Icon representing the service
+  - Service name
+  - Brief description (one line)
+  - Price
+  - Toggle/checkbox to add
+  - "View details" expandable section with full feature list
+- Visual feedback when selected (highlighted border, checkmark)
+
+### Estimated Cost Panel (Sticky Sidebar)
+- Shows breakdown:
+  - Base Plan: [Selected plan name] - [Price]
+  - Add-Ons: [List each selected] - [Price each]
+  - Transaction Fees: 0.5% capped at [cap] - [Calculated amount]
+  - **Total: [Sum]**
+- "Start Building for Free" CTA button
+- "No credit card required. Cancel anytime." text below
+
+### Currency Selector
+Support these currencies in the dropdown (organised by region):
+
+**West Africa:**
+- Nigerian Naira (NGN) - Default
+- Ghanaian Cedi (GHS)
+- CFA Franc BCEAO - Senegal (XOF)
+- CFA Franc BCEAO - Ivory Coast (XOF)
+- Gambian Dalasi (GMD)
+- Sierra Leonean Leone (SLL)
+- Liberian Dollar (LRD)
+
+**East Africa:**
+- Kenyan Shilling (KES)
+- Tanzanian Shilling (TZS)
+- Ugandan Shilling (UGX)
+- Rwandan Franc (RWF)
+- Ethiopian Birr (ETB)
+
+**Southern Africa:**
+- South African Rand (ZAR)
+- Botswana Pula (BWP)
+- Namibian Dollar (NAD)
+- Mozambican Metical (MZN)
+- Zambian Kwacha (ZMW)
+- Malawian Kwacha (MWK)
+- Swazi Lilangeni (SZL)
+- Lesotho Loti (LSL)
+
+**North Africa:**
+- Egyptian Pound (EGP)
+- Moroccan Dirham (MAD)
+- Tunisian Dinar (TND)
+- Algerian Dinar (DZD)
+
+**Central Africa:**
+- CFA Franc BEAC - Cameroon (XAF)
+
+**International:**
+- US Dollar (USD)
+- British Pound (GBP)
+- Euro (EUR)
+
+---
+
+## Important Notes
+
+1. **All plans include 0.5% transaction fee** on bookings (covers WhatsApp/SMS costs)
+2. **Yearly pricing saves 20%** on all paid plans and add-ons
+3. **No booking limits** on any plan
+4. **Mix and match**: Users choose 1 base plan + any combination of add-on services
+5. Display the transaction fee cap prominently so users understand costs are predictable
+6. The calculator should update in real-time as users adjust sliders and select modules
+
+---
+
+## Footer Section
+Include:
+- "Built for tourism, hospitality, and experience businesses."
+- "Supercharge your business today."
+- Links: Features, Pricing, Integrations, FAQ, Blog, Support, About, Contact, Privacy Policy, Terms of Service
+- Social icons
+- © 2026 Panlit. All rights reserved.
