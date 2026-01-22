@@ -457,21 +457,25 @@ export default function Pricing() {
                   {addOns.map(addon => {
                     const price = getPrice(addon.pricing);
                     const isSelected = selectedAddons.includes(addon.id);
+                    const isDisabled = addon.id !== "website_starter";
+                    
                     return (
                       <div 
                         key={addon.id}
-                        onClick={() => toggleAddon(addon.id)}
+                        onClick={() => !isDisabled && toggleAddon(addon.id)}
                         className={cn(
-                          "p-4 rounded-xl border-2 transition-all cursor-pointer flex items-center justify-between group",
+                          "p-4 rounded-xl border-2 transition-all flex items-center justify-between group relative",
                           isSelected 
                             ? "border-panlit-orange bg-orange-50/30" 
-                            : "border-slate-100 hover:border-slate-300 hover:bg-slate-50"
+                            : isDisabled 
+                              ? "border-slate-100 bg-slate-50 opacity-60 cursor-not-allowed" 
+                              : "border-slate-100 hover:border-slate-300 hover:bg-slate-50 cursor-pointer"
                         )}
                       >
                         <div className="flex items-center gap-4">
                           <div className={cn(
                             "p-2 rounded-lg", 
-                            isSelected ? "bg-white text-panlit-orange" : "bg-slate-100 text-slate-500 group-hover:bg-white"
+                            isSelected ? "bg-white text-panlit-orange" : "bg-slate-100 text-slate-500"
                           )}>
                             <addon.icon size={20} />
                           </div>
@@ -484,12 +488,14 @@ export default function Pricing() {
                           <div className="font-bold text-slate-900 text-sm">
                             {price === 0 ? "Free" : `${currencyData.symbol}${price.toLocaleString()}`}
                           </div>
-                          <div className={cn(
-                            "w-5 h-5 rounded border ml-auto mt-1 flex items-center justify-center transition-colors",
-                            isSelected ? "bg-panlit-orange border-panlit-orange" : "border-slate-300 bg-white"
-                          )}>
-                            {isSelected && <Check size={12} className="text-white" />}
-                          </div>
+                          {!isDisabled && (
+                            <div className={cn(
+                              "w-5 h-5 rounded border ml-auto mt-1 flex items-center justify-center transition-colors",
+                              isSelected ? "bg-panlit-orange border-panlit-orange" : "border-slate-300 bg-white"
+                            )}>
+                              {isSelected && <Check size={12} className="text-white" />}
+                            </div>
+                          )}
                         </div>
                       </div>
                     )
