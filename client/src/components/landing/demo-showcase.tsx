@@ -6,7 +6,7 @@ import { Building2, Globe, Sparkles, Ticket, Trees } from "lucide-react";
 const demos = [
   {
     id: "museums",
-    title: "Museums & Attractions",
+    title: "Attractions",
     fullTitle: "Museums, Galleries, Theatres & More",
     icon: Building2,
     videoId: "266206827f7840f5938013921a899d1a",
@@ -15,7 +15,7 @@ const demos = [
   {
     id: "tours",
     title: "Tours & Experiences",
-    fullTitle: "Tour Operators, Agencies & Culinary",
+    fullTitle: "Tour Operators, Agencies, Culinary & More",
     icon: Globe,
     videoId: "143c2bf56d6e4955ae92083e03cefb81",
     description: "Streamline bookings, manifests, and resource allocation."
@@ -23,7 +23,7 @@ const demos = [
   {
     id: "spas",
     title: "Wellness & Beauty",
-    fullTitle: "Spas, Wellness Centres & Yoga Studios",
+    fullTitle: "Spas, Salons, Yoga Studios & More",
     icon: Sparkles,
     videoId: "db7e9b8285954b709b2b037035e84ba7",
     description: "Effortless appointment scheduling and therapist management."
@@ -31,7 +31,7 @@ const demos = [
   {
     id: "adventure",
     title: "Activities & Adventure",
-    fullTitle: "Adventure Parks & Escape Rooms",
+    fullTitle: "Adventure Parks, Escape Rooms & More",
     icon: Ticket,
     videoId: "28548494b1164ce9ad8a3648fab84a39",
     description: "Handle waiver signing, capacity limits, and group bookings."
@@ -39,7 +39,7 @@ const demos = [
   {
     id: "zoos",
     title: "Wildlife & Nature",
-    fullTitle: "Zoos, Wildlife Parks & Aquariums",
+    fullTitle: "Zoos, Wildlife Parks, Aquariums & More",
     icon: Trees,
     videoId: "fe6113c02dd24c79bba358186ea8f489",
     description: "Ticketing, membership management, and entry control."
