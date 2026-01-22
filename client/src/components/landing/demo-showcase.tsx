@@ -6,7 +6,7 @@ import { Building2, Globe, Sparkles, Ticket, Trees } from "lucide-react";
 const demos = [
   {
     id: "museums",
-    title: "Museums & Galleries",
+    title: "Museums & Attractions",
     fullTitle: "Museums, Galleries, Theatres & More",
     icon: Building2,
     videoId: "266206827f7840f5938013921a899d1a",
@@ -14,7 +14,7 @@ const demos = [
   },
   {
     id: "tours",
-    title: "Tour Operators",
+    title: "Tours & Experiences",
     fullTitle: "Tour Operators, Agencies & Culinary",
     icon: Globe,
     videoId: "143c2bf56d6e4955ae92083e03cefb81",
@@ -22,7 +22,7 @@ const demos = [
   },
   {
     id: "spas",
-    title: "Spas & Wellness",
+    title: "Wellness & Beauty",
     fullTitle: "Spas, Wellness Centres & Yoga Studios",
     icon: Sparkles,
     videoId: "db7e9b8285954b709b2b037035e84ba7",
@@ -30,7 +30,7 @@ const demos = [
   },
   {
     id: "adventure",
-    title: "Adventure Parks",
+    title: "Activities & Adventure",
     fullTitle: "Adventure Parks & Escape Rooms",
     icon: Ticket,
     videoId: "28548494b1164ce9ad8a3648fab84a39",
@@ -38,7 +38,7 @@ const demos = [
   },
   {
     id: "zoos",
-    title: "Zoos & Wildlife",
+    title: "Wildlife & Nature",
     fullTitle: "Zoos, Wildlife Parks & Aquariums",
     icon: Trees,
     videoId: "fe6113c02dd24c79bba358186ea8f489",
