@@ -1,60 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Check, X } from "lucide-react";
+import { Check, X, Calculator, Globe, Zap, Layers, MessageSquare, Send, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { Switch } from "@/components/ui/switch";
+import { Slider } from "@/components/ui/slider";
+import { cn } from "@/lib/utils";
 
-interface PricingPlan {
-  name: string;
-  description: string;
-  price: string;
-  period: string;
-  highlighted?: boolean;
-  features: {
-    name: string;
-    included: boolean;
-  }[];
-  cta: string;
-}
-
-const pricingPlans: PricingPlan[] = [
-  {
-    name: "Starter",
-    description: "Perfect for solo operators and small teams",
-    price: "Free",
-    period: "forever",
-    features: [
-      { name: "Up to 5 bookings per month", included: true },
-      { name: "Basic booking management", included: true },
-      { name: "Email notifications", included: true },
-      { name: "Single user", included: true },
-      { name: "Calendar view", included: false },
-      { name: "Customer CRM", included: false },
-      { name: "Analytics & reports", included: false },
-      { name: "Team management", included: false },
-    ],
-    cta: "Get Started"
-  },
-  {
-    name: "Enterprise",
-    description: "Scale with unlimited everything",
-    price: "$99",
-    period: "per month, billed annually",
-    features: [
-      { name: "Unlimited bookings & services", included: true },
-      { name: "Premium booking management", included: true },
-      { name: "All notification channels", included: true },
-      { name: "Unlimited team members", included: true },
-      { name: "Advanced calendar & scheduling", included: true },
-      { name: "Full-featured CRM", included: true },
-      { name: "Advanced analytics & custom reports", included: true },
-      { name: "Custom roles & fine-grained permissions", included: true },
-    ],
-    cta: "Talk to Sales"
-  }
-];
-
+// Currency Data
 const currencies = [
   { name: "US Dollar", code: "USD", fee: "$1.25", maxFee: 1.25, symbol: "$" },
   { name: "British Pound", code: "GBP", fee: "£1.00", maxFee: 1.00, symbol: "£" },
@@ -77,279 +31,426 @@ const currencies = [
   { name: "Swazi Lilangeni", code: "SZL", fee: "L22", maxFee: 22, symbol: "L" },
 ];
 
-export default function Pricing() {
-  const [bookingAmount, setBookingAmount] = useState<string>("100");
-  const [selectedCurrency, setSelectedCurrency] = useState<string>("USD");
+// Modules Data
+const modules = [
+  {
+    id: "core",
+    name: "Panlit Core",
+    description: "The complete operating system",
+    price: 0,
+    required: true,
+    features: [
+      "Unlimited bookings",
+      "Resource management",
+      "CRM & Analytics",
+      "Team management"
+    ],
+    icon: Globe,
+    status: "active"
+  },
+  {
+    id: "website",
+    name: "AI Website Builder",
+    description: "Professional site in minutes",
+    price: 15, // Placeholder price
+    required: false,
+    features: [
+      "Custom domain",
+      "SEO optimization",
+      "AI content generation",
+      "Hosting included"
+    ],
+    icon: Zap,
+    status: "active"
+  },
+  {
+    id: "channel",
+    name: "Channel Manager",
+    description: "Sync with OTAs instantly",
+    price: 29,
+    required: false,
+    features: [
+      "Airbnb, Booking.com sync",
+      "Real-time availability",
+      "Rate parity management"
+    ],
+    icon: Layers,
+    status: "coming_soon"
+  },
+  {
+    id: "inbox",
+    name: "Unified AI Inbox",
+    description: "All messages in one place",
+    price: 19,
+    required: false,
+    features: [
+      "WhatsApp & Instagram",
+      "AI auto-responses",
+      "Team collaboration"
+    ],
+    icon: MessageSquare,
+    status: "coming_soon"
+  },
+  {
+    id: "guest",
+    name: "Guest Comms",
+    description: "Automated notifications",
+    price: 12,
+    required: false,
+    features: [
+      "SMS & WhatsApp reminders",
+      "Review requests",
+      "Pre-arrival guides"
+    ],
+    icon: Send,
+    status: "coming_soon"
+  },
+  {
+    id: "store",
+    name: "Direct Booking Store",
+    description: "Embeddable booking engine",
+    price: 0,
+    required: false,
+    features: [
+      "Embed on any site",
+      "Social media links",
+      "Commission-free"
+    ],
+    icon: ShoppingBag,
+    status: "coming_soon"
+  }
+];
 
-  const selectedCurrencyData = currencies.find(c => c.code === selectedCurrency);
-  const amount = parseFloat(bookingAmount) || 0;
-  const calculatedFee = Math.min((amount * 0.005), selectedCurrencyData?.maxFee || 0);
+export default function Pricing() {
+  const [selectedCurrency, setSelectedCurrency] = useState("USD");
+  const [avgBookingValue, setAvgBookingValue] = useState([100]);
+  const [monthlyBookings, setMonthlyBookings] = useState([50]);
+  const [selectedModules, setSelectedModules] = useState<string[]>(["core"]);
+  const [billingInterval, setBillingInterval] = useState<"monthly" | "yearly">("monthly");
+
+  const currencyData = currencies.find(c => c.code === selectedCurrency) || currencies[0];
+
+  const toggleModule = (id: string) => {
+    if (id === "core") return;
+    setSelectedModules(prev => 
+      prev.includes(id) ? prev.filter(m => m !== id) : [...prev, id]
+    );
+  };
+
+  // Calculations
+  const transactionFeeRate = 0.005; // 0.5%
+  const transactionFeeCap = currencyData.maxFee;
+  
+  const feePerBooking = Math.min(avgBookingValue[0] * transactionFeeRate, transactionFeeCap);
+  const totalTransactionFees = feePerBooking * monthlyBookings[0];
+  
+  const activeModules = modules.filter(m => selectedModules.includes(m.id));
+  const modulesCost = activeModules.reduce((sum, m) => sum + m.price, 0);
+  
+  // Convert module cost to selected currency (approximate conversion for demo if needed, or just show USD for modules)
+  // For now, assuming module prices are fixed in USD. 
+  // Ideally, we'd have module prices per currency. 
+  // I'll display module costs in USD for now as typical for SaaS.
+  
+  const totalMonthlyCost = totalTransactionFees + (modulesCost * (currencyData.code === "USD" ? 1 : 1)); // Simplified mixing currencies
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-slate-50 font-sans">
       <Navbar />
       
-      <main className="pt-32">
-        {/* Hero Section */}
-        <section className="bg-slate-50 py-16 md:py-24">
-          <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-4xl md:text-5xl font-bold font-heading text-slate-900 mb-6">
-                Fair pricing for any business
-              </h1>
-              <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                Simple as that: 0.5% per booking, capped rates, zero hidden fees. We only make money when you do, so we're invested in helping your business grow—at every stage. Whether you're just starting out or managing hundreds of bookings monthly, you'll only ever pay for what you use. No lock-in contracts, no minimum fees, no penalties for quiet months. Just straightforward pricing that grows with your success, not against it.
-              </p>
-            </motion.div>
-          </div>
-        </section>
+      <main className="pt-32 pb-24">
+        {/* Header */}
+        <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold font-heading text-slate-900 mb-6">
+            Build your perfect plan
+          </h1>
+          <p className="text-xl text-slate-600">
+            Start with the Core platform for free. Add powerful modules as you grow.
+          </p>
+        </div>
 
-        {/* Simple Pricing */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-3xl mx-auto text-center"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-8">
-                That's it. One simple model.
-              </h2>
+        {/* Calculator Section */}
+        <div className="container mx-auto px-4 md:px-6 mb-24">
+          <div className="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-3">
               
-              <div className="bg-gradient-to-br from-panlit-orange/10 to-orange-50 border-2 border-panlit-orange rounded-2xl p-12 md:p-16">
-                <div className="space-y-6">
-                  <div>
-                    <p className="text-slate-600 text-lg mb-2">Start using Panlit</p>
-                    <p className="text-5xl md:text-6xl font-bold font-heading text-slate-900">Free</p>
-                  </div>
+              {/* Left: Inputs */}
+              <div className="p-8 md:p-10 lg:col-span-2 space-y-10">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <Globe size={20} className="text-panlit-orange" />
+                    Select your currency
+                  </h3>
+                  <select 
+                    value={selectedCurrency}
+                    onChange={(e) => setSelectedCurrency(e.target.value)}
+                    className="w-full md:w-1/2 p-3 border border-slate-200 rounded-xl focus:outline-none focus:border-panlit-orange bg-slate-50 font-medium"
+                  >
+                    {currencies.map(c => (
+                      <option key={c.code} value={c.code}>{c.name} ({c.code})</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <Calculator size={20} className="text-panlit-orange" />
+                    Estimate your usage
+                  </h3>
                   
-                  <div className="border-t-2 border-b-2 border-panlit-orange/20 py-8">
-                    <p className="text-slate-600 text-lg mb-3">Per every booking completed</p>
-                    <p className="text-4xl md:text-5xl font-bold font-heading text-panlit-orange">0.5%</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <div className="flex justify-between">
+                        <label className="text-sm font-medium text-slate-600">Average Booking Value</label>
+                        <span className="font-bold text-slate-900">{currencyData.symbol}{avgBookingValue[0]}</span>
+                      </div>
+                      <Slider 
+                        value={avgBookingValue} 
+                        onValueChange={setAvgBookingValue} 
+                        max={1000} 
+                        step={10} 
+                        className="py-4"
+                      />
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="flex justify-between">
+                        <label className="text-sm font-medium text-slate-600">Monthly Bookings</label>
+                        <span className="font-bold text-slate-900">{monthlyBookings[0]}</span>
+                      </div>
+                      <Slider 
+                        value={monthlyBookings} 
+                        onValueChange={setMonthlyBookings} 
+                        max={1000} 
+                        step={10} 
+                        className="py-4"
+                      />
+                    </div>
                   </div>
-                  
-                  <div>
-                    <p className="text-slate-600 text-lg">Zero setup fees • Zero hidden charges • No minimums</p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <Layers size={20} className="text-panlit-orange" />
+                    Select Modules
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {modules.map(module => (
+                      <div 
+                        key={module.id}
+                        onClick={() => module.status === "active" && toggleModule(module.id)}
+                        className={cn(
+                          "p-4 rounded-xl border transition-all cursor-pointer relative",
+                          module.status !== "active" ? "opacity-60 cursor-not-allowed bg-slate-50 border-slate-100" :
+                          selectedModules.includes(module.id) 
+                            ? "border-panlit-orange bg-orange-50/50 shadow-sm" 
+                            : "border-slate-200 hover:border-panlit-orange/50 hover:bg-slate-50"
+                        )}
+                      >
+                        <div className="flex justify-between items-start mb-2">
+                          <div className={cn(
+                            "p-2 rounded-lg",
+                            selectedModules.includes(module.id) ? "bg-white text-panlit-orange" : "bg-slate-100 text-slate-500"
+                          )}>
+                            <module.icon size={20} />
+                          </div>
+                          {module.status === "active" ? (
+                            <div className={cn(
+                              "w-6 h-6 rounded-full flex items-center justify-center border",
+                              selectedModules.includes(module.id) 
+                                ? "bg-panlit-orange border-panlit-orange text-white" 
+                                : "border-slate-300"
+                            )}>
+                              {selectedModules.includes(module.id) && <Check size={14} />}
+                            </div>
+                          ) : (
+                            <span className="text-[10px] font-bold uppercase tracking-wider bg-slate-200 text-slate-500 px-2 py-1 rounded-full">
+                              Coming Soon
+                            </span>
+                          )}
+                        </div>
+                        <h4 className="font-bold text-slate-900">{module.name}</h4>
+                        <p className="text-sm text-slate-500 mb-2">{module.description}</p>
+                        <div className="text-sm font-semibold text-slate-900">
+                          {module.price === 0 ? "Free" : `$${module.price}/mo`}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
 
-              <Button className="mt-12 bg-panlit-orange hover:bg-orange-600 text-white font-bold py-6 px-10 rounded-lg text-lg">
-                Get Started Free
-              </Button>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Fee Calculator */}
-        <section className="py-24 bg-slate-50">
-          <div className="container mx-auto px-4 md:px-6">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-2xl mx-auto"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-8 text-center">
-                See what you'll pay
-              </h2>
-
-              <div className="bg-white rounded-2xl p-8 md:p-12 border-2 border-slate-200">
-                <div className="space-y-8">
-                  {/* Input Fields */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-900 mb-2">
-                        Booking Amount
-                      </label>
-                      <div className="relative">
-                        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 text-lg font-semibold">
-                          {selectedCurrencyData?.symbol}
-                        </span>
-                        <input
-                          type="number"
-                          value={bookingAmount}
-                          onChange={(e) => setBookingAmount(e.target.value)}
-                          placeholder="0"
-                          className="w-full pl-14 pr-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-panlit-orange text-lg font-semibold"
-                        />
+              {/* Right: Summary */}
+              <div className="bg-slate-900 text-white p-8 md:p-10 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold font-heading mb-8">Estimated Cost</h3>
+                  
+                  <div className="space-y-6">
+                    <div className="flex justify-between items-center py-4 border-b border-white/10">
+                      <div>
+                        <p className="font-medium">Transaction Fees</p>
+                        <p className="text-sm text-slate-400">
+                          0.5% capped at {currencyData.fee}
+                        </p>
+                      </div>
+                      <div className="text-right">
+                        <p className="font-bold text-lg">
+                          {currencyData.symbol}{totalTransactionFees.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                        </p>
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-900 mb-2">
-                        Currency
-                      </label>
-                      <select
-                        value={selectedCurrency}
-                        onChange={(e) => setSelectedCurrency(e.target.value)}
-                        className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-panlit-orange text-base font-medium"
-                      >
-                        {currencies.map(curr => (
-                          <option key={curr.code} value={curr.code}>
-                            {curr.name} ({curr.code})
-                          </option>
-                        ))}
-                      </select>
+                    <div className="flex justify-between items-center py-4 border-b border-white/10">
+                      <div>
+                        <p className="font-medium">Module Subscriptions</p>
+                        <p className="text-sm text-slate-400">
+                          {activeModules.length} active module{activeModules.length !== 1 && 's'}
+                        </p>
+                      </div>
+                      <div className="text-right">
+                        <p className="font-bold text-lg">
+                          ${modulesCost}
+                        </p>
+                      </div>
                     </div>
                   </div>
+                </div>
 
-                  {/* Results */}
-                  <div className="border-t-2 border-slate-100 pt-8">
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="text-slate-600 text-base">Booking amount</span>
-                      <span className="font-semibold text-slate-900">
-                        {selectedCurrencyData?.symbol} {amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                <div className="mt-12">
+                  <div className="bg-white/5 rounded-2xl p-6 mb-8">
+                    <p className="text-slate-400 text-sm mb-1">Total Estimated Monthly Cost</p>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-bold text-white">
+                        {currencyData.symbol}{totalMonthlyCost.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                       </span>
-                    </div>
-                    <div className="bg-slate-50 -mx-8 md:-mx-12 px-8 md:px-12 py-6 rounded-lg">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-base font-semibold text-slate-900">0.5% fee (capped)</span>
-                        <span className="text-2xl font-bold text-panlit-orange">
-                          {selectedCurrencyData?.symbol} {calculatedFee.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                      {currencyData.code !== "USD" && modulesCost > 0 && (
+                        <span className="text-xs text-slate-400">
+                          (Includes ${modulesCost} USD for modules)
                         </span>
-                      </div>
-                      <p className="text-sm text-slate-500">
-                        0.5% of {selectedCurrencyData?.symbol} {amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} = {selectedCurrencyData?.symbol} {(amount * 0.005).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} (capped at {selectedCurrencyData?.symbol} {selectedCurrencyData?.maxFee.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })})
-                      </p>
+                      )}
                     </div>
                   </div>
-
-                  <p className="text-sm text-slate-500 text-center mt-6">
-                    The fee shown is the maximum capped amount for {selectedCurrencyData?.name}. Your actual fee will be 0.5% of the booking amount, capped at this maximum.
+                  
+                  <Button className="w-full bg-panlit-orange hover:bg-orange-600 text-white font-bold h-12 rounded-xl text-lg">
+                    Start Building for Free
+                  </Button>
+                  <p className="text-center text-slate-500 text-sm mt-4">
+                    No credit card required. Cancel anytime.
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </section>
+        </div>
 
-        {/* Currency & Fees Table */}
-        <section className="py-24 bg-slate-50">
+        {/* Modules Grid (Detailed) */}
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold font-heading text-slate-900 mb-4">
+              Modular Pricing
+            </h2>
+            <p className="text-slate-600 text-lg">
+              Only pay for the tools you need.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {modules.map(module => (
+              <div 
+                key={module.id}
+                className={cn(
+                  "bg-white rounded-2xl p-8 border hover:shadow-lg transition-all",
+                  module.status === "active" ? "border-slate-200 hover:border-panlit-orange/50" : "border-slate-100 opacity-75"
+                )}
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <div className={cn(
+                    "p-3 rounded-xl",
+                    module.status === "active" ? "bg-orange-50 text-panlit-orange" : "bg-slate-100 text-slate-400"
+                  )}>
+                    <module.icon size={24} />
+                  </div>
+                  {module.status !== "active" && (
+                    <span className="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                      Coming Soon
+                    </span>
+                  )}
+                </div>
+
+                <h3 className="text-xl font-bold text-slate-900 mb-2">{module.name}</h3>
+                <p className="text-slate-600 text-sm mb-6 h-10">{module.description}</p>
+                
+                <div className="mb-6">
+                  <span className="text-3xl font-bold text-slate-900">
+                    {module.price === 0 ? "Free" : `$${module.price}`}
+                  </span>
+                  {module.price > 0 && <span className="text-slate-500">/month</span>}
+                </div>
+
+                <ul className="space-y-3 mb-8">
+                  {module.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
+                      <Check size={16} className="text-green-500 mt-0.5 shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <Button 
+                  variant={module.status === "active" ? "default" : "outline"}
+                  className={cn(
+                    "w-full font-bold",
+                    module.status === "active" 
+                      ? "bg-panlit-dark hover:bg-panlit-dark/90 text-white" 
+                      : "border-slate-200 text-slate-400 hover:bg-slate-50"
+                  )}
+                  disabled={module.status !== "active"}
+                >
+                  {module.status === "active" ? "Add to Plan" : "Join Waitlist"}
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Currency Table */}
+        <section className="mt-24">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-4">
-                Multi-currency support
+             <div className="text-center max-w-2xl mx-auto mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 mb-4">
+                Supported Currencies
               </h2>
-              <p className="text-slate-600 text-lg">
-                All supported currencies and their capped maximum fees per booking.
+              <p className="text-slate-600">
+                We support local payments in 15+ African currencies with capped transaction fees.
               </p>
             </div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm"
-            >
+            
+            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm max-w-4xl mx-auto">
               <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="bg-panlit-orange text-white">
-                      <th className="px-6 py-4 text-left font-semibold">Currency</th>
-                      <th className="px-6 py-4 text-left font-semibold">Code</th>
-                      <th className="px-6 py-4 text-left font-semibold">Maximum Fee per Booking</th>
+                <table className="w-full text-sm text-left">
+                  <thead className="bg-slate-50 text-slate-900 font-semibold border-b border-slate-200">
+                    <tr>
+                      <th className="px-6 py-4">Currency</th>
+                      <th className="px-6 py-4">Code</th>
+                      <th className="px-6 py-4">Max Fee / Booking</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
-                    {currencies.map((currency, index) => (
-                      <tr key={currency.code} className="hover:bg-slate-50 transition-colors">
+                    {currencies.map((currency) => (
+                      <tr key={currency.code} className="hover:bg-slate-50/50">
                         <td className="px-6 py-4 font-medium text-slate-900">{currency.name}</td>
-                        <td className="px-6 py-4 font-mono text-slate-600">{currency.code}</td>
-                        <td className="px-6 py-4 font-semibold text-panlit-orange">{currency.fee}</td>
+                        <td className="px-6 py-4 text-slate-500 font-mono">{currency.code}</td>
+                        <td className="px-6 py-4 text-panlit-orange font-bold">{currency.fee}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-            <h2 className="text-3xl font-bold font-heading text-slate-900 mb-12 text-center">
-              Frequently Asked Questions
-            </h2>
-
-            <div className="space-y-6">
-              {[
-                {
-                  q: "Is there a setup fee or hidden charges?",
-                  a: "No. There are no setup fees, no monthly minimums, and no hidden charges. You only pay per booking, and nothing more."
-                },
-                {
-                  q: "Can I upgrade or downgrade anytime?",
-                  a: "Yes. Switch plans whenever you need to. Changes take effect immediately on your next billing cycle."
-                },
-                {
-                  q: "Do you offer discounts for annual billing?",
-                  a: "Yes. All our pricing is shown for annual billing. Pay monthly at 25% higher rate, or save by paying annually."
-                },
-                {
-                  q: "What payment methods do you accept?",
-                  a: "We accept all major credit cards, bank transfers, and local payment methods in 50+ countries through our payment partners."
-                },
-                {
-                  q: "Can I cancel anytime?",
-                  a: "Absolutely. Cancel your subscription at any time. No penalties, no long-term contracts."
-                }
-              ].map((faq, idx) => (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="border-b border-slate-200 pb-6 last:border-0"
-                >
-                  <h3 className="text-lg font-bold text-slate-900 mb-3">
-                    {faq.q}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {faq.a}
-                  </p>
-                </motion.div>
-              ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-24 bg-panlit-dark relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-panlit-orange/10 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
-          
-          <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-6">
-                Ready to get started?
-              </h2>
-              <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-                Start using Panlit today. No credit card required.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-bold h-14 px-10 rounded-full text-lg">
-                  Start Free Trial
-                </Button>
-                <Button variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 font-bold h-14 px-10 rounded-full text-lg">
-                  Schedule Demo
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
       </main>
-
       <Footer />
     </div>
   );
