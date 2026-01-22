@@ -207,7 +207,7 @@ export default function Pricing() {
                       <Slider 
                         value={avgBookingValue} 
                         onValueChange={setAvgBookingValue} 
-                        max={1000} 
+                        max={10000} 
                         step={10} 
                         className="py-4"
                       />
@@ -221,7 +221,7 @@ export default function Pricing() {
                       <Slider 
                         value={monthlyBookings} 
                         onValueChange={setMonthlyBookings} 
-                        max={1000} 
+                        max={100000} 
                         step={10} 
                         className="py-4"
                       />
