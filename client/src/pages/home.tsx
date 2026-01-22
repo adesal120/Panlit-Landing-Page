@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/landing/navbar";
 import { Hero } from "@/components/landing/hero";
 import { FeaturesGrid } from "@/components/landing/features-grid";
+import { DemoShowcase } from "@/components/landing/demo-showcase";
 import { Integrations } from "@/components/landing/integrations";
 import { Testimonials } from "@/components/landing/testimonials";
 import { BlogPreview } from "@/components/landing/blog-preview";
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Hero />
         <FeaturesGrid />
+        <DemoShowcase />
         <Integrations />
         <Testimonials />
         {/* <BlogPreview /> */}
