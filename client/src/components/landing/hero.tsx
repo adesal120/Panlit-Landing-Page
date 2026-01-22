@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Calendar, Users, CreditCard, BarChart3 } from "lucide-react";
 
 export function Hero() {
-  const [word, setWord] = useState<"tours" | "activities" | "experiences" | "stays">("tours");
+  const [word, setWord] = useState<"tours" | "activities" | "experiences" | "accommodation" | "hotel">("tours");
 
   useEffect(() => {
-    const words: ("tours" | "activities" | "experiences" | "stays")[] = ["tours", "activities", "experiences", "stays"];
+    const words: ("tours" | "activities" | "experiences" | "accommodation" | "hotel")[] = ["tours", "activities", "experiences", "accommodation", "hotel"];
     let currentIndex = 0;
 
     const interval = setInterval(() => {
