@@ -119,7 +119,7 @@ const addOns = [
   {
     id: "website_pro",
     name: "AI Website Pro",
-    description: "Scale with unlimited pages, blog, and advanced SEO.",
+    description: "Unlimited pages, blog, and multilingual support.",
     icon: Globe,
     pricing: {
       NGN: 12000, USD: 35, GBP: 25, EUR: 30, KES: 1800, GHS: 180, ZAR: 240,
@@ -131,7 +131,7 @@ const addOns = [
   {
     id: "concierge_starter",
     name: "AI Concierge Starter",
-    description: "Automate support on WhatsApp, Email, and Socials.",
+    description: "AI-powered support across chat, social, email & reviews.",
     icon: MessageSquare,
     pricing: {
       NGN: 10000, USD: 20, GBP: 15, EUR: 18, KES: 1500, GHS: 150, ZAR: 200,
@@ -143,7 +143,7 @@ const addOns = [
   {
     id: "concierge_pro",
     name: "AI Concierge Pro",
-    description: "Full 24/7 AI voice support + digital channels.",
+    description: "Everything in Starter + Voice AI assistant & call recording.",
     icon: Phone,
     pricing: {
       NGN: 18000, USD: 35, GBP: 25, EUR: 30, KES: 2700, GHS: 270, ZAR: 360,
