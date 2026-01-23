@@ -177,9 +177,11 @@ export default function Integrations() {
               <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
                 We're always looking to expand our integrations. If you need to connect Panlit with another tool, let us know!
               </p>
-              <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-bold h-14 px-10 rounded-full text-lg">
-                Request an Integration
-              </Button>
+              <a href="https://tally.so/r/WO8MPv" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-bold h-14 px-10 rounded-full text-lg">
+                  Request an Integration
+                </Button>
+              </a>
             </motion.div>
           </div>
         </section>
