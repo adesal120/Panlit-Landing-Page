@@ -37,10 +37,10 @@ const mainResources: ResourceCard[] = [
 ];
 
 const quickLinks = [
-  { icon: MessageSquare, title: "Contact Support", description: "Email us anytime at support@panlit.com" },
-  { icon: Video, title: "Video Tutorials", description: "Step-by-step video guides for all features" },
-  { icon: FileText, title: "API Documentation", description: "Integrate Panlit with your own tools" },
-  { icon: Zap, title: "Feature Requests", description: "Suggest features you'd like to see" }
+  { icon: MessageSquare, title: "Contact Support", description: "Email us anytime at support@panlit.com", link: "mailto:support@panlit.com" },
+  { icon: Video, title: "Video Tutorials", description: "Step-by-step video guides for all features", link: "#" },
+  { icon: FileText, title: "API Documentation", description: "Integrate Panlit with your own tools", link: "#" },
+  { icon: Zap, title: "Feature Requests", description: "Suggest features you'd like to see", link: "#" }
 ];
 
 interface FAQItem {
@@ -170,7 +170,7 @@ export default function Support() {
                 return (
                   <motion.a 
                     key={link.title}
-                    href="#"
+                    href={link.link}
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -219,9 +219,11 @@ export default function Support() {
 
             <div className="text-center mt-12">
               <p className="text-slate-600 mb-4">Still have questions?</p>
-              <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg">
-                Contact Support Team
-              </Button>
+              <a href="mailto:support@panlit.com">
+                <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg">
+                  Contact Support Team
+                </Button>
+              </a>
             </div>
           </div>
         </section>
@@ -243,9 +245,11 @@ export default function Support() {
                 Our support team is here to help. Get a response within 24 hours.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-bold h-14 px-10 rounded-full text-lg">
-                  Email Support
-                </Button>
+                <a href="mailto:support@panlit.com">
+                  <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-bold h-14 px-10 rounded-full text-lg">
+                    Email Support
+                  </Button>
+                </a>
                 <Button variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 font-bold h-14 px-10 rounded-full text-lg">
                   Schedule Call
                 </Button>
