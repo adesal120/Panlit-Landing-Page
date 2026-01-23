@@ -29,10 +29,10 @@ export function Footer() {
           <div>
             <h4 className="text-white font-bold mb-4">Product</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-panlit-orange transition-colors">Features</a></li>
+              <li><a href="/#features" className="hover:text-panlit-orange transition-colors">Features</a></li>
               <li><Link href="/pricing" className="hover:text-panlit-orange transition-colors cursor-pointer">Pricing</Link></li>
               <li><Link href="/integrations" className="hover:text-panlit-orange transition-colors cursor-pointer">Integrations</Link></li>
-              <li><a href="#" className="hover:text-panlit-orange transition-colors">Changelog</a></li>
+              <li><span className="text-slate-600 cursor-default">Changelog</span></li>
             </ul>
           </div>
 
@@ -40,19 +40,19 @@ export function Footer() {
             <h4 className="text-white font-bold mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/faq" className="hover:text-panlit-orange transition-colors cursor-pointer">FAQ</Link></li>
-              <li><Link href="/blog" className="hover:text-panlit-orange transition-colors cursor-pointer">Blog</Link></li>
+              <li><a href="https://blog.panlit.com" target="_blank" rel="noopener noreferrer" className="hover:text-panlit-orange transition-colors">Blog</a></li>
               <li><Link href="/support" className="hover:text-panlit-orange transition-colors cursor-pointer">Support</Link></li>
-              <li><a href="#" className="hover:text-panlit-orange transition-colors">Community</a></li>
+              <li><a href="https://chat.whatsapp.com/IbMXDHloChTE0tbIGAeTum" target="_blank" rel="noopener noreferrer" className="hover:text-panlit-orange transition-colors">Community</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-panlit-orange transition-colors">About</a></li>
-              <li><a href="#" className="hover:text-panlit-orange transition-colors">Contact</a></li>
-              <li><a href="#" className="hover:text-panlit-orange transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-panlit-orange transition-colors">Terms of Service</a></li>
+              <li><span className="text-slate-600 cursor-default">About</span></li>
+              <li><Link href="/support" className="hover:text-panlit-orange transition-colors cursor-pointer">Contact</Link></li>
+              <li><span className="text-slate-600 cursor-default">Privacy Policy</span></li>
+              <li><span className="text-slate-600 cursor-default">Terms of Service</span></li>
             </ul>
           </div>
         </div>
@@ -60,9 +60,9 @@ export function Footer() {
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-slate-500">© 2026 Panlit. All rights reserved.</p>
           <div className="flex gap-6 text-sm text-slate-500">
-            <a href="#" className="hover:text-white">Privacy</a>
-            <a href="#" className="hover:text-white">Terms</a>
-            <a href="#" className="hover:text-white">Security</a>
+            <span className="cursor-default text-slate-700">Privacy</span>
+            <span className="cursor-default text-slate-700">Terms</span>
+            <span className="cursor-default text-slate-700">Security</span>
           </div>
         </div>
       </div>
