@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Calendar, MessageSquare, CreditCard, Check, Zap, TrendingUp, Bell } from "lucide-react";
+import { ArrowRight, CheckCircle2, Calendar, FileText, CreditCard, Check, UserCheck, Bell, History } from "lucide-react";
 
 export function Hero() {
   const [word, setWord] = useState<"tours" | "activities" | "experiences" | "accommodation" | "hotel">("tours");
@@ -97,7 +97,7 @@ export function Hero() {
                 {/* Background Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-panlit-orange/20 to-blue-500/20 rounded-full blur-[100px]" />
 
-                {/* Card 1: New Booking (Top Left) */}
+                {/* Card 1: Guest CRM (Top Left) */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -107,28 +107,37 @@ export function Hero() {
                   <div className="flex items-center justify-between mb-3 border-b border-slate-50 pb-2">
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
-                        <Calendar size={16} />
+                        <UserCheck size={16} />
                       </div>
-                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">New Booking</span>
+                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Guest Insight</span>
                     </div>
-                    <span className="text-[10px] text-slate-400">Just now</span>
+                    <span className="text-[10px] text-slate-400">Arriving Today</span>
                   </div>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold text-sm">
-                      JD
+                    <div className="relative">
+                      <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold text-sm border-2 border-white shadow-sm">
+                        SJ
+                      </div>
+                      <div className="absolute -bottom-1 -right-1 bg-panlit-orange text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold border border-white">
+                        VIP
+                      </div>
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 text-sm">John Doe</h4>
-                      <p className="text-xs text-slate-500">Deluxe Ocean Suite • 3 Nights</p>
+                      <h4 className="font-bold text-slate-900 text-sm">Sarah Jenkins</h4>
+                      <p className="text-xs text-green-600 font-medium flex items-center gap-1">
+                        <History size={10} /> Returning Guest (3rd Visit)
+                      </p>
                     </div>
                   </div>
-                  <div className="flex gap-2">
-                    <Button size="sm" className="w-full bg-slate-900 text-white h-8 text-xs">Confirm</Button>
-                    <Button size="sm" variant="outline" className="w-full border-slate-200 h-8 text-xs">Details</Button>
+                  <div className="bg-yellow-50 p-2.5 rounded-lg border border-yellow-100 mb-2">
+                    <p className="text-[10px] text-yellow-800 font-medium leading-tight">
+                      ℹ️ Note: Prefers quiet room away from elevator. Allergies: Peanuts.
+                    </p>
                   </div>
+                  <Button size="sm" className="w-full bg-slate-900 text-white h-7 text-xs">View Profile</Button>
                 </motion.div>
 
-                {/* Card 2: AI Response (Top Right) */}
+                {/* Card 2: Digital Waiver (Top Right) */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -138,25 +147,33 @@ export function Hero() {
                   <div className="flex items-center justify-between mb-3 border-b border-slate-50 pb-2">
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center text-purple-600">
-                        <MessageSquare size={16} />
+                        <FileText size={16} />
                       </div>
-                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Guest Inquiry</span>
+                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Smart Waiver</span>
                     </div>
                   </div>
+                  
                   <div className="space-y-3">
-                    <div className="bg-slate-50 p-2 rounded-lg rounded-tl-none text-xs text-slate-600">
-                      Hi, is late check-in available?
+                    <div className="flex items-center gap-3 p-2 bg-slate-50 rounded-lg border border-slate-100">
+                       <div className="w-8 h-10 bg-white border border-slate-200 rounded flex items-center justify-center shadow-sm">
+                          <span className="text-[8px] font-bold text-slate-400">PDF</span>
+                       </div>
+                       <div>
+                          <p className="text-xs font-bold text-slate-700">Adventure Tour Waiver</p>
+                          <p className="text-[10px] text-slate-400">Signed 10 mins ago</p>
+                       </div>
                     </div>
-                    <div className="relative">
-                      <div className="bg-blue-50 p-2 rounded-lg rounded-tr-none text-xs text-blue-800 border border-blue-100">
-                        <div className="flex items-center gap-1 mb-1 text-[10px] text-blue-500 font-bold uppercase">
-                          <Zap size={10} /> AI Suggestion
-                        </div>
-                        Yes! Our front desk is open 24/7.
-                      </div>
+
+                    <div className="flex items-center justify-between px-2">
+                       <span className="text-[10px] text-slate-500 font-medium">Signature Verified</span>
+                       <div className="flex items-center gap-1 text-green-600 text-[10px] font-bold bg-green-50 px-2 py-1 rounded-full">
+                          <Check size={10} />
+                          Valid
+                       </div>
                     </div>
-                    <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-white h-7 text-xs gap-1">
-                      <Check size={12} /> Send Reply
+                    
+                    <Button size="sm" variant="outline" className="w-full border-slate-200 h-7 text-xs text-slate-600 hover:text-slate-900">
+                      Download PDF
                     </Button>
                   </div>
                 </motion.div>
