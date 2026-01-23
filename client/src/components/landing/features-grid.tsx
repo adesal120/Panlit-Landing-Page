@@ -77,8 +77,8 @@ export function FeaturesGrid() {
           </p>
         </div>
 
-        {/* Top Grid: Big Card + Tall Card */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        {/* Top Grid: Big Card + Tall Card + Guest Comms */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
           {/* Large Card - Ticketing & Booking */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
@@ -121,6 +121,25 @@ export function FeaturesGrid() {
               Streamline guest arrival for tours, appointments, or overnight stays. Scan tickets or check in guests instantly with any device. No lists, no delays.
             </p>
             <div className="text-6xl mt-6 opacity-30">✓</div>
+          </motion.div>
+
+          {/* Automated Guest Comms (Moved here) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="bg-white rounded-3xl border border-slate-200 p-8 hover:border-panlit-orange/30 transition-all group min-h-[400px] flex flex-col justify-center"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <div className="p-4 bg-teal-50 rounded-2xl text-teal-600">
+                <Send size={32} />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">Automated Guest Comms</h3>
+            <p className="text-slate-600 leading-relaxed">
+              Send automated communications via Email, SMS, and WhatsApp. Automate review requests, arrival instructions, meetup details, and personalized offers.
+            </p>
           </motion.div>
         </div>
 
@@ -310,24 +329,6 @@ export function FeaturesGrid() {
             <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">AI Review Manager</h3>
             <p className="text-slate-600 leading-relaxed">
               One place for every review. Set your preferred tone, language, and style. AI responds thoughtfully, whether it's a five-star rave or a complaint. Run it on autopilot, or stay hands-on. You're in control.
-            </p>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.85 }}
-            className="bg-white rounded-3xl border border-slate-200 p-8 hover:border-panlit-orange/30 transition-all group"
-          >
-            <div className="flex items-center justify-between mb-6">
-              <div className="p-4 bg-teal-50 rounded-2xl text-teal-600">
-                <Send size={32} />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">Automated Guest Comms</h3>
-            <p className="text-slate-600 leading-relaxed">
-              Send automated communications via Email, SMS, and WhatsApp. Automate review requests, arrival instructions, meetup details, and personalized offers for every guest.
             </p>
           </motion.div>
         </div>
