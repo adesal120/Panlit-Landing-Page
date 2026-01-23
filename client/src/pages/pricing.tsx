@@ -466,6 +466,14 @@ export default function Pricing() {
                     )
                   })}
                 </div>
+                
+                {/* Compare Button */}
+                <div className="mt-8 text-center">
+                  <a href="#feature-breakdown" className="inline-flex items-center text-panlit-orange font-semibold hover:text-orange-700 transition-colors group">
+                    Compare all features in detail
+                    <ChevronDown className="ml-1 w-4 h-4 group-hover:translate-y-1 transition-transform" />
+                  </a>
+                </div>
               </div>
 
               {/* 3. Add-Ons Selector */}
@@ -598,7 +606,7 @@ export default function Pricing() {
         </div>
 
         {/* Currency Table Section */}
-        <section className="bg-slate-50 py-16 border-t border-slate-200">
+        <section id="feature-breakdown" className="bg-slate-50 py-16 border-t border-slate-200">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <h2 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 mb-4">
