@@ -583,9 +583,11 @@ export default function Pricing() {
                   )}
                 </div>
 
-                <Button className="w-full bg-panlit-orange hover:bg-orange-600 text-white font-bold h-12 rounded-xl text-lg mb-4">
-                  Start Building for Free
-                </Button>
+                <a href="https://tally.so/r/nrPA95" target="_blank" rel="noopener noreferrer" className="w-full block mb-4">
+                  <Button className="w-full bg-panlit-orange hover:bg-orange-600 text-white font-bold h-12 rounded-xl text-lg">
+                    Start Building for Free
+                  </Button>
+                </a>
                 <p className="text-center text-slate-500 text-xs">
                   No credit card required. Cancel anytime.
                 </p>
