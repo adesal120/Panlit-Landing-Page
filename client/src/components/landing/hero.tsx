@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, BedDouble, Compass, Scissors, Star, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle2, Calendar, MessageSquare, CreditCard, Check, Zap, TrendingUp, Bell } from "lucide-react";
 
 export function Hero() {
   const [word, setWord] = useState<"tours" | "activities" | "experiences" | "accommodation" | "hotel">("tours");
@@ -91,94 +91,121 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative hidden lg:flex items-center justify-center h-full min-h-[500px]"
           >
-             {/* Floating Cards Container */}
+             {/* Floating Tasks Container */}
              <div className="relative w-full max-w-lg h-[500px]">
                 
                 {/* Background Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-panlit-orange/20 to-blue-500/20 rounded-full blur-[100px]" />
 
-                {/* Card 1: Hotel (Top Left) */}
+                {/* Card 1: New Booking (Top Left) */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="absolute top-0 left-0 w-64 bg-white rounded-2xl p-3 shadow-xl border border-slate-100 z-20 rotate-[-6deg] hover:rotate-0 transition-transform duration-300"
+                  className="absolute top-0 left-0 w-72 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 z-20 rotate-[-6deg] hover:rotate-0 transition-transform duration-300"
                 >
-                  <div className="h-32 rounded-xl overflow-hidden mb-3 relative">
-                     <img src="/src/assets/hero-hotel.jpg" alt="Hotel" className="w-full h-full object-cover" />
-                     <div className="absolute top-2 right-2 bg-white/90 backdrop-blur px-2 py-1 rounded-md text-xs font-bold flex items-center gap-1 text-slate-900">
-                        <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" /> 4.9
-                     </div>
+                  <div className="flex items-center justify-between mb-3 border-b border-slate-50 pb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+                        <Calendar size={16} />
+                      </div>
+                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">New Booking</span>
+                    </div>
+                    <span className="text-[10px] text-slate-400">Just now</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-                      <BedDouble size={20} />
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold text-sm">
+                      JD
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 text-sm">Ocean View Resort</h4>
-                      <p className="text-xs text-slate-500">Accommodation</p>
+                      <h4 className="font-bold text-slate-900 text-sm">John Doe</h4>
+                      <p className="text-xs text-slate-500">Deluxe Ocean Suite • 3 Nights</p>
                     </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <Button size="sm" className="w-full bg-slate-900 text-white h-8 text-xs">Confirm</Button>
+                    <Button size="sm" variant="outline" className="w-full border-slate-200 h-8 text-xs">Details</Button>
                   </div>
                 </motion.div>
 
-                {/* Card 2: Tour (Top Right) */}
+                {/* Card 2: AI Response (Top Right) */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className="absolute top-10 right-0 w-60 bg-white rounded-2xl p-3 shadow-xl border border-slate-100 z-10 rotate-[6deg] hover:rotate-0 transition-transform duration-300"
+                  className="absolute top-12 right-0 w-64 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 z-10 rotate-[6deg] hover:rotate-0 transition-transform duration-300"
                 >
-                  <div className="h-28 rounded-xl overflow-hidden mb-3">
-                     <img src="/src/assets/hero-tour.jpg" alt="Tour" className="w-full h-full object-cover" />
+                  <div className="flex items-center justify-between mb-3 border-b border-slate-50 pb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center text-purple-600">
+                        <MessageSquare size={16} />
+                      </div>
+                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Guest Inquiry</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600">
-                      <Compass size={20} />
+                  <div className="space-y-3">
+                    <div className="bg-slate-50 p-2 rounded-lg rounded-tl-none text-xs text-slate-600">
+                      Hi, is late check-in available?
                     </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 text-sm">Mountain Treks</h4>
-                      <p className="text-xs text-slate-500">Tours & Activities</p>
+                    <div className="relative">
+                      <div className="bg-blue-50 p-2 rounded-lg rounded-tr-none text-xs text-blue-800 border border-blue-100">
+                        <div className="flex items-center gap-1 mb-1 text-[10px] text-blue-500 font-bold uppercase">
+                          <Zap size={10} /> AI Suggestion
+                        </div>
+                        Yes! Our front desk is open 24/7.
+                      </div>
                     </div>
+                    <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-white h-7 text-xs gap-1">
+                      <Check size={12} /> Send Reply
+                    </Button>
                   </div>
                 </motion.div>
 
-                {/* Card 3: Spa (Bottom Center) */}
+                {/* Card 3: Payment Success (Bottom Center) */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 }}
-                  className="absolute bottom-10 left-1/2 -translate-x-1/2 w-72 bg-white rounded-2xl p-3 shadow-2xl border border-slate-100 z-30"
+                  className="absolute bottom-16 left-1/2 -translate-x-1/2 w-80 bg-white rounded-2xl p-4 shadow-2xl border border-slate-100 z-30"
                 >
-                   <div className="absolute -top-3 -right-3 bg-panlit-orange text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-bounce">
-                      New Booking!
+                   <div className="absolute -top-3 right-6 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
+                      <Check size={12} /> Paid
                    </div>
-                  <div className="h-32 rounded-xl overflow-hidden mb-3 relative">
-                     <img src="/src/assets/hero-spa.jpg" alt="Spa" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center text-purple-600">
-                        <Scissors size={20} />
+                      <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-600">
+                        <CreditCard size={24} />
                       </div>
                       <div>
-                        <h4 className="font-bold text-slate-900 text-sm">Serenity Spa</h4>
-                        <p className="text-xs text-slate-500">Appointments</p>
+                        <p className="text-xs text-slate-500 font-medium uppercase">Payment Received</p>
+                        <h4 className="font-bold text-slate-900 text-xl">$450.00</h4>
                       </div>
                     </div>
-                    <div className="text-right">
-                       <p className="text-xs font-bold text-green-600">$120.00</p>
-                       <p className="text-[10px] text-slate-400">Paid</p>
-                    </div>
+                  </div>
+                  <div className="bg-slate-50 rounded-xl p-3 flex items-center justify-between">
+                     <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                        <span className="text-xs text-slate-600 font-medium">Stripe Payment</span>
+                     </div>
+                     <span className="text-xs text-slate-400">#INV-2024-001</span>
                   </div>
                 </motion.div>
 
-                {/* Floating Elements */}
+                {/* Floating Notification */}
                  <motion.div 
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-1/2 right-10 bg-white rounded-lg p-2 shadow-lg z-0"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1, y: [0, -5, 0] }}
+                    transition={{ delay: 1.5, duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-1/2 -right-4 bg-slate-900 text-white rounded-lg p-3 shadow-xl z-40 flex items-center gap-3 max-w-[200px]"
                  >
-                    <MapPin className="text-red-500 w-6 h-6" />
+                    <div className="relative">
+                      <Bell className="text-panlit-orange w-5 h-5" />
+                      <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-slate-900"></span>
+                    </div>
+                    <div className="text-xs">
+                      <span className="font-bold block">Low Inventory</span>
+                      <span className="text-slate-400">Only 2 rooms left!</span>
+                    </div>
                  </motion.div>
              </div>
           </motion.div>
