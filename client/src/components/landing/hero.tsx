@@ -91,49 +91,33 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative hidden lg:flex items-center justify-center"
           >
-            <div className="grid grid-cols-2 gap-6">
-              <motion.div 
+            <div className="relative w-full max-w-[600px]">
+              <div className="absolute -inset-1 bg-gradient-to-r from-panlit-orange to-purple-600 rounded-2xl blur opacity-30 animate-pulse"></div>
+              <motion.img 
+                src="/src/assets/hero-dashboard-v2.png" 
+                alt="Panlit Dashboard Overview" 
+                className="relative rounded-2xl shadow-2xl border border-white/10 w-full h-auto object-cover"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl hover:bg-white/15 transition-all"
+                transition={{ delay: 0.3, duration: 0.8 }}
+              />
+              
+              {/* Floating feature pills */}
+              <motion.div 
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white text-sm font-medium shadow-lg"
               >
-                <Calendar className="w-12 h-12 text-panlit-orange mb-3" />
-                <p className="text-white font-semibold">Calendar</p>
-                <p className="text-xs text-slate-400 mt-1">Smart scheduling</p>
+                ✨ AI Powered
               </motion.div>
-
+              
               <motion.div 
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl hover:bg-white/15 transition-all"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white text-sm font-medium shadow-lg flex items-center gap-2"
               >
-                <Users className="w-12 h-12 text-blue-400 mb-3" />
-                <p className="text-white font-semibold">CRM</p>
-                <p className="text-xs text-slate-400 mt-1">Customer insights</p>
-              </motion.div>
-
-              <motion.div 
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl hover:bg-white/15 transition-all"
-              >
-                <CreditCard className="w-12 h-12 text-green-400 mb-3" />
-                <p className="text-white font-semibold">Payments</p>
-                <p className="text-xs text-slate-400 mt-1">Secure & instant</p>
-              </motion.div>
-
-              <motion.div 
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl hover:bg-white/15 transition-all"
-              >
-                <BarChart3 className="w-12 h-12 text-purple-400 mb-3" />
-                <p className="text-white font-semibold">Analytics</p>
-                <p className="text-xs text-slate-400 mt-1">Real-time insights</p>
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                All-in-one Platform
               </motion.div>
             </div>
           </motion.div>
