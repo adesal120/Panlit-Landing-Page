@@ -60,10 +60,12 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Button size="lg" className="bg-panlit-orange hover:bg-orange-600 text-white font-semibold text-lg h-14 px-8 rounded-full shadow-lg shadow-orange-900/20 transition-all hover:scale-105">
-                Book a demo
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <a href="https://tally.so/r/nrPA95" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-panlit-orange hover:bg-orange-600 text-white font-semibold text-lg h-14 px-8 rounded-full shadow-lg shadow-orange-900/20 transition-all hover:scale-105 w-full sm:w-auto">
+                  Book a demo
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </a>
               <Button size="lg" variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 font-semibold text-lg h-14 px-8 rounded-full backdrop-blur-sm">
                 See how it works
               </Button>

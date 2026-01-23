@@ -31,12 +31,16 @@ export default function Home() {
                Join hundreds of tourism, hospitality, and experience businesses who trust Panlit to run their business.
              </p>
              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-               <Button size="lg" className="bg-panlit-orange hover:bg-orange-600 text-white font-bold h-14 px-10 rounded-full text-lg">
-                 Get Started for Free
-               </Button>
-               <Button size="lg" variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 font-bold h-14 px-10 rounded-full text-lg">
-                 Book a Demo
-               </Button>
+               <a href="https://tally.so/r/nrPA95" target="_blank" rel="noopener noreferrer">
+                 <Button size="lg" className="bg-panlit-orange hover:bg-orange-600 text-white font-bold h-14 px-10 rounded-full text-lg w-full sm:w-auto">
+                   Get Started for Free
+                 </Button>
+               </a>
+               <a href="https://tally.so/r/nrPA95" target="_blank" rel="noopener noreferrer">
+                 <Button size="lg" variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 font-bold h-14 px-10 rounded-full text-lg w-full sm:w-auto">
+                   Book a Demo
+                 </Button>
+               </a>
              </div>
            </div>
         </section>

@@ -68,9 +68,11 @@ export function Navbar() {
           )}>
             Log in
           </Button>
-          <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-medium rounded-full px-6">
-            Book a demo
-          </Button>
+          <a href="https://tally.so/r/nrPA95" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-medium rounded-full px-6">
+              Book a demo
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -109,9 +111,11 @@ export function Navbar() {
           <Button variant="ghost" className="justify-start text-slate-600">
             Log in
           </Button>
-          <Button className="bg-panlit-orange hover:bg-orange-600 text-white w-full rounded-full">
-            Book a demo
-          </Button>
+          <a href="https://tally.so/r/nrPA95" target="_blank" rel="noopener noreferrer" className="w-full">
+            <Button className="bg-panlit-orange hover:bg-orange-600 text-white w-full rounded-full">
+              Book a demo
+            </Button>
+          </a>
         </div>
       )}
     </nav>
