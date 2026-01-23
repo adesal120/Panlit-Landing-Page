@@ -71,7 +71,7 @@ const basePlans = [
   {
     id: "professional",
     name: "Professional",
-    description: "Membership & communications.",
+    description: "For teams ready to scale",
     features: [
       "Everything in Free",
       "Membership management",
