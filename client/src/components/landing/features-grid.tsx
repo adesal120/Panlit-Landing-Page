@@ -18,7 +18,8 @@ import {
   MessageSquare,
   RefreshCcw,
   Layers,
-  Send
+  Send,
+  Star
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -283,7 +284,7 @@ export function FeaturesGrid() {
             </div>
             <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">AI Customer Support</h3>
             <p className="text-slate-600 leading-relaxed">
-              Centralize every guest interaction. Manage messages from Instagram, WhatsApp, Airbnb, and Booking.com. Share documentation about your business and connect your systems, and AI will draft responses for you, but you always have full control to review, edit, or reply yourself.
+              One inbox for social media, OTAs, email, WhatsApp, and more. Give it your business information and connect your systems, so replies and actions feel like you. Let it run on autopilot, or keep final say on every message. You decide how much control to hand over.
             </p>
           </motion.div>
 
@@ -292,6 +293,31 @@ export function FeaturesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.8 }}
+            className="bg-white rounded-3xl border border-slate-200 p-8 hover:border-panlit-orange/30 transition-all group"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <div className="p-4 bg-yellow-50 rounded-2xl text-yellow-600">
+                <Star size={32} />
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Coming Soon</span>
+                <div className="flex items-center gap-1.5 bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-bold">
+                  <Zap size={12} />
+                  AI POWERED
+                </div>
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold font-heading text-slate-900 mb-3">AI Review Manager</h3>
+            <p className="text-slate-600 leading-relaxed">
+              One place for every review. Set your preferred tone, language, and style. AI responds thoughtfully, whether it's a five-star rave or a complaint. Run it on autopilot, or stay hands-on. You're in control.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.85 }}
             className="bg-white rounded-3xl border border-slate-200 p-8 hover:border-panlit-orange/30 transition-all group"
           >
             <div className="flex items-center justify-between mb-6">
