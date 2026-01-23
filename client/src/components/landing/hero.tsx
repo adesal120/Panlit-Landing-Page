@@ -66,9 +66,11 @@ export function Hero() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </a>
-              <Button size="lg" variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 font-semibold text-lg h-14 px-8 rounded-full backdrop-blur-sm">
-                See how it works
-              </Button>
+              <a href="#demo-showcase" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 font-semibold text-lg h-14 px-8 rounded-full backdrop-blur-sm w-full sm:w-auto">
+                  See how it works
+                </Button>
+              </a>
             </div>
 
             <div className="flex flex-wrap gap-6 text-sm text-slate-400 font-medium">

@@ -50,7 +50,7 @@ export function DemoShowcase() {
   const [activeDemo, setActiveDemo] = useState(demos[0]);
 
   return (
-    <section className="py-24 bg-slate-50 border-y border-slate-200">
+    <section id="demo-showcase" className="py-24 bg-slate-50 border-y border-slate-200">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-panlit-orange font-bold tracking-wider uppercase text-sm mb-3">Watch a Demo</h2>
