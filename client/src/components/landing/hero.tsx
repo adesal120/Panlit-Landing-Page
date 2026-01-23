@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Calendar, Users, CreditCard, BarChart3 } from "lucide-react";
+import { ArrowRight, CheckCircle2, BedDouble, Compass, Scissors, Star, MapPin } from "lucide-react";
 
 export function Hero() {
   const [word, setWord] = useState<"tours" | "activities" | "experiences" | "accommodation" | "hotel">("tours");
@@ -89,37 +89,98 @@ export function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:flex items-center justify-center"
+            className="relative hidden lg:flex items-center justify-center h-full min-h-[500px]"
           >
-            <div className="relative w-full max-w-[600px]">
-              <div className="absolute -inset-1 bg-gradient-to-r from-panlit-orange to-purple-600 rounded-2xl blur opacity-30 animate-pulse"></div>
-              <motion.img 
-                src="/src/assets/hero-dashboard-v2.png" 
-                alt="Panlit Dashboard Overview" 
-                className="relative rounded-2xl shadow-2xl border border-white/10 w-full h-auto object-cover"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-              />
-              
-              {/* Floating feature pills */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white text-sm font-medium shadow-lg"
-              >
-                ✨ AI Powered
-              </motion.div>
-              
-              <motion.div 
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white text-sm font-medium shadow-lg flex items-center gap-2"
-              >
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                All-in-one Platform
-              </motion.div>
-            </div>
+             {/* Floating Cards Container */}
+             <div className="relative w-full max-w-lg h-[500px]">
+                
+                {/* Background Glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-panlit-orange/20 to-blue-500/20 rounded-full blur-[100px]" />
+
+                {/* Card 1: Hotel (Top Left) */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="absolute top-0 left-0 w-64 bg-white rounded-2xl p-3 shadow-xl border border-slate-100 z-20 rotate-[-6deg] hover:rotate-0 transition-transform duration-300"
+                >
+                  <div className="h-32 rounded-xl overflow-hidden mb-3 relative">
+                     <img src="/src/assets/hero-hotel.jpg" alt="Hotel" className="w-full h-full object-cover" />
+                     <div className="absolute top-2 right-2 bg-white/90 backdrop-blur px-2 py-1 rounded-md text-xs font-bold flex items-center gap-1 text-slate-900">
+                        <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" /> 4.9
+                     </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                      <BedDouble size={20} />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900 text-sm">Ocean View Resort</h4>
+                      <p className="text-xs text-slate-500">Accommodation</p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Card 2: Tour (Top Right) */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                  className="absolute top-10 right-0 w-60 bg-white rounded-2xl p-3 shadow-xl border border-slate-100 z-10 rotate-[6deg] hover:rotate-0 transition-transform duration-300"
+                >
+                  <div className="h-28 rounded-xl overflow-hidden mb-3">
+                     <img src="/src/assets/hero-tour.jpg" alt="Tour" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600">
+                      <Compass size={20} />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900 text-sm">Mountain Treks</h4>
+                      <p className="text-xs text-slate-500">Tours & Activities</p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Card 3: Spa (Bottom Center) */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 }}
+                  className="absolute bottom-10 left-1/2 -translate-x-1/2 w-72 bg-white rounded-2xl p-3 shadow-2xl border border-slate-100 z-30"
+                >
+                   <div className="absolute -top-3 -right-3 bg-panlit-orange text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-bounce">
+                      New Booking!
+                   </div>
+                  <div className="h-32 rounded-xl overflow-hidden mb-3 relative">
+                     <img src="/src/assets/hero-spa.jpg" alt="Spa" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center text-purple-600">
+                        <Scissors size={20} />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 text-sm">Serenity Spa</h4>
+                        <p className="text-xs text-slate-500">Appointments</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                       <p className="text-xs font-bold text-green-600">$120.00</p>
+                       <p className="text-[10px] text-slate-400">Paid</p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Floating Elements */}
+                 <motion.div 
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-1/2 right-10 bg-white rounded-lg p-2 shadow-lg z-0"
+                 >
+                    <MapPin className="text-red-500 w-6 h-6" />
+                 </motion.div>
+             </div>
           </motion.div>
         </div>
       </div>
