@@ -80,9 +80,9 @@ export default function Support() {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      <main className="pt-32">
+      <main>
         {/* Hero Section */}
-        <section className="bg-panlit-dark py-16 md:py-24 relative overflow-hidden">
+        <section className="bg-panlit-dark pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-panlit-orange/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-blue-500/10 rounded-full blur-[80px] translate-x-1/4 translate-y-1/4" />
           

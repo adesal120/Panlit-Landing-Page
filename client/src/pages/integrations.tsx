@@ -78,9 +78,9 @@ export default function Integrations() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <main className="pt-32">
+      <main>
         {/* Hero Section */}
-        <section className="bg-panlit-dark py-16 md:py-24 relative overflow-hidden">
+        <section className="bg-panlit-dark pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
           {/* Abstract Background Elements */}
           <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden pointer-events-none">
             <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-panlit-orange/10 rounded-full blur-[120px]" />
