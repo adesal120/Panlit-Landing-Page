@@ -80,17 +80,23 @@ export default function Integrations() {
 
       <main className="pt-32">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-slate-50 to-white py-16 md:py-24">
-          <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl">
+        <section className="bg-panlit-dark py-16 md:py-24 relative overflow-hidden">
+          {/* Abstract Background Elements */}
+          <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-panlit-orange/10 rounded-full blur-[120px]" />
+            <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px]" />
+          </div>
+
+          <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold font-heading text-slate-900 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">
                 Connect your tools to Panlit
               </h1>
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="text-lg text-slate-300 leading-relaxed">
                 Integrate with your favorite platforms to streamline operations, automate workflows, and manage your business more efficiently.
               </p>
             </motion.div>

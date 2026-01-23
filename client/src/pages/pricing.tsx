@@ -325,33 +325,41 @@ export default function Pricing() {
     <div className="min-h-screen bg-slate-50 font-sans">
       <Navbar />
       
-      <main className="pt-32 pb-24">
+      <main>
         {/* Header */}
-        <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold font-heading text-slate-900 mb-6">
-            Build your perfect plan
-          </h1>
-          <p className="text-xl text-slate-600 mb-8">
-            Start with a Base Plan. Add powerful modules as you grow.
-          </p>
-          
-          {/* Currency Selector - Prominent */}
-          <div className="inline-flex items-center bg-white border-2 border-slate-200 rounded-xl px-4 py-2 shadow-sm">
-            <Globe size={20} className="text-panlit-orange mr-3" />
-            <select 
-              value={selectedCurrency}
-              onChange={(e) => setSelectedCurrency(e.target.value)}
-              className="bg-transparent font-bold text-slate-900 focus:outline-none cursor-pointer"
-            >
-              {currencies.map(c => (
-                <option key={c.code} value={c.code}>{c.name} ({c.code})</option>
-              ))}
-            </select>
+        <section className="bg-panlit-dark pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
+          {/* Abstract Background Elements */}
+          <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-panlit-orange/10 rounded-full blur-[120px]" />
+            <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px]" />
           </div>
-        </div>
+
+          <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl relative z-10">
+            <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">
+              Build your perfect plan
+            </h1>
+            <p className="text-xl text-slate-300 mb-8">
+              Start with a Base Plan. Add powerful modules as you grow.
+            </p>
+            
+            {/* Currency Selector - Prominent */}
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2 shadow-lg">
+              <Globe size={20} className="text-panlit-orange mr-3" />
+              <select 
+                value={selectedCurrency}
+                onChange={(e) => setSelectedCurrency(e.target.value)}
+                className="bg-transparent font-bold text-white focus:outline-none cursor-pointer [&>option]:text-slate-900"
+              >
+                {currencies.map(c => (
+                  <option key={c.code} value={c.code}>{c.name} ({c.code})</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </section>
 
         {/* Main Calculator Interface */}
-        <div className="container mx-auto px-4 md:px-6 mb-24">
+        <div className="container mx-auto px-4 md:px-6 py-12 md:py-24 -mt-12 relative z-20">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
             
             {/* Left Column: Configuration */}
