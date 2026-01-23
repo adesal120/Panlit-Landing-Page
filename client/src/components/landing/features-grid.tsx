@@ -352,9 +352,11 @@ export function FeaturesGrid() {
               A beautiful, mobile-optimized booking engine that embeds directly into your existing website or social media platform. Turn lookers into bookers instantly—commission-free.
             </p>
           </div>
-          <Button size="lg" className="bg-panlit-dark text-white hover:bg-panlit-dark/90 shrink-0">
-            View Demo Store
-          </Button>
+          <a href="https://dashboard.panlit.com/store/direx" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-panlit-dark text-white hover:bg-panlit-dark/90 shrink-0">
+              View Demo Store
+            </Button>
+          </a>
         </motion.div>
 
       </div>
