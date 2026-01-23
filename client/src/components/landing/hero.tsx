@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Calendar, FileText, CreditCard, Check, UserCheck, Bell, History } from "lucide-react";
+import { ArrowRight, CheckCircle2, Calendar, FileText, CreditCard, Check, UserCheck, Bell, History, MessageSquare, Zap } from "lucide-react";
 
 export function Hero() {
   const [word, setWord] = useState<"tours" | "activities" | "experiences" | "accommodation" | "hotel">("tours");
@@ -92,7 +92,7 @@ export function Hero() {
             className="relative hidden lg:flex items-center justify-center h-full min-h-[500px]"
           >
              {/* Floating Tasks Container */}
-             <div className="relative w-full max-w-lg h-[500px]">
+             <div className="relative w-full max-w-lg h-[600px] scale-90 sm:scale-100">
                 
                 {/* Background Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-panlit-orange/20 to-blue-500/20 rounded-full blur-[100px]" />
@@ -102,7 +102,7 @@ export function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="absolute top-0 left-0 w-72 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 z-20 rotate-[-6deg] hover:rotate-0 transition-transform duration-300"
+                  className="absolute top-0 left-0 w-72 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 z-30 rotate-[-4deg] hover:rotate-0 transition-transform duration-300 hover:z-50"
                 >
                   <div className="flex items-center justify-between mb-3 border-b border-slate-50 pb-2">
                     <div className="flex items-center gap-2">
@@ -131,18 +131,48 @@ export function Hero() {
                   </div>
                   <div className="bg-yellow-50 p-2.5 rounded-lg border border-yellow-100 mb-2">
                     <p className="text-[10px] text-yellow-800 font-medium leading-tight">
-                      ℹ️ Note: Prefers quiet room away from elevator. Allergies: Peanuts.
+                      ℹ️ Note: Prefers quiet room. Allergies: Peanuts.
                     </p>
                   </div>
                   <Button size="sm" className="w-full bg-slate-900 text-white h-7 text-xs">View Profile</Button>
                 </motion.div>
 
-                {/* Card 2: Digital Waiver (Top Right) */}
+                {/* Card 2: New Booking (Top Right) */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="absolute top-8 -right-4 w-64 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 z-20 rotate-[3deg] hover:rotate-0 transition-transform duration-300 hover:z-50"
+                >
+                  <div className="flex items-center justify-between mb-3 border-b border-slate-50 pb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
+                        <Calendar size={16} />
+                      </div>
+                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">New Booking</span>
+                    </div>
+                    <span className="text-[10px] text-slate-400">Just now</span>
+                  </div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold text-sm">
+                      JD
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900 text-sm">John Doe</h4>
+                      <p className="text-xs text-slate-500">Deluxe Ocean Suite • 3 Nights</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <Button size="sm" className="w-full bg-slate-900 text-white h-7 text-xs">Confirm</Button>
+                  </div>
+                </motion.div>
+
+                {/* Card 3: Digital Waiver (Middle Left) */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className="absolute top-12 right-0 w-64 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 z-10 rotate-[6deg] hover:rotate-0 transition-transform duration-300"
+                  className="absolute top-52 left-0 w-64 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 z-10 rotate-[2deg] hover:rotate-0 transition-transform duration-300 hover:z-50"
                 >
                   <div className="flex items-center justify-between mb-3 border-b border-slate-50 pb-2">
                     <div className="flex items-center gap-2">
@@ -159,11 +189,10 @@ export function Hero() {
                           <span className="text-[8px] font-bold text-slate-400">PDF</span>
                        </div>
                        <div>
-                          <p className="text-xs font-bold text-slate-700">Adventure Tour Waiver</p>
+                          <p className="text-xs font-bold text-slate-700">Adventure Tour</p>
                           <p className="text-[10px] text-slate-400">Signed 10 mins ago</p>
                        </div>
                     </div>
-
                     <div className="flex items-center justify-between px-2">
                        <span className="text-[10px] text-slate-500 font-medium">Signature Verified</span>
                        <div className="flex items-center gap-1 text-green-600 text-[10px] font-bold bg-green-50 px-2 py-1 rounded-full">
@@ -171,19 +200,48 @@ export function Hero() {
                           Valid
                        </div>
                     </div>
-                    
-                    <Button size="sm" variant="outline" className="w-full border-slate-200 h-7 text-xs text-slate-600 hover:text-slate-900">
-                      Download PDF
+                  </div>
+                </motion.div>
+
+                {/* Card 4: AI Inquiry (Middle Right) */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 }}
+                  className="absolute top-48 right-0 w-64 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 z-20 rotate-[-3deg] hover:rotate-0 transition-transform duration-300 hover:z-50"
+                >
+                  <div className="flex items-center justify-between mb-3 border-b border-slate-50 pb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-600">
+                        <MessageSquare size={16} />
+                      </div>
+                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">AI Inquiry</span>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="bg-slate-50 p-2 rounded-lg text-xs text-slate-600">
+                      Hi, is late check-in available?
+                    </div>
+                    <div className="relative">
+                      <div className="bg-blue-50 p-2 rounded-lg text-xs text-blue-800 border border-blue-100">
+                        <div className="flex items-center gap-1 mb-1 text-[10px] text-blue-500 font-bold uppercase">
+                          <Zap size={10} /> AI Suggestion
+                        </div>
+                        Yes! Our front desk is open 24/7.
+                      </div>
+                    </div>
+                    <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-white h-7 text-xs gap-1">
+                      <Check size={12} /> Send Reply
                     </Button>
                   </div>
                 </motion.div>
 
-                {/* Card 3: Payment Success (Bottom Center) */}
+                {/* Card 5: Payment Success (Bottom Center) */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 }}
-                  className="absolute bottom-16 left-1/2 -translate-x-1/2 w-80 bg-white rounded-2xl p-4 shadow-2xl border border-slate-100 z-30"
+                  className="absolute bottom-20 left-1/2 -translate-x-1/2 w-80 bg-white rounded-2xl p-4 shadow-2xl border border-slate-100 z-40"
                 >
                    <div className="absolute -top-3 right-6 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
                       <Check size={12} /> Paid
@@ -213,7 +271,7 @@ export function Hero() {
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1, y: [0, -5, 0] }}
                     transition={{ delay: 1.5, duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-1/2 -right-4 bg-slate-900 text-white rounded-lg p-3 shadow-xl z-40 flex items-center gap-3 max-w-[200px]"
+                    className="absolute top-1/2 -right-8 bg-slate-900 text-white rounded-lg p-3 shadow-xl z-40 flex items-center gap-3 max-w-[200px]"
                  >
                     <div className="relative">
                       <Bell className="text-panlit-orange w-5 h-5" />
