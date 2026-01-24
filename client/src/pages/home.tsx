@@ -31,7 +31,7 @@ export default function Home() {
                Join hundreds of tourism, hospitality, and experience businesses who trust Panlit to run their business.
              </p>
              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-               <a href="https://tally.so/r/nrPA95" target="_blank" rel="noopener noreferrer">
+               <a href="https://dashboard.panlit.com/" target="_blank" rel="noopener noreferrer">
                  <Button size="lg" className="bg-panlit-orange hover:bg-orange-600 text-white font-bold h-14 px-10 rounded-full text-lg w-full sm:w-auto">
                    Get Started for Free
                  </Button>
