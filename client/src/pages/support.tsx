@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { HelpCircle, BookOpen, Users, Mail, MessageSquare, Zap, FileText, Video } from "lucide-react";
+import { HelpCircle, BookOpen, Users, Mail, MessageSquare, Zap, FileText, Video, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
@@ -17,22 +17,29 @@ const mainResources: ResourceCard[] = [
     icon: HelpCircle,
     title: "Support Center",
     description: "Find answers to frequently asked questions and browse articles covering common topics. Quick solutions to help you get the most out of Panlit.",
-    link: "#",
+    link: "https://intercom.help/panlit/en",
     cta: "Browse articles"
   },
   {
     icon: BookOpen,
     title: "Guides & Tutorials",
     description: "Comprehensive guides, demo videos, feature documentation, and best practices. Learn how to use every aspect of Panlit to manage your business effectively.",
-    link: "#",
+    link: "https://intercom.help/panlit/en",
     cta: "View guides"
   },
   {
     icon: Users,
     title: "Community",
     description: "Connect with other tourism operators and experience creators using Panlit. Share tips, ask questions, learn best practices, and discover how others are running their businesses smarter.",
-    link: "#",
+    link: "https://chat.whatsapp.com/IbMXDHloChTE0tbIGAeTum",
     cta: "Join community"
+  },
+  {
+    icon: MessageCircle,
+    title: "FAQs",
+    description: "Common questions about pricing, features, and account management. Get quick answers to the most frequent inquiries without waiting for support.",
+    link: "#faq-section",
+    cta: "Read FAQs"
   }
 ];
 
@@ -124,34 +131,36 @@ export default function Support() {
         {/* Main Resources Grid */}
         <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {mainResources.map((resource, index) => {
                 const Icon = resource.icon;
                 return (
-                  <motion.div 
+                  <motion.a 
                     key={resource.title}
+                    href={resource.link}
+                    target={resource.link.startsWith("http") ? "_blank" : undefined}
+                    rel={resource.link.startsWith("http") ? "noopener noreferrer" : undefined}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="group bg-white rounded-xl border border-slate-200 p-8 hover:border-panlit-orange/30 hover:shadow-lg transition-all"
+                    className="group bg-white rounded-xl border border-slate-200 p-8 hover:border-panlit-orange/30 hover:shadow-lg transition-all flex flex-col h-full"
                   >
-                    <div className="w-14 h-14 rounded-xl bg-panlit-orange/10 flex items-center justify-center mb-6 group-hover:bg-panlit-orange/20 transition-colors">
+                    <div className="w-14 h-14 rounded-xl bg-panlit-orange/10 flex items-center justify-center mb-6 group-hover:bg-panlit-orange/20 transition-colors shrink-0">
                       <Icon className="w-7 h-7 text-panlit-orange" />
                     </div>
                     <h3 className="text-xl font-bold font-heading text-slate-900 mb-3">
                       {resource.title}
                     </h3>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
+                    <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
                       {resource.description}
                     </p>
-                    <Button 
-                      variant="ghost"
-                      className="text-panlit-orange hover:text-panlit-dark hover:bg-orange-50"
+                    <div 
+                      className="text-panlit-orange font-medium hover:text-panlit-dark transition-colors inline-flex items-center mt-auto"
                     >
                       {resource.cta} →
-                    </Button>
-                  </motion.div>
+                    </div>
+                  </motion.a>
                 );
               })}
             </div>
@@ -188,7 +197,7 @@ export default function Support() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-24 bg-slate-50">
+        <section id="faq-section" className="py-24 bg-slate-50">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-4 text-center">
               Frequently Asked Questions
