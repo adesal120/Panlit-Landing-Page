@@ -118,9 +118,16 @@ export function Navbar() {
             Resources
           </Link>
           <div className="h-px bg-slate-100 my-2" />
-          <Button variant="ghost" className="justify-start text-slate-600">
-            Log in
-          </Button>
+          <a href="https://dashboard.panlit.com/" target="_blank" rel="noopener noreferrer" className="w-full">
+            <Button variant="ghost" className="justify-start text-slate-600 w-full">
+              Log in
+            </Button>
+          </a>
+          <a href="https://dashboard.panlit.com/" target="_blank" rel="noopener noreferrer" className="w-full">
+            <Button variant="ghost" className="justify-start text-slate-600 w-full">
+              Get Started
+            </Button>
+          </a>
           <a href="https://tally.so/r/nrPA95" target="_blank" rel="noopener noreferrer" className="w-full">
             <Button className="bg-panlit-orange hover:bg-orange-600 text-white w-full rounded-full">
               Book a demo
