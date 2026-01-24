@@ -324,7 +324,6 @@ export default function Pricing() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans">
       <Navbar />
-      
       <main>
         {/* Header */}
         <section className="bg-panlit-dark pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
@@ -592,9 +591,7 @@ export default function Pricing() {
                 </div>
 
                 <a href="https://tally.so/r/nrPA95" target="_blank" rel="noopener noreferrer" className="w-full block mb-4">
-                  <Button className="w-full bg-panlit-orange hover:bg-orange-600 text-white font-bold h-12 rounded-xl text-lg">
-                    Start Building for Free
-                  </Button>
+                  <Button className="w-full bg-panlit-orange hover:bg-orange-600 text-white font-bold h-12 rounded-xl text-lg">Sign up for free</Button>
                 </a>
                 <p className="text-center text-slate-500 text-xs">
                   No credit card required. Cancel anytime.
