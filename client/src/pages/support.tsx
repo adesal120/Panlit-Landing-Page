@@ -31,7 +31,7 @@ const mainResources: ResourceCard[] = [
     icon: MessageCircle,
     title: "FAQs",
     description: "Common questions about pricing, features, and account management. Get quick answers to the most frequent inquiries without waiting for support.",
-    link: "https://intercom.help/panlit/en",
+    link: "/faqs",
     cta: "Read FAQs"
   }
 ];
