@@ -62,23 +62,25 @@ export function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-          <Button variant="ghost" className={cn(
-            "font-medium hover:bg-white/10",
-            isScrolled ? "text-panlit-dark hover:text-panlit-orange hover:bg-slate-100" : "text-white hover:text-white"
-          )}>
-            Log in
-          </Button>
           <a href="https://dashboard.panlit.com/" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" className={cn(
               "font-medium hover:bg-white/10",
               isScrolled ? "text-panlit-dark hover:text-panlit-orange hover:bg-slate-100" : "text-white hover:text-white"
             )}>
-              Book a demo
+              Log in
             </Button>
           </a>
           <a href="https://dashboard.panlit.com/" target="_blank" rel="noopener noreferrer">
-            <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-medium rounded-full px-6">
+            <Button variant="ghost" className={cn(
+              "font-medium hover:bg-white/10",
+              isScrolled ? "text-panlit-dark hover:text-panlit-orange hover:bg-slate-100" : "text-white hover:text-white"
+            )}>
               Get Started
+            </Button>
+          </a>
+          <a href="https://tally.so/r/nrPA95" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-medium rounded-full px-6">
+              Book a demo
             </Button>
           </a>
         </div>
