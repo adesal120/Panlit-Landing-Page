@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { SEO } from "@/components/seo";
 
 import paystackLogo from "../assets/official_logos/paystack.png";
 import stripeLogo from "../assets/official_logos/stripe.webp";
@@ -76,6 +77,11 @@ const categories = Array.from(new Set(integrations.map(i => i.category)));
 export default function Integrations() {
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Panlit Integrations | Connect Everything, Control Everywhere"
+        description="Your payment providers, booking channels, review sites, and messaging tools, finally talking to each other. Built for tourism and hospitality businesses that want one dashboard, real-time sync, and zero headaches."
+        keywords="tourism software integrations, hospitality platform connections, sync booking channels, payment system integrations, review management sync, real-time hospitality dashboard, multi-platform tourism tools, automated data sync, third-party hospitality integrations, unified tourism operations"
+      />
       <Navbar />
 
       <main>

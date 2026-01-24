@@ -7,6 +7,7 @@ import { Footer } from "@/components/landing/footer";
 import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
 import { cn } from "@/lib/utils";
+import { SEO } from "@/components/seo";
 
 // --- Data Definitions ---
 
@@ -323,6 +324,11 @@ export default function Pricing() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans">
+      <SEO 
+        title="Panlit Pricing | Plans That Grow With Your Business"
+        description="Start with what you need, add more as you grow. Free to launch, transparent fees, and AI-powered add-ons built for tourism and hospitality businesses. No contracts, cancel anytime."
+        keywords="tourism software pricing, hospitality platform plans, free tier booking software, usage-based pricing, modular hospitality add-ons, transparent tourism fees, no hidden costs, scalable hospitality pricing, tourism business plans, revenue-first software"
+      />
       <Navbar />
       <main>
         {/* Header */}

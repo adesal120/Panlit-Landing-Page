@@ -3,6 +3,7 @@ import { HelpCircle, BookOpen, Users, Mail, MessageSquare, Zap, FileText, Video,
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { SEO } from "@/components/seo";
 
 interface ResourceCard {
   icon: React.ElementType;
@@ -78,6 +79,11 @@ const faqs: FAQItem[] = [
 export default function Support() {
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Panlit Support | Help That Actually Helps"
+        description="Self-service guides when you want them. Real humans when you need them. Dedicated support for tourism and hospitality businesses, with answers in 24 hours, not excuses."
+        keywords="tourism software support, hospitality platform help, human customer support, self-service help centre, fast response team, tourism onboarding guidance, hospitality setup help, dedicated support team, live chat support, 24-hour response time"
+      />
       <Navbar />
       
       <main>

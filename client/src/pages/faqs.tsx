@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { SEO } from "@/components/seo";
 
 interface FAQ {
   question: string;
@@ -275,6 +276,11 @@ export default function FAQs() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Panlit FAQ | Everything You Need to Know"
+        description="Curious how it all works? Browse our most-asked questions about pricing, features, setup, and more. Built for tourism and hospitality businesses. Still stuck? Our team is just a message away."
+        keywords="tourism software FAQ, hospitality platform questions, how Panlit works, pricing explained, feature breakdown, tourism setup questions, hospitality beginner guide, common queries answered, self-help resources, tourism and hospitality support"
+      />
       <Navbar />
       
       <main>

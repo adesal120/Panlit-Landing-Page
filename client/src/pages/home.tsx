@@ -7,10 +7,16 @@ import { Testimonials } from "@/components/landing/testimonials";
 import { BlogPreview } from "@/components/landing/blog-preview";
 import { Footer } from "@/components/landing/footer";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/seo";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white font-sans">
+      <SEO 
+        title="Panlit | All-in-One Software for Tourism & Hospitality"
+        description="Everything you need to manage bookings, delight guests, and grow your tourism or hospitality business. AI-powered software that works while you sleep, so you can focus on delivering unforgettable experiences."
+        keywords="tourism management software, hospitality business software, all-in-one tourism software, guest experience software, booking automation software, hospitality operations software, AI-powered tourism software, unified hospitality software, smart business software, end-to-end tourism software"
+      />
       <Navbar />
       <main>
         <Hero />
