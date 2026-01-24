@@ -15,31 +15,17 @@ interface ResourceCard {
 const mainResources: ResourceCard[] = [
   {
     icon: HelpCircle,
-    title: "Support Center",
-    description: "Find answers to frequently asked questions and browse articles covering common topics. Quick solutions to help you get the most out of Panlit.",
+    title: "Help Center & Guides",
+    description: "Find answers to frequently asked questions, browse articles, and access comprehensive guides to help you get the most out of Panlit.",
     link: "https://intercom.help/panlit/en",
-    cta: "Browse articles"
-  },
-  {
-    icon: BookOpen,
-    title: "Guides & Tutorials",
-    description: "Comprehensive guides, demo videos, feature documentation, and best practices. Learn how to use every aspect of Panlit to manage your business effectively.",
-    link: "https://intercom.help/panlit/en",
-    cta: "View guides"
+    cta: "Visit help center"
   },
   {
     icon: Users,
     title: "Community",
-    description: "Connect with other tourism operators and experience creators using Panlit. Share tips, ask questions, learn best practices, and discover how others are running their businesses smarter.",
+    description: "Connect with other tourism operators and experience creators using Panlit. Share tips, ask questions, and discover best practices.",
     link: "https://chat.whatsapp.com/IbMXDHloChTE0tbIGAeTum",
     cta: "Join community"
-  },
-  {
-    icon: MessageCircle,
-    title: "FAQs",
-    description: "Common questions about pricing, features, and account management. Get quick answers to the most frequent inquiries without waiting for support.",
-    link: "#faq-section",
-    cta: "Read FAQs"
   }
 ];
 
@@ -131,7 +117,7 @@ export default function Support() {
         {/* Main Resources Grid */}
         <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {mainResources.map((resource, index) => {
                 const Icon = resource.icon;
                 return (
@@ -167,75 +153,7 @@ export default function Support() {
           </div>
         </section>
 
-        {/* Quick Links */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-12 text-center">
-              Quick Links
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {quickLinks.map((link, index) => {
-                const Icon = link.icon;
-                return (
-                  <motion.a 
-                    key={link.title}
-                    href={link.link}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
-                    className="group bg-slate-50 hover:bg-panlit-orange/5 border border-slate-200 hover:border-panlit-orange/30 rounded-lg p-6 transition-all cursor-pointer"
-                  >
-                    <Icon className="w-8 h-8 text-panlit-orange mb-4 group-hover:scale-110 transition-transform" />
-                    <h4 className="font-bold text-slate-900 mb-1">{link.title}</h4>
-                    <p className="text-sm text-slate-600">{link.description}</p>
-                  </motion.a>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section id="faq-section" className="py-24 bg-slate-50">
-          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-4 text-center">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-center text-slate-600 mb-12 text-lg">
-              Can't find what you're looking for? Check our help center or contact support.
-            </p>
-
-            <div className="space-y-6">
-              {faqs.map((faq, idx) => (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="bg-white border border-slate-200 rounded-lg p-6 hover:border-panlit-orange/30 transition-colors"
-                >
-                  <h3 className="text-lg font-bold text-slate-900 mb-3">
-                    {faq.question}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <p className="text-slate-600 mb-4">Still have questions?</p>
-              <a href="mailto:support@panlit.com">
-                <Button className="bg-panlit-orange hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg">
-                  Contact Support Team
-                </Button>
-              </a>
-            </div>
-          </div>
-        </section>
+        {/* Contact CTA */}
 
         {/* Contact CTA */}
         <section className="py-24 bg-panlit-dark relative overflow-hidden">
