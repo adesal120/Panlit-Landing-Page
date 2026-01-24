@@ -36,7 +36,7 @@ export default function Home() {
                    Get Started for Free
                  </Button>
                </a>
-               <a href="https://tally.so/r/nrPA95" target="_blank" rel="noopener noreferrer">
+               <a href="https://dashboard.panlit.com/" target="_blank" rel="noopener noreferrer">
                  <Button size="lg" variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 font-bold h-14 px-10 rounded-full text-lg w-full sm:w-auto">
                    Book a Demo
                  </Button>
