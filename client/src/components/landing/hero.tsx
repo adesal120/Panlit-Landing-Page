@@ -5,6 +5,14 @@ import { ArrowRight, CheckCircle2, Calendar, FileText, CreditCard, Check, UserCh
 
 export function Hero() {
   const [word, setWord] = useState<"tours" | "activities" | "experiences" | "accommodation" | "hotel">("tours");
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 1024);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const words: ("tours" | "activities" | "experiences" | "accommodation" | "hotel")[] = ["tours", "activities", "experiences", "accommodation", "hotel"];
@@ -19,22 +27,22 @@ export function Hero() {
   return (
     <section className="relative bg-panlit-dark pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       {/* Abstract Background Elements */}
-      <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-panlit-orange/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px]" />
-        <div className="absolute top-[20%] left-[15%] w-full h-full opacity-5" 
-             style={{ backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-      </div>
+            <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden pointer-events-none transform-gpu">
+              <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-panlit-orange/10 rounded-full blur-[120px]" />
+              <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px]" />
+              <div className="absolute top-[20%] left-[15%] w-full h-full opacity-5" 
+                   style={{ backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+            </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-2xl"
-          >
+          <div className="max-w-2xl">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
               <span className="flex h-2 w-2 rounded-full bg-panlit-orange animate-pulse"></span>
               <span className="text-sm font-medium text-white/90">New: Smart Forms & QR Check-in</span>
@@ -83,9 +91,11 @@ export function Hero() {
                 <span>Cancel anytime</span>
               </div>
             </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
-          <motion.div 
+          {isDesktop && (
+            <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -284,6 +294,7 @@ export function Hero() {
                  </motion.div>
              </div>
           </motion.div>
+          )}
         </div>
       </div>
     </section>
