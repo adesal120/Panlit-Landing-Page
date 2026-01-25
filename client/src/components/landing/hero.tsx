@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Calendar, FileText, CreditCard, Check, UserCheck, Bell, History, MessageSquare, Zap } from "lucide-react";
 
@@ -38,7 +38,7 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           <div className="max-w-2xl">
-            <motion.div 
+            <m.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -50,7 +50,7 @@ export function Hero() {
 
             <h1 className="text-4xl md:text-6xl font-bold font-heading text-white leading-[1.1] mb-6">
               Ready to supercharge your <AnimatePresence mode="wait">
-                <motion.span 
+                <m.span 
                   key={word}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -95,7 +95,7 @@ export function Hero() {
           </div>
 
           {isDesktop && (
-            <motion.div 
+            <m.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -108,7 +108,7 @@ export function Hero() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-panlit-orange/20 to-blue-500/20 rounded-full blur-[100px]" />
 
                 {/* Card 1: Guest CRM (Top Left) */}
-                <motion.div 
+                <m.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
@@ -148,7 +148,7 @@ export function Hero() {
                 </motion.div>
 
                 {/* Card 2: New Booking (Top Right) */}
-                <motion.div 
+                <m.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
@@ -178,7 +178,7 @@ export function Hero() {
                 </motion.div>
 
                 {/* Card 3: Digital Waiver (Middle Left) */}
-                <motion.div 
+                <m.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
@@ -214,7 +214,7 @@ export function Hero() {
                 </motion.div>
 
                 {/* Card 4: AI Inquiry (Middle Right) */}
-                <motion.div 
+                <m.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 }}
@@ -247,7 +247,7 @@ export function Hero() {
                 </motion.div>
 
                 {/* Card 5: Payment Success (Bottom Center) */}
-                <motion.div 
+                <m.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 }}
@@ -277,7 +277,7 @@ export function Hero() {
                 </motion.div>
 
                 {/* Floating Notification */}
-                 <motion.div 
+                 <m.div 
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1, y: [0, -5, 0] }}
                     transition={{ delay: 1.5, duration: 4, repeat: Infinity, ease: "easeInOut" }}
