@@ -55,6 +55,9 @@ export function Integrations() {
                     <img 
                       src={item.logo} 
                       alt={item.name} 
+                      width={100}
+                      height={40}
+                      loading="lazy"
                       className="max-h-12 w-auto max-w-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" 
                     />
                   </div>

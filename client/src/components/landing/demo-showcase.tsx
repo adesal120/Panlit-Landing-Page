@@ -110,6 +110,8 @@ export function DemoShowcase() {
                 <iframe 
                   src={`https://www.loom.com/embed/${activeDemo.videoId}?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true`}
                   allowFullScreen 
+                  loading="lazy"
+                  title={`${activeDemo.title} Demo Video`}
                   className="absolute top-0 left-0 w-full h-full"
                 ></iframe>
               </div>

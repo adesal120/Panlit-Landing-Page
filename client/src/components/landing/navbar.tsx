@@ -29,6 +29,8 @@ export function Navbar() {
             <img 
               src={panlitLogoCombo} 
               alt="Panlit Logo" 
+              width={200}
+              height={80}
               className="h-20 w-auto group-hover:scale-105 transition-transform"
             />
         </Link>
@@ -89,6 +91,7 @@ export function Navbar() {
         <button
           className="md:hidden p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? (
             <X className={isScrolled ? "text-slate-900" : "text-white"} />
