@@ -1,13 +1,15 @@
 import { Navbar } from "@/components/landing/navbar";
 import { Hero } from "@/components/landing/hero";
-import { FeaturesGrid } from "@/components/landing/features-grid";
-import { DemoShowcase } from "@/components/landing/demo-showcase";
-import { Integrations } from "@/components/landing/integrations";
-import { Testimonials } from "@/components/landing/testimonials";
-import { BlogPreview } from "@/components/landing/blog-preview";
 import { Footer } from "@/components/landing/footer";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/seo";
+import React, { Suspense } from "react";
+
+// Lazy load below-the-fold content
+const FeaturesGrid = React.lazy(() => import("@/components/landing/features-grid").then(module => ({ default: module.FeaturesGrid })));
+const DemoShowcase = React.lazy(() => import("@/components/landing/demo-showcase").then(module => ({ default: module.DemoShowcase })));
+const Integrations = React.lazy(() => import("@/components/landing/integrations").then(module => ({ default: module.Integrations })));
+const Testimonials = React.lazy(() => import("@/components/landing/testimonials").then(module => ({ default: module.Testimonials })));
 
 export default function Home() {
   return (
@@ -20,11 +22,22 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <FeaturesGrid />
-        <DemoShowcase />
-        <Integrations />
-        <Testimonials />
-        {/* <BlogPreview /> */}
+        
+        <Suspense fallback={<div className="h-96" />}>
+          <FeaturesGrid />
+        </Suspense>
+
+        <Suspense fallback={<div className="h-96" />}>
+          <DemoShowcase />
+        </Suspense>
+
+        <Suspense fallback={<div className="h-96" />}>
+          <Integrations />
+        </Suspense>
+
+        <Suspense fallback={<div className="h-96" />}>
+          <Testimonials />
+        </Suspense>
         
         {/* CTA Section */}
         <section className="py-24 bg-panlit-dark relative overflow-hidden">

@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 import { Check, X, Calculator, Globe, Zap, Layers, MessageSquare, Send, ShoppingBag, Phone, Mic, LayoutDashboard, Database, CreditCard, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/landing/navbar";

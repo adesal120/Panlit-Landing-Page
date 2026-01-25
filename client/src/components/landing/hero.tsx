@@ -59,7 +59,7 @@ export function Hero() {
                   className="text-transparent bg-clip-text bg-gradient-to-r from-panlit-orange to-orange-300 inline-block"
                 >
                   {word}
-                </motion.span>
+                </m.span>
               </AnimatePresence> business?
             </h1>
             
@@ -91,7 +91,7 @@ export function Hero() {
                 <span>Cancel anytime</span>
               </div>
             </div>
-            </motion.div>
+            </m.div>
           </div>
 
           {isDesktop && (
@@ -145,7 +145,7 @@ export function Hero() {
                     </p>
                   </div>
                   <Button size="sm" className="w-full bg-slate-900 text-white h-7 text-xs">View Profile</Button>
-                </motion.div>
+                </m.div>
 
                 {/* Card 2: New Booking (Top Right) */}
                 <m.div 
@@ -175,7 +175,7 @@ export function Hero() {
                   <div className="flex gap-2">
                     <Button size="sm" className="w-full bg-slate-900 text-white h-7 text-xs">Confirm</Button>
                   </div>
-                </motion.div>
+                </m.div>
 
                 {/* Card 3: Digital Waiver (Middle Left) */}
                 <m.div 
@@ -211,7 +211,7 @@ export function Hero() {
                        </div>
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
 
                 {/* Card 4: AI Inquiry (Middle Right) */}
                 <m.div 
@@ -244,7 +244,7 @@ export function Hero() {
                       <Check size={12} /> Send Reply
                     </Button>
                   </div>
-                </motion.div>
+                </m.div>
 
                 {/* Card 5: Payment Success (Bottom Center) */}
                 <m.div 
@@ -274,7 +274,7 @@ export function Hero() {
                      </div>
                      <span className="text-xs text-slate-400">#INV-2024-001</span>
                   </div>
-                </motion.div>
+                </m.div>
 
                 {/* Floating Notification */}
                  <m.div 
@@ -291,9 +291,9 @@ export function Hero() {
                       <span className="font-bold block">Low Inventory</span>
                       <span className="text-slate-400">Only 2 rooms left!</span>
                     </div>
-                 </motion.div>
+                 </m.div>
              </div>
-          </motion.div>
+          </m.div>
           )}
         </div>
       </div>

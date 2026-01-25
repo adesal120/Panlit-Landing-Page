@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import stripeLogo from "../../assets/official_logos/stripe.webp";
 import paystackLogo from "../../assets/official_logos/paystack.png";
 import tripadvisorLogo from "../../assets/official_logos/tripadvisor.png";

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { Clock, Hand, Search, Zap } from "lucide-react";
 
 interface Testimonial {

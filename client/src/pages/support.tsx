@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { HelpCircle, BookOpen, Users, Mail, MessageSquare, Zap, FileText, Video, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/landing/navbar";
