@@ -1,11 +1,11 @@
 import { m as motion } from "framer-motion";
 import stripeLogo from "../../assets/official_logos/stripe.webp";
-import paystackLogo from "../../assets/official_logos/paystack.png";
-import tripadvisorLogo from "../../assets/official_logos/tripadvisor.png";
-import googleReviewsLogo from "../../assets/official_logos/google_reviews.png";
-import whatsappLogo from "../../assets/official_logos/whatsapp.webp";
-import flutterwaveLogo from "../../assets/official_logos/flutterwave-official.webp";
-import mailchimpLogo from "../../assets/official_logos/mailchimp-black.png";
+import paystackLogo from "../../assets/official_logos/paystack.webp";
+import tripadvisorLogo from "../../assets/official_logos/tripadvisor.webp";
+import googleReviewsLogo from "../../assets/official_logos/google_reviews.webp";
+import whatsappLogo from "../../assets/official_logos/whatsapp-opt.webp";
+import flutterwaveLogo from "../../assets/official_logos/flutterwave-opt.webp";
+import mailchimpLogo from "../../assets/official_logos/mailchimp-black.webp";
 
 export function Integrations() {
   const logos = [
@@ -55,8 +55,8 @@ export function Integrations() {
                     <img 
                       src={item.logo} 
                       alt={item.name} 
-                      width={100}
-                      height={40}
+                      width={200}
+                      height={80}
                       loading="lazy"
                       className="max-h-12 w-auto max-w-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" 
                     />
@@ -106,6 +106,9 @@ export function Integrations() {
                       <img 
                         src={item.logo} 
                         alt={item.name} 
+                        width={200}
+                        height={80}
+                        loading="lazy"
                         className="w-full h-full object-contain p-1"
                       />
                     </motion.div>

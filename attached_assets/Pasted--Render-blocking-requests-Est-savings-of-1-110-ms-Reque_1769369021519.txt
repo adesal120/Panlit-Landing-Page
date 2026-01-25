@@ -1,0 +1,140 @@
+
+Render blocking requests Est savings of 1,110 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+panlit.com 1st party
+21.0 KiB	320 ms
+/assets/index-D4OP_9NB.css(panlit.com)
+21.0 KiB
+320 ms
+Google Fonts cdn 
+1.1 KiB	750 ms
+/css2?family=Sintony:wght@400;700&display=swap(fonts.googleapis.com)
+1.1 KiB
+750 ms
+Improve image delivery Est savings of 484 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeLCPFCPUnscored
+URL
+Resource Size
+Est Savings
+panlit.com 1st party
+491.5 KiB	484.1 KiB
+Panlit Logo
+<img alt="Panlit Logo" width="200" height="80" class="h-20 w-auto group-hover:scale-105 transition-transform" src="/assets/panlit-logo-combo-D5LLBhyY.png">
+/assets/panlit-lo….png(panlit.com)
+184.8 KiB
+184.7 KiB
+This image file is larger than it needs to be (4500x4500) for its displayed dimensions (140x140). Use responsive images to reduce the image download size.
+184.7 KiB
+Google Reviews
+<img alt="Google Reviews" width="100" height="40" loading="lazy" class="max-h-12 w-auto max-w-full object-contain grayscale opacity-70 group-hover…" src="/assets/google_reviews-CA_w6oZH.png">
+/assets/google_re….png(panlit.com)
+139.0 KiB
+136.3 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+130.5 KiB
+This image file is larger than it needs to be (350x150) for its displayed dimensions (196x84). Use responsive images to reduce the image download size.
+95.4 KiB
+Mailchimp
+<img alt="Mailchimp" width="100" height="40" loading="lazy" class="max-h-12 w-auto max-w-full object-contain grayscale opacity-70 group-hover…" src="/assets/mailchimp-black-BmOr8eon.png">
+/assets/mailchimp….png(panlit.com)
+41.2 KiB
+40.6 KiB
+This image file is larger than it needs to be (2000x560) for its displayed dimensions (259x73). Use responsive images to reduce the image download size.
+40.6 KiB
+Paystack
+<img alt="Paystack" width="100" height="40" loading="lazy" class="max-h-12 w-auto max-w-full object-contain grayscale opacity-70 group-hover…" src="/assets/paystack-D2W3WpOn.png">
+/assets/paystack-D2W3WpOn.png(panlit.com)
+41.8 KiB
+40.5 KiB
+This image file is larger than it needs to be (1024x474) for its displayed dimensions (181x84). Use responsive images to reduce the image download size.
+40.5 KiB
+WhatsApp
+<img alt="WhatsApp" class="w-full h-full object-contain p-1" src="/assets/whatsapp-CpDN5elc.webp">
+/assets/whatsapp-CpDN5elc.webp(panlit.com)
+32.9 KiB
+32.7 KiB
+This image file is larger than it needs to be (980x980) for its displayed dimensions (91x91). Use responsive images to reduce the image download size.
+32.7 KiB
+TripAdvisor
+<img alt="TripAdvisor" width="100" height="40" loading="lazy" class="max-h-12 w-auto max-w-full object-contain grayscale opacity-70 group-hover…" src="/assets/tripadvisor-DqkTKm8u.png">
+/assets/tripadvis….png(panlit.com)
+27.7 KiB
+25.9 KiB
+This image file is larger than it needs to be (1024x219) for its displayed dimensions (259x55). Use responsive images to reduce the image download size.
+25.9 KiB
+Flutterwave
+<img alt="Flutterwave" width="100" height="40" loading="lazy" class="max-h-12 w-auto max-w-full object-contain grayscale opacity-70 group-hover…" src="/assets/flutterwave-official-CUYvrVsy.webp">
+/assets/flutterwave-official-CUYvrVsy.webp(panlit.com)
+18.6 KiB
+18.4 KiB
+This image file is larger than it needs to be (1200x720) for its displayed dimensions (140x84). Use responsive images to reduce the image download size.
+18.4 KiB
+Stripe
+<img alt="Stripe" width="100" height="40" loading="lazy" class="max-h-12 w-auto max-w-full object-contain grayscale opacity-70 group-hover…" src="/assets/stripe-fooxP3c4.webp">
+/assets/stripe-fooxP3c4.webp(panlit.com)
+5.3 KiB
+5.2 KiB
+This image file is larger than it needs to be (800x500) for its displayed dimensions (134x84). Use responsive images to reduce the image download size.
+5.2 KiB
+LCP breakdown
+Each subpart has specific improvement strategies. Ideally, most of the LCP time should be spent on loading the resources, not within delays.LCPUnscored
+Subpart
+Duration
+Time to first byte
+0 ms
+Element render delay
+3,580 ms
+The complete operating system for tourism, hospitality, and experience business…
+<p class="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 1,493 ms
+Initial Navigation
+https://panlit.com - 385 ms, 1.25 KiB
+/css2?family=Sintony:wght@400;700&display=swap(fonts.googleapis.com) - 390 ms, 1.14 KiB
+…v17/XoHm2YDqR….woff2(fonts.gstatic.com) - 1,185 ms, 9.10 KiB
+…v17/XoHj2YDqR….woff2(fonts.gstatic.com) - 1,186 ms, 8.92 KiB
+/assets/index-Vf9PtY2p.js(panlit.com) - 785 ms, 117.67 KiB
+/assets/home-DNeTB8F4.js(panlit.com) - 1,103 ms, 7.04 KiB
+/assets/features-….js(panlit.com) - 1,430 ms, 5.10 KiB
+/assets/ticket-77OZ7Ntz.js(panlit.com) - 1,467 ms, 1.11 KiB
+/assets/users-B7zVGCLX.js(panlit.com) - 1,439 ms, 1.11 KiB
+/assets/layers-D6o6pQNZ.js(panlit.com) - 1,307 ms, 1.13 KiB
+/assets/demo-show….js(panlit.com) - 1,309 ms, 2.89 KiB
+/assets/globe-CqE_Hjo3.js(panlit.com) - 1,493 ms, 1.08 KiB
+/assets/integrati….js(panlit.com) - 1,314 ms, 2.05 KiB
+/assets/whatsapp-BdkfUtwO.js(panlit.com) - 1,308 ms, 1.02 KiB
+/assets/testimonials-gQduWqsy.js(panlit.com) - 1,327 ms, 2.66 KiB
+/assets/search-Cep4PVNV.js(panlit.com) - 1,315 ms, 1.06 KiB
+/assets/footer-D4VHfQ-Q.js(panlit.com) - 1,010 ms, 4.07 KiB
+/assets/proxy-glyQVf-y.js(panlit.com) - 1,091 ms, 3.61 KiB
+/assets/calendar-Ccxauja1.js(panlit.com) - 1,109 ms, 1.09 KiB
+/assets/check-C06t9yF-.js(panlit.com) - 1,118 ms, 1.02 KiB
+/assets/message-square-CTo_pGsc.js(panlit.com) - 1,105 ms, 1.10 KiB
+/assets/seo-yypOMnL-.js(panlit.com) - 988 ms, 7.13 KiB
+/assets/index-D4OP_9NB.css(panlit.com) - 696 ms, 21.01 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+no origins were preconnected
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+Layout shift culprits
+3rd parties
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Reduce unused JavaScript Est savings of 52 KiB
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.LCPFCPUnscored
+URL
+Transfer Size
+Est Savings
+panlit.com 1st party
+116.8 KiB	52.0 KiB
+/assets/index-Vf9PtY2p.js(panlit.com)
+116.8 KiB
+52.0 KiB
+Image elements do not have explicit width and height
+More information about the performance of your application. These numbers don't directly affect the Performance score.

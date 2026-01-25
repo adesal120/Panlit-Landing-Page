@@ -7,7 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import React, { Suspense } from "react";
 
 // Lazy load pages to reduce initial bundle size
-const Home = React.lazy(() => import("@/pages/home"));
+import Home from "@/pages/home";
 const Blog = React.lazy(() => import("@/pages/blog"));
 const Pricing = React.lazy(() => import("@/pages/pricing"));
 const Support = React.lazy(() => import("@/pages/support"));
